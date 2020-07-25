@@ -1,0 +1,50 @@
+\documentclass[candidate, subf, href, colorlinks, fixint]{disser}
+
+\usepackage[intlimits]{amsmath}
+\usepackage{amssymb, amsfonts}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{epstopdf}
+\usepackage[autostyle]{csquotes}
+
+% Margins
+\usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry}
+
+\usepackage{wrapfig} % floating figures
+
+\usepackage[style=gost-numeric, backend=biber, language=auto, hyperref=auto, autolang=other, sorting=none
+]{biblatex}
+
+% \addbibresource{thesis.bib} % bibliography source
+
+% Page number position config
+\pagestyle{footcenter}
+\chapterpagestyle{footcenter}
+
+\begin{document}
+
+\input{title}
+\maketitle
+
+% Content
+\tableofcontents
+
+% Introduction
+% \input{intro} 
+
+% Literature review
+% \input{review}
+
+% Conclusion
+% \input{conclusion}
+
+% Bibliography
+\printbibliography[heading=bibintoc]
+
+% Appendix
+% \appendix
+% \input{a}
+
+\end{document}
