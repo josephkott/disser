@@ -40,3 +40,6 @@
 *.synctex.gz(busy)
 *.pdfsync
 
+## Other latex/pdflatex generated files
+*.nav
+*.snm

@@ -1,19 +1,27 @@
-\documentclass{beamer}
-\usetheme{default}
-\usecolortheme{default}
+\documentclass [10pt] {beamer}
+\usetheme      {Madrid}
+\usecolortheme {rose}
+\usefonttheme  {serif}
 
 \setbeamertemplate {navigation symbols} {}
 \setbeamertemplate {footline} [page number]
 \setbeamertemplate {caption} [numbered]
 \setbeamertemplate {itemize items} [circle]
 \setbeamertemplate {enumerate items} [square]
+
 \setbeamercolor {footnote mark} {fg = red}
+\setbeamercolor {block title} {fg=black}
+
+\setbeamersize {text margin left=10pt,text margin right=10pt}
 
 \usepackage [T2A] {fontenc}
 \usepackage [utf8] {inputenc}
 \usepackage [english, russian] {babel}
+\usepackage {mathrsfs}
 \usepackage {graphicx}
 \usepackage {ulem}
+\usepackage {amssymb}
+\usepackage {amsfonts}
 
 \definecolor {forestgreen}   {rgb} {0.13, 0.55, 0.13}
 \definecolor {fireenginered} {rgb} {0.81, 0.09, 0.13}
@@ -24,13 +32,13 @@
 
 \title{Пространственно локализованные решения уравнения Гросса--Питаевского с переодически модулированной нелинейностью}
 
-\author{Лебедев М. Е.}
+\author{Лебедев Михаил Евгеньевич}
 \institute{
 	Институт математики с вычислительным центром \\ УФИЦ РАН \\
 	\medskip
 	\textit{gloriouslair@gmail.com}
 }
-\date{Декабрь \\ 2020}
+\date{Москва -- 2020}
 
 \begin{document}
 
@@ -176,8 +184,8 @@
 	\frametitle{Классификация}
 	\framesubtitle{Аппарат}
 
-	\begin{block}{Множества $\mathcal{U}_L^{\pm}$}
-	$\mathcal{U}_L^{\pm} = \{ (u_0, u_0') \in \mathbb{R}^2$ | решение задачи Коши для уравнения \eqref{eq:classification} с НУ $(u_0, u_0')$ не сингулярно на $[0, {\pm} L] \}$, $\mathcal{U}_L = \mathcal{U}_L^+ \cap \mathcal{U}_L^-$.
+	\begin{block}{Множества $\mathscr{U}_L^{\pm}$}
+	$\mathscr{U}_L^{\pm} = \{ (u_0, u_0') \in \mathbb{R}^2$ | решение задачи Коши для уравнения \eqref{eq:classification} с НУ $(u_0, u_0')$ не сингулярно на $[0, {\pm} L] \}$, $\mathscr{U}_L = \mathscr{U}_L^+ \cap \mathscr{U}_L^-$.
 	\end{block}
 
 	\begin{block}{Отображение Пуанкаре $\mathcal{P}: \mathbb{R}^2 \to \mathbb{R}^2$}
@@ -189,7 +197,7 @@
 	\end{block}
 
 	\begin{block}{$\Sigma: \mathcal{O} \to \Omega^N$}
-		Можно определить соответствие ($\Sigma$) между {\it орбитами} регулярных решений ($\mathcal{O}$) и {\it последовательностями} над алфавитом из $N$ символов ($\Omega^N$), где каждый символ соответствует компоненте связности множества $\mathcal{U}_L$.
+		Можно определить соответствие ($\Sigma$) между {\it орбитами} регулярных решений ($\mathcal{O}$) и {\it последовательностями} над алфавитом из $N$ символов ($\Omega^N$), где каждый символ соответствует компоненте связности множества $\mathscr{U}_L$.
 	\end{block}
 \end{frame}
 
@@ -198,11 +206,11 @@
 % ************
 \begin{frame}
 	\frametitle{Классификация}
-	\framesubtitle{Пример множеств $\mathcal{U}_L^{\pm}$}
+	\framesubtitle{Пример множеств $\mathscr{U}_L^{\pm}$}
 	$$P(x) = \alpha + \cos{2x}, \quad \alpha \in (-1; +1)$$
 	\begin{figure}
-		\includegraphics[width=1\textwidth]{pic/sets.pdf}
-		\caption{Множества $\mathcal{U}_{\pi} = \mathcal{U}_{\pi}^+ \cap \mathcal{U}_{\pi}^-$ для различных значений $\omega$, $\alpha$.}
+		\includegraphics[width=0.8\textwidth]{pic/sets.pdf}
+		\caption{Множества $\mathscr{U}_{\pi} = \mathscr{U}_{\pi}^+ \cap \mathscr{U}_{\pi}^-$ для различных значений $\omega$, $\alpha$.}
 		\label{pic:sets}
 	\end{figure}
 \end{frame}
@@ -215,7 +223,7 @@
 	\framesubtitle{Построение алфавита: $\omega = -1$, $\alpha = -0.1$}
 	\begin{figure}
 		\includegraphics[width=0.75\textwidth]{pic/alphabet.pdf}
-		\caption{Спиралевидная структура $\mathcal{U}_{\pi}^{\pm}$ $\Rightarrow$ бесконечный алфавит.}
+		\caption{Спиралевидная структура $\mathscr{U}_{\pi}^{\pm}$ $\Rightarrow$ бесконечный алфавит.}
 		\label{pic:alphabet}
 	\end{figure}
 \end{frame}
@@ -243,9 +251,9 @@
 	
 	Когда соответствие $\Sigma$ является взаимно однозначным?\footnotemark[3]
 	\begin{enumerate}
-		\item Множество $\mathcal{U}_L$ состоит из непересекающихся {\it островов}: $\mathcal{U}_L = \bigcup_{i \in S} D_i$.
+		\item Множество $\mathscr{U}_L$ состоит из непересекающихся {\it островов}: $\mathscr{U}_L = \bigcup_{i \in S} D_i$.
 		\item $\mathcal{P} D_i \cap D_j$, $\mathcal{P} D_i \cap D_j$ непусты; действие $\mathcal{P}$ на кривые внутри $D_i$ сохраняет свойства монотонности.
-		\item $\Delta_0 = \mathcal{U}_L$, \quad $\Delta_{n + 1}^+ = \mathcal{P} \Delta_n^+ \cap \Delta_0$, \quad $\Delta_{n + 1}^- = \mathcal{P}^{-1} \Delta_n^- \cap \Delta_0$,\begin{center}
+		\item $\Delta_0 = \mathscr{U}_L$, \quad $\Delta_{n + 1}^+ = \mathcal{P} \Delta_n^+ \cap \Delta_0$, \quad $\Delta_{n + 1}^- = \mathcal{P}^{-1} \Delta_n^- \cap \Delta_0$,\begin{center}
 				$\lim \limits_{n \to \infty} \mu( \Delta_n^{\pm} ) = 0$.
 			\end{center} 
 	\end{enumerate}
@@ -254,7 +262,7 @@
 	% Some h, v - strips could be depicted here.
 	\begin{figure}
 		\includegraphics[width=0.5\textwidth]{pic/islands.pdf}
-		\caption{Пример островного и не островного множества $\mathcal{U}_{L}$.}
+		\caption{Пример островного и не островного множества $\mathscr{U}_{L}$.}
 		\label{pic:coding}
 	\end{figure}
 	
