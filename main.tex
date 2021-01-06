@@ -1,13 +1,17 @@
-\documentclass[candidate, subf, href, colorlinks, fixint]{disser}
+\documentclass[candidate, subf, href, colorlinks]{disser}
+% Add `fixint` for straight integral signs
 
-\usepackage[intlimits]{amsmath}
-\usepackage{amssymb, amsfonts}
-
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
-\usepackage{epstopdf}
-\usepackage[autostyle]{csquotes}
+\usepackage [T2A] {fontenc}
+\usepackage [utf8] {inputenc}
+\usepackage [russian, english] {babel}
+\usepackage {epstopdf}
+\usepackage [autostyle] {csquotes}
+\usepackage [intlimits] {amsmath}
+\usepackage {amssymb, amsfonts}
+\usepackage {amsthm}
+\usepackage {hyperref}
+\usepackage {array}
+\usepackage {multicol}
 
 % Margins
 \usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry}
@@ -17,11 +21,17 @@
 \usepackage[style=gost-numeric, backend=biber, language=auto, hyperref=auto, autolang=other, sorting=none
 ]{biblatex}
 
-% \addbibresource{thesis.bib} % bibliography source
+\addbibresource{bibliography.bib} % bibliography source
 
 % Page number position config
 \pagestyle{footcenter}
 \chapterpagestyle{footcenter}
+
+% Definitions
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
 
 \begin{document}
 
@@ -32,13 +42,17 @@
 \tableofcontents
 
 % Introduction
-% \input{intro} 
+\input{intro} 
 
 % Literature review
 % \input{review}
 
+\input{first_chapter}
+
 % Conclusion
 % \input{conclusion}
+
+\input{appendix}
 
 % Bibliography
 \printbibliography[heading=bibintoc]

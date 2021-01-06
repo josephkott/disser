@@ -1,0 +1,120 @@
+\appendix
+\chapter{Lemma on bounded solutions}
+\label{appendix:lemma-on-bounded-solutions}
+
+\begin{lemma*}[On bounded solutions]
+	Let $f(t, z)$ be a continuous with respect to $t$ and continuously differentiable with respect to $z$ function, defined for $t \ge t_0$, $|z| < +\infty$, and having the following properties:
+	\begin{itemize}
+		\item[(i)] for $|z| < \rho$, $\rho > 0$, the estimate $|f(t, z)| < \eta_{\rho}(t)|z|$, where $\eta_{\rho}(t) \in L_1(t_0; +\infty)$, takes place;
+		\item[(ii)] for all $z_1$, $z_2$ such that $|z_{1,2}| < \rho$, $\rho > 0$, there exists function $\tilde{\eta}_{\rho}(t) \in L_1(t_0; +\infty)$, that $|f(t, z_2) - f(t, z_1)| \le \tilde{\eta}_{\rho}(t) |z_2 - z_1|$;
+		\item[(iii)] for $|z| < \rho$, $\rho > 0$, the estimate $|f_z(t, z)| < \theta_{\rho}(t) |z|$, where $\theta_{\rho} \in L_1(t_0, +\infty)$, takes place;
+		\item[(iv)] for all $z_1$, $z_2$ such that $z_{1,2} < \rho$, $\rho > 0$, there exists function $\tilde{\theta}_{\rho} \in L_1(t_0; +\infty)$, that $|f_z(t, z_2) - f_z(t, z_1)| \le \tilde{\theta}_{\rho} |z_2 - z_1|$.
+	\end{itemize}
+	Then for the equation
+	\begin{equation}
+		z_{tt} - \alpha z_t + f(t, z) = 0, \quad \alpha > 0
+		\label{eq:lemma-bs-main}
+	\end{equation}
+	the following statements are valid:
+	\begin{itemize}
+		\item[(A)] for each solution $z(t)$ of the equation \eqref{eq:lemma-bs-main} that is bounded as $t \to +\infty$ there exists $C \in \mathbb{R}$ such that $z(t) \to C$ as $t \to +\infty$;
+		\item[(B)] for each $C \in \mathbb{R}$ there exists unique solution $Z(t, C)$ of the equation \eqref{eq:lemma-bs-main}, defined on a segment $(t_C; +\infty)$, such that
+		\begin{equation}
+			Z(t, C) = C + o(1), \quad t \to +\infty;
+		\end{equation}
+		\item[(C)] family of solutions $Z(t, C)$ is $C^1$-smooth with respect to the parameter $C$.
+	\end{itemize}
+\end{lemma*}
+\begin{proof}
+	Let us prove the statement (A) first.
+	With the method of variation of parameters one can find that a solution of the equation \eqref{eq:lemma-bs-main} satisfies the equality:
+	\begin{equation}
+		z(t) = \varkappa_1 + \varkappa_2 e^{\alpha t} + \int \limits_{t_0}^{t} e^{\alpha \eta} \left( \int \limits_{\eta}^{+\infty} e^{-\alpha \xi} f(\xi, z(\xi)) d\xi \right) d\eta.
+	\end{equation}
+	It follows from the condition (i) that if $z(t)$ is bounded while $t \to +\infty$ then the integral
+	\begin{equation}
+		\int \limits_{t_0}^{+\infty} e^{\alpha \eta} \left( \int \limits_{\eta}^{+\infty} e^{-\alpha \xi} f(\xi, z(\xi)) d\xi \right) d\eta
+	\end{equation}
+	converges.
+	Furthermore for all bounded solutions $\varkappa_2 = 0$, hence $z(t)$ tends to some constant for $t \to +\infty$.
+	That proves the point (A).
+	
+	Move on to the point (B).
+	We make a variable change $u(t) = z(t) - C$, where $C$ is an arbitrary number.
+	Rewrite the equation \eqref{eq:lemma-bs-main} in the form of a system of equations
+	\begin{equation}
+		y_t = Ay + F(t, y),
+		\label{eq:lemma-bs-system}	
+	\end{equation}
+	where
+	\begin{equation*}
+		y = \begin{pmatrix}
+			u \\ v
+		\end{pmatrix}, \quad
+		A = \begin{pmatrix}
+			0 & 1 \\
+			0 & \alpha
+		\end{pmatrix}, \quad
+		F(t, y) = \begin{pmatrix}
+			0 \\ f(t, u + C)
+		\end{pmatrix}.
+	\end{equation*}
+	Now we apply Theorem 9.1 from \cite[Chapter XII]{Hartman} to the system \eqref{eq:lemma-bs-system}.
+	It states that the system \eqref{eq:lemma-bs-system} has a solution which tends to zero on the infinity, if the following conditions are satisfied:
+	\begin{itemize}
+		\item[(1)] function $F(t, y)$ is continuous and $||F(t, y)|| \le \lambda(t)$ for $t \in [t_0; +\infty)$, $||y|| \le \rho$, where $\lambda(t) \in L_1(t_0; +\infty)$;
+		\item[(2)] for all $g(t) = col(g_1(t), g_2(t))$, $g(t) \in L_1(t_0; +\infty)$ there exists a solution $y(t) \in L_0^{\infty}(t_0; +\infty)$ of the inhomogeneous system
+		\begin{equation}
+			y_t = Ay + g(t);
+			\label{eq:lemma-bs-hartman}
+		\end{equation}
+		(hereinafter by the norm $||\cdot||$ we mean the Euclidean norm in $\mathbb{R}$).
+	\end{itemize}
+	
+	At first, by the condition (i) if $|u| \le \rho$ and $t > t_0$ relation $||f(t, u, C)|| \le \rho \eta_{\rho} (t)$ holds true, moreover $\eta_{\rho} \in L_1(t_0; +\infty)$, hence the condition (1) of the above-mentioned theorem is satisfied.
+	At second, general solution of the inhomogeneous system of equations \eqref{eq:lemma-bs-hartman} can be written as:
+	\begin{eqnarray}
+		&& u(t) = C_2 + \int \limits_{t_0}^{t} \left( g_1(\eta) + e^{\alpha \eta} \left( C_1 - \int \limits_{+\infty}^{\eta} e^{-\alpha \xi} g_2(\xi) d\xi \right) \right) d\eta; \\
+		&& v(t) = u_t(t) - g_1(t).
+	\end{eqnarray}
+	Since $g_{1,2}(t) \in L_1(t_0; +\infty)$ we can choose appropriate parameters $C_1$, $C_2$ to get the solution which tends to zero while $t \to +\infty$, so the condition (2) of the theorem also holds.
+	Thereby both of the conditions for the applied theorem take place for the system \eqref{eq:lemma-bs-system}.
+	That implies existence of a solution $z(t)$ of \eqref{eq:lemma-bs-main} that approaches a given constant $C$ while $t \to +\infty$ for all $C$.
+	
+	Now we prove the uniqueness of such solution.
+	Suppose that for the same $C$ there exist two solutions $u_{1,2}(t)$ for equation
+	\begin{equation}
+		u_{tt} - \alpha u_t + f(t, u + C) = 0.
+		\label{eq:lemma-bs-u}
+	\end{equation}
+	Consider their difference $\Delta(t) = u_2(t) - u_1(t)$, it satisfies an equation
+	\begin{equation}
+		\Delta_{tt} - \alpha \Delta_t + R(t) \Delta = 0,
+		\label{eq:lemma-bs-difference}
+	\end{equation}
+	and a boundary condition $\Delta \to 0$ as $t \to +\infty$.
+	Here
+	\begin{equation}
+		R(t) \equiv \dfrac{f(t, u_2(t) +C) - f(t, u_1(t) + C}{u_2(t) - u_1(t)}.
+	\end{equation}
+	By the condition (ii) we can apply Theorem 11 from \cite[Chapter 3]{Coppel}.
+	It states that there exists a homeomorphism between the bounded solutions of the equation \eqref{eq:lemma-bs-difference} and solutions of equation
+	\begin{equation}
+		\Delta_{tt} - \alpha \Delta_t = 0,
+	\end{equation}
+	moreover (see a note to that theorem in \cite{Coppel}) this homeomorphism is a linear map.
+	It means that only a zero solution of \eqref{eq:lemma-bs-difference} satisfies the zero asymptotic at infinity, i.e. $u_2(t) \equiv u_1(t)$.
+	Thus we have proven the existence of the solutions family $Z(t, C)$ parametrised by $C \in \mathbb{R}$, i.e., that proves statement (B).
+	
+	To prove the point (C) we note that the derivative
+	\begin{equation}
+		\dfrac{\partial Z}{\partial C}(t, C) \equiv \Theta(t, C)
+	\end{equation}
+	satisfies the equation \eqref{eq:lemma-bs-u} after differentiation with respect to $C$, moreover $\Theta(t, C) \to 0$ as $t \to +\infty$.
+	We have
+	\begin{equation}
+		\Theta_{tt} - \alpha \Theta_t + f_z(t, u + C) \Theta + f_z(t, u + C) = 0.
+	\end{equation}
+	Here we can use again Theorem 11 from \cite[Chapter 3]{Coppel}, and using the condition (iii) we can conclude that there exists a solution of this equation $\Theta(t, C)$ such that $\Theta(t, C) \to 0$ as $t \to +\infty$, and $\Theta(t, C)$ is continuous with respect to the parameter $C$.
+	That proves the overall lemma.
+\end{proof}
