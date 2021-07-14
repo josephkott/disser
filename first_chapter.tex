@@ -2,15 +2,15 @@
 
 \section{Objections}
 
-Our main goal is to formulate general proposition about singular  and regular solutions for the general form of the GPE equation:
+Our main goal is to formulate general propositions about singular  and regular solutions for the general form of the GPE equation:
 
 \begin{equation}
 	u_{xx} + Q(x) u + P(x) u^3 = 0.
 	\label{eq:stationary}
 \end{equation}
 
-We suppose functions that $Q(x), P(x) \in C^1(\mathbb{R})$ and will put additional restrictions further when it's needed.
-Mainly we are interested in two main questions: (A) when do exist regular solutions; and (B) what are the conditions on function $Q(x)$ and $P(x)$ which can guarantee the existence of the singular solutions for the equation \eqref{eq:stationary}, and what is the behaviour of the collapsing solutions near the collapse point.
+We suppose that functions $Q(x), P(x) \in C^1(\mathbb{R})$ and will put additional restrictions further when it's needed.
+Mainly we are interested in two main cases: (A) when do exist regular solutions; and (B) what are the conditions on function $Q(x)$ and $P(x)$ which can guarantee the existence of the singular solutions for the equation \eqref{eq:stationary}, and what is the behaviour of the collapsing solutions near the collapse point.
 In this chapter partial answer to question (A) is given by the Propositions 1 and 2.
 On the other hand Proposition 3 gives a partial answer to the question (B).
 It states that if the function $P(x)$ less then zero at least at one point $x = x_0$ then there exist two one-parametric families of solutions collapsing at $x_0$.
@@ -30,10 +30,10 @@ It's given by the following proposition.
 	\label{prop:absense-of-singular-solutions}
 \end{proposition}
 \begin{proof}
-	By the ODE existence and uniqueness theorem there exists an interval $[x_0; x_1)$ such that the solution of the Cauchy problem $u(x)$ for the equation \eqref{eq:stationary} with initial conditions $u(x_0) = u_0$, $u_{x}(x_0) = u_0'$ exists and unique on the interval, $u(x) \in C^2[x_0; x_1)$.
+	By the existence and uniqueness theorem for ODE there exists an interval $[x_0; x_1)$ such that a solution of the Cauchy problem $u(x)$ for the equation \eqref{eq:stationary} with initial conditions $u(x_0) = u_0$, $u_{x}(x_0) = u_0'$ exists and is unique on the interval, $u(x) \in C^2[x_0; x_1)$.
 	Suppose that $[x_0; x_1)$ is the maximum interval of existence for the the solution $u(x)$.
-	That means that solution of the Cauchy problem $u(x)$ cannot be continued outwards the point $x_1$.
-	Multiply the original equation by $4u_{x}(x)$ and then integrate over $[x_0, x)$, $x < x_1$, we have the following relationship:
+	It means that solution of the Cauchy problem $u(x)$ cannot be continued beyond the point $x_1$.
+	Multiply the original equation by $4u_{x}(x)$ and then integrate it over $[x_0, x)$, $x < x_1$, we have the following relationship:
 	\begin{equation}
 	\begin{aligned}
 		& 2 u_x^2(x)) + 2 Q(x) u^2(x) - 2 \int \limits_{x_0}^{x} Q'(\xi) u^2(\xi) d\xi + P(x) u^4(x) - \int \limits_{x_0}^x P'(\xi) u^4(\xi) d\xi = \\
@@ -41,11 +41,11 @@ It's given by the following proposition.
 		\label{eq:aux-04}
 	\end{aligned}	
 	\end{equation}
-	We can omit term $u_{x}^2(x) \ge 0$ in the left-hand side of the equality, and than take into account the lower limits for $Q(x)$, $P(x)$ functions, so we have the following inequality:
+	We can omit term $u_{x}^2(x) \ge 0$ in the left-hand side of the equality, and take into account the lower limits for $Q(x)$, $P(x)$ functions, so we come to the following inequality:
 	\begin{equation}
 		2 Q_0 u^2(x) + P_0 u^4(x) \le C + 2 \int \limits_{x_0}^{x} Q'(\xi) u^2(\xi) d\xi + \int \limits_{x_0}^{x} P'(\xi) u^4(\xi) d\xi.
 	\end{equation}
-	We replace the derivatives $Q'(\xi)$ and $P'(\xi)$ with their upper bounds: $Q'(\xi) \le \widetilde{Q}$, $P'(\xi) \le \widetilde{P}$, where $\widetilde{Q} \ge 0$, $\widetilde{P} \ge 0$.
+	Further we can replace the derivatives $Q'(\xi)$ and $P'(\xi)$ with their upper bounds: $Q'(\xi) \le \widetilde{Q}$, $P'(\xi) \le \widetilde{P}$, where $\widetilde{Q} \ge 0$, $\widetilde{P} \ge 0$.
 	With multiplying both sides of the inequality by $P_0$, we have
 	\begin{equation}
 		2 Q_0 P_0 u^2(x) + P_0^2 u^4(x) \le P_0 C + 2 P_0 \widetilde{Q} \int \limits_{x_0}^{x} u^2(\xi) d\xi + P_0 \widetilde{P} \int \limits_{x_0}^{x} u^4(\xi) d\xi.
@@ -71,7 +71,7 @@ It's given by the following proposition.
 	\end{equation}
 	diverges, one can conclude that $G(s)$ is a positive, monotonically increasing, and unbounded function.
 	It means that an inverse function $G^{-1}(r)$ is well-defined for $r \ge 0$, increases monotonically, and is unbounded.
-	The above-mentioned statements allow as to apply Bihary inequality \cite[theorem 2.3.1]{Pachpatte} to \eqref{eq:aux-02}, that gives:
+	The above-mentioned statements allow as to apply {\it Bihary} inequality \cite[theorem 2.3.1]{Pachpatte} to \eqref{eq:aux-02} which allows us to conclude that:
 	\begin{equation}
 		v(x) \le G^{-1} \left( G(\widetilde{C}) + \dfrac{\widetilde{P}}{P_0} \int \limits_{x_0}^{x} d\xi \right) = G^{-1} \left( G(\widetilde{C}) \dfrac{\widetilde{P}}{P_0} (x - x_0) \right) < \infty.
 		\label{eq:bihari}
@@ -82,13 +82,13 @@ It's given by the following proposition.
 		v(x) \le M = G^{-1} \left( G(\widetilde{C}) + \dfrac{\widetilde{P}}{P_0} (x_1 - x_0) \right).
 	\end{equation}
 	We observe that $\widetilde{C} \ge Q_0^2$, moreover $\widetilde{C} = Q_0^2$ only if $u_0 = u_0' = 0$.
-	It means that $G(s)$ is well-defined for each constant $\widetilde{C}$ that corresponds to any non-zero solution $u(x)$.
+	It means that $G(s)$ is well-defined for each constant $\widetilde{C}$ corresponding to any non-zero solution $u(x)$.
 	The boundedness of $v(x)$ yields that solution $u(x)$ is also bounded on the segment $[x_0; x_1)$:
 	\begin{equation}
 		|u(x)| \le \sqrt{\dfrac{\sqrt{M} - Q_0}{P_0}}, \quad x \in [x_0; x_1).
 		\label{eq:aux-03}
 	\end{equation}
-	Substituting the estimate \eqref{eq:aux-03} into the identity \eqref{eq:aux-04} gives the upper estimate for the derivative $u_{x}(x)$ on the interval $x \in [x_0; x_1)$.
+	Substitution of the estimate \eqref{eq:aux-03} into the identity \eqref{eq:aux-04} gives the upper bound for the derivative $u_{x}(x)$ on the interval $x \in [x_0; x_1)$.
 	Since functions $u(x)$ and $u_{x}(x)$ are continuous and bounded on $[x_0; x_1)$, the values $u(x_1) = u_1$ and $u_{x}(x_1) = u_1'$ are finite.
 	Hence there exists a continuation of the solution to the Cauchy problem with the initial conditions $u(x_0) = u_0$, $u_{x}(x_0) = u_0'$ on a larger interval beyond the initial $[x_0; x_1)$.
 	It contradicts to the original assumption.
@@ -99,17 +99,17 @@ It's given by the following proposition.
 
 One trivial corollary simply follows from this proposition.
 \begin{corollary}
-	If the conditions (a) and (b) are satisfied not on the whole real axis $\mathbb{R}$, but only on some segment $[x_1; x_2]$, then a solution to the Cauchy problem to the equation \eqref{eq:stationary} with arbitrary initial conditions does not collapse at any point of the segment $[x_1; x_2]$.
+	If the conditions (a) and (b) are satisfied not on the whole real axis $\mathbb{R}$, but only on some segment $[x_1; x_2]$, then a solution of the Cauchy problem for the equation \eqref{eq:stationary} with arbitrary initial conditions does not collapse at any point of the segment $[x_1; x_2]$.
 \end{corollary}
 
 \section{Asymptotic behaviour at a collapse point: $P(x_0) < 0$}
 
 \subsection{Asymptotic expansions}
 
-If $P(x)$ is negative at least at one point $x_0 \in \mathbb{R}$, formal asymptotic expansions predict the existence of two one-parametric families of the solutions for the equation \eqref{eq:stationary} collapsing at this point.
+If $P(x)$ is negative at least at one point $x_0 \in \mathbb{R}$, formal asymptotic expansions predict existence of two one-parametric families of the solutions for the equation \eqref{eq:stationary} collapsing at this point.
 
 Let us construct these asymptotic expansions.
-We suppose that $P(x_0) = -1$ (this condition can be achieved by the renormalisation of an independent variable), denote by $\eta = x - x_0$, and assume that in the vicinity of the point $x = x_0$, the following expansions are valid:
+We suppose that $P(x_0) = -1$ (this condition can be achieved by a simple renormalisation of the independent variable), denote by $\eta = x - x_0$, and assume that in the vicinity of the point $x = x_0$, the following expansions are valid:
 \begin{equation}
 	Q(x) = Q_0 + Q_1 \eta + Q_2 \eta^2 \dots, \quad P(x) = -1 + P_1 \eta + P_2 \eta^2 + \dots.
 \end{equation}
@@ -126,26 +126,25 @@ It gives
 	v_{tt} + 3v_{t} + 2v + e^{-2t} Q(t) v + P(t) v^3 = 0.
 	\label{eq:asymptotic-problem}
 \end{equation}
-We determine the main term of the expansion by balancing $2v$ and $-v^3$ terms.
-Accordingly we have
+Let's determine the main term of the expansion by balancing $2v$ and $-v^3$ terms, we have
 \begin{equation}
 	V_0(t) = \pm \sqrt{2}.
 	\label{eq:main-term}
 \end{equation}
-Let us define the first order term $V_1(t)$, $v(t) = \pm \sqrt{2} + V_1(t) + o(V_1(t))$.
+Now let's define the first order term $V_1(t)$, $v(t) = \pm \sqrt{2} + V_1(t) + o(V_1(t))$.
 Substituting the last expression into the \eqref{eq:asymptotic-problem}, considering expansion for the functions $Q(t)$, $P(t)$, and omitting the terms of order higher than $e^{-t}$, we obtain
 \begin{equation}
 	V_{1, tt} + 3V_{1, t} - 4V_1 = \mp 2 \sqrt{2} e^{-t},
 \end{equation}
 that gives $V_1(t) = \pm \frac{\sqrt{2}}{3} e^{-t}$.
-Second, third, and forth order terms $V_n$, $n = 2, 3, 4$, are found simultaneously.
+Second, third, and forth order terms $V_n$, $n = 2, 3, 4$, can be found in a similar manner.
 For each term the corresponding equation takes form:
 \begin{equation}
 	V_{n, tt} + 3V_{n, t} - 4V_n = C_n e^{-nt}.
 	\label{eq:high-order-terms-equation}
 \end{equation}
 However, for $n = 2, 3$ solutions of the equation \eqref{eq:high-order-terms-equation} are of the form $V_n \sim e^{-nt}$, but in the case $n = 4$, the exponent term in the right hand side coincides with one of the roots of the characteristic polynomial for the differential operator in the left-hand side.
-In this case solution of the equation \eqref{eq:high-order-terms-equation} is chosen in the form $Ce^{-4t} - A_3 t e^{-4t}$.
+In this case solution of the equation \eqref{eq:high-order-terms-equation} must be chosen in the form $Ce^{-4t} - A_3 t e^{-4t}$.
 Here $C$ in an arbitrary constant, while $A_3$ can be determined uniquely from the coefficients of the series expansions for $Q(t)$, $P(t)$.
 If constant $C$ is fixed, at the further steps of this procedure the corresponding equations are uniquely solvable.
 One can note that the replacement of $+$ to $-$ in the expression \eqref{eq:main-term} leads to the corresponding replacement of the signs for all coefficients $A_n$, $n = 0, 1,...$, that is natural due to the invariance of the equation \eqref{eq:stationary} with regard to the change $u \to -u$.
@@ -173,8 +172,8 @@ Finally we get an asymptotic expansion for the original solution $u(x)$ for $x \
 \end{equation}
 here $\eta = x - x_0$, $A_0, \dots, A_3$ are determined by the equations \eqref{eq:aux-A0}-\eqref{eq:aux-A3}, and all other coefficients $A_n$, $n > 3$ can be expressed with $Q_n$, $P_n$ and arbitrary constant $C$.
 
-To summarise all the above-mentioned, asymptotic expansion \eqref{eq:expansion} predicts the existence of two one-parametric families of solutions collapsing at the point $x_0$.
-These families are related by a symmetry $u \to -u$.
+Summarizing all above mentioned, one can say that asymptotic expansion \eqref{eq:expansion} {\it predicts the existence} of two one-parametric families of solutions collapsing at the point $x_0$.
+These families are connected by the symmetry $u \to -u$.
 When $x \to x_0$, the solutions from one of these families tends to $+\infty$, while solutions from another family tends to $-\infty$ correspondingly.
 
 \subsection{Existence of one-parametric families of collapsing solutions}
@@ -183,11 +182,11 @@ The possibility of constructing asymptotic expansions \eqref{eq:expansion} itsel
 But at the same time, the following rigorous statement is true.
 
 \begin{proposition}
-	Let $\Omega$ be a neighbourhood of the point $x_0$, $Q(x) \in C^3(\Omega)$ and $P(x) \in C^4(\Omega)$, then there exist two $C^1$-smooth one-parametric families of solutions for the equation \eqref{eq:stationary} corresponding to the expansions \eqref{eq:expansion}, collapsing at the point $x = x_0$ (while approaching from the left, $x , x_0$), and related by a symmetry $u \to -u$.
-	Each of these families can be parametrised by a free variable $C \in \mathbb{R}$ from the expansions \eqref{eq:expansion}.
+	Let $\Omega$ be a neighbourhood of the point $x_0$, $Q(x) \in C^3(\Omega)$ and $P(x) \in C^4(\Omega)$, then there exist two $C^1$-smooth one-parametric families of solutions for the equation \eqref{eq:stationary} corresponding to the expansions \eqref{eq:expansion}, collapsing at the point $x = x_0$ (while approaching from the left, $x , x_0$), and connected by a symmetry $u \to -u$.
+	Each of these families can be parametrized by a free variable $C \in \mathbb{R}$ from the expansions \eqref{eq:expansion}.
 \end{proposition}
 \begin{proof}
-	By the stated conditions the following expansions are valid:
+	By the initial statement the following expansions are valid:
 	\begin{eqnarray}
 		& Q(x) & = Q_0 + Q_1 \eta + Q_2 \eta^2 + \widetilde{Q}(\eta) \eta^3; \\
 		& P(x) & = -1 + P_1 \eta + P_2 \eta^2 + P_3 \eta^3 + P_4 \eta^4 + \widetilde{P}(\eta) \eta^5.
@@ -200,7 +199,7 @@ But at the same time, the following rigorous statement is true.
 	\end{equation}
 	where $z(\eta)$ is a new unknown function.
 	Coefficients $A_0, \dots, A_3$ are chosen accordingly to the expressions \eqref{eq:aux-A0}-\eqref{eq:aux-A3}, so the coefficients at the terms $\eta^{-2}$, $\eta^{-1}$, $\eta^0$, and $\eta$ are vanish.
-	Easy to check that direct substitution of the \eqref{eq:aux-20} into \eqref{eq:stationary} shows that for such choice of $A_0, \dots, A_3$ the following equation for $z$ takes place:
+	It's easy to check that direct substitution of the \eqref{eq:aux-20} into \eqref{eq:stationary} shows that for such choice of $A_0, \dots, A_3$ the following equation for $z$ takes place:
 	\begin{equation}
 		z_{\eta\eta} + \dfrac{6}{\eta} z_{\eta} + g(\eta, z) = 0,
 		\label{eq:aux-z}
@@ -212,11 +211,11 @@ But at the same time, the following rigorous statement is true.
 		\label{eq:aux-zt}
 	\end{equation}
 	Here $f(t, z) \sim t e^{-t}$ while $t \to +\infty$.
-	Properties of the function $f(t, z)$ allows us to apply {\it lemma on bounded solutions} from the Appendix \ref{appendix:lemma-on-bounded-solutions} to the equation \eqref{eq:aux-zt}.
-	This lemma states that while $t \to +\infty$, all bounded solutions of the equation \eqref{eq:aux-zt} tend to some constant $C$ when $t \to +\infty$, moreover for each $C \in \mathbb{R}$ there exists unique, solution that approaches to that constant asymptotically while $t \to +\infty$.
+	Properties of the function $f(t, z)$ allows us to apply {\it Lemma on Bounded Solutions} from the Appendix \ref{appendix:lemma-on-bounded-solutions} to the equation \eqref{eq:aux-zt}.
+	This lemma states that for $t \to +\infty$ all bounded solutions of the equation \eqref{eq:aux-zt} tend to some constant $C$ when $t \to +\infty$, moreover for each $C \in \mathbb{R}$ there exists unique solution that approaches to that constant asymptotically while $t \to +\infty$.
 	Furthermore these solutions form a $C^1$-smooth family.
-	Finally we can move to the previous equation \eqref{eq:aux-z}, and then to the \eqref{eq:stationary} to get the initial statement of the proposition valid.
-	The existence of the second family of solutions corresponding to the sign $-$ in \eqref{eq:expansion} follows from the invariance of equation \eqref{eq:stationary} under the replacement $u \to -u$.
+	Finally we can move to the previous equation \eqref{eq:aux-z}, and then to the \eqref{eq:stationary} to get the initial statement of the proposition.
+	The existence of the second family of solutions corresponding to the sign ``$-$'' in \eqref{eq:expansion} follows from the invariance of equation \eqref{eq:stationary} under the replacement $u \to -u$.
 \end{proof}
 
 Similar one-parametric families of collapsing solutions exist from the right side of the point $x = x_0$.
@@ -224,38 +223,38 @@ The corresponding proof can be performed in the same way.
 
 \section{All solutions are singular: $P(x) \le P_0 < 0$, $Q(x) \le Q_0 < 0$}
 
-It turns out that the following statement is valid.
+It turns out that under some assumptions all non-trivial solutions of the equation \eqref{eq:stationary} are singular.
 \begin{proposition}
 	Let for all $x \in \mathbb{R}$ conditions $P(x) \le P_0 < 0$, $Q(x) \le Q_0 < 0$ take place, then all solutions of the equation \eqref{eq:stationary} are singular except for the zero one.
 \end{proposition}
 
-In order to prove this proposition we prove the following auxiliary lemma.
+To prove this proposition we prove the following auxiliary lemma first.
 \begin{lemma}
-	All solutions of equation
+	Let $p, q > 0$ are real constants, then all solutions of equation
 	\begin{equation}
 		v_{xx} - q v - p v^3 = 0,
 		\label{eq:aux-lemma}
 	\end{equation}
-	where $p, q > 0$ are some constants, are singular except for the zero one.
+	are singular except for the zero one.
 \end{lemma}
 \begin{proof}
-	Solution to the Cauchy problem for the equation \eqref{eq:aux-lemma} with initial conditions $v(x_0) = v_0$, $v_x(x_0) = v_0'$ can be written in an implicit way as follows:
+	Solution to the Cauchy problem for the equation \eqref{eq:aux-lemma} with initial conditions $v(x_0) = v_0$, $v_x(x_0) = v_0'$ can be written in an implicit way as:
 	\begin{equation}
 		\pm \int \limits_{v_0}^{v} \dfrac{d\xi}{\sqrt{C + q \xi^2 + \dfrac{p}{2} \xi^4}} = x - x_0;	\quad C \equiv (v_0')^2 - q v_0^2 - \dfrac{p}{2} v_0^4.
 		\label{eq:aux-21}
 	\end{equation}
-	The choice of the sign in the left hand-side depends on the initial conditions and a value of $x$.
-	Integral in the left hand-side of the equality \eqref{eq:aux-21} converges while $v \to \infty$, and hence there exist a value $x^*$, defined as
+	Choice of the sign in the left hand-side depends on the initial conditions and the value of $x$.
+	Integral in the left hand-side of the equality \eqref{eq:aux-21} converges when $v \to \infty$, and hence there exist a value $x^*$, defined as
 	\begin{equation}
 		x^* = x_0 \int \limits_{v_0}^{\infty} \dfrac{d\xi}{\sqrt{C + q \xi^2 + \dfrac{p}{2} \xi^4}},
 	\end{equation}
-	and $v(x)$ goes to infinity while $x$ approaching to the $x^*$ 
-	So the solution $v(x)$ with arbitrary non-zero initial conditions is singular, lemma is proven.
+	and $v(x)$ goes to infinity while $x$ approaches to the $x^*$ 
+	So a solution $v(x)$ with arbitrary non-zero initial conditions is singular, lemma is proven.
 \end{proof}
 
 Now we can prove the Proposition 3.
 \begin{proof}[Proof of the Proposition 3.]
-	We use a so-called Comparison Lemma from \cite[Appendix C]{AlfimovZezyulin}.
+	We use a so-called {\it Comparison Lemma} from \cite[Appendix C]{AlfimovZezyulin}.
 	Consider the equation
 	\begin{equation}
 		v_{xx} + Q_0 v + P_0 v^3 = 0.
@@ -287,12 +286,12 @@ Now we can prove the Proposition 3.
 	One can prove in the same manner that in the domain $D_-$ solution $u(x)$ is also singular.
 \end{proof}
 
-\section{Conclusions to the first chapter}
+\section{Summary to the first chapter}
 
 Our main findings on regular and singular solutions for the stationary states equation \eqref{eq:stationary} are summarised within the Table \ref{tab:first-chapter-results}.
 All these results were published by us in \cite{AlfimovLebedev}.
-Other further findings are focused on the case when $P(x)$ changes its sign along the real line.
-In the following chapter we describe a so-called {\it singular solution elimination} which allow us under some additional assumptions to classify all regular stationary states solution for the equation \eqref{eq:stationary}.
+Our further findings are focused on the case when $P(x)$ changes its sign along the $x$.
+In the next chapter we describe a so-called {\it singular solution elimination} method which allow us under some additional assumptions classify all regular stationary states solution for the equation \eqref{eq:stationary} within the symbolic dynamics framework.
 
 \begin{table}[h!]
 	\centering
