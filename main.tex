@@ -4,7 +4,6 @@
 \usepackage [T2A] {fontenc}
 \usepackage [utf8] {inputenc}
 \usepackage [russian, english] {babel}
-\usepackage {epstopdf}
 \usepackage [autostyle] {csquotes}
 \usepackage [intlimits] {amsmath}
 \usepackage {amssymb, amsfonts}
@@ -12,6 +11,8 @@
 \usepackage {hyperref}
 \usepackage {array}
 \usepackage {multicol}
+\usepackage {mathrsfs}
+\usepackage {bm}
 
 % Margins
 \usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry}
@@ -26,11 +27,20 @@
 \pagestyle{footcenter}
 \chapterpagestyle{footcenter}
 
-% Definitions
+% Declarations
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
 \newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
 \newtheorem*{lemma*}{Lemma}
+\newtheorem*{remark*}{Remark}
+
+\newenvironment{psm}
+	{\left( \begin{smallmatrix}}
+	{\end{smallmatrix} \right) }
+
+\DeclareMathOperator*{\argmax}{arg\,max}
 
 \begin{document}
 
@@ -47,6 +57,8 @@
 % \input{review}
 
 \input{first_chapter}
+
+\input{second_chapter}
 
 % Conclusion
 % \input{conclusion}
