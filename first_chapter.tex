@@ -1,4 +1,4 @@
-\chapter{General propositions on regular and singular solutions for stationary states equation $u_{xx} + Q(x) u + P(x) u^3 = 0$}
+\chapter{General Propositions on Regular and Singular Solutions for Stationary States Equation $u_{xx} + Q(x) u + P(x) u^3 = 0$}
 
 \section{Objections}
 
@@ -19,7 +19,7 @@ In this chapter partial answer to question (A) is given by the Propositions 1 an
 On the other hand Proposition 3 gives a partial answer to the question (B).
 It states that if the function $P(x)$ less then zero at least at one point $x = x_0$ then there exist two one-parametric families of solutions collapsing at $x_0$.
 
-\section{Absence of the singular solutions: $P(x) \ge P_0 > 0$}
+\section{Absence of the Singular Solutions: $P(x) \ge P_0 > 0$}
 
 This section contains a sufficient condition for absence of singular solutions of the equation \eqref{eq:stationary}.
 It's given by the following proposition.
@@ -106,9 +106,9 @@ One trivial corollary simply follows from this proposition.
 	If the conditions (a) and (b) are satisfied not on the whole real axis $\mathbb{R}$, but only on some segment $[x_1; x_2]$, then a solution of the Cauchy problem for the equation \eqref{eq:stationary} with arbitrary initial conditions does not collapse at any point of the segment $[x_1; x_2]$.
 \end{corollary}
 
-\section{Asymptotic behaviour at a collapse point: $P(x_0) < 0$}
+\section{Asymptotic Behaviour at a Collapse Point: $P(x_0) < 0$}
 
-\subsection{Asymptotic expansions}
+\subsection{Asymptotic Expansions}
 
 If $P(x)$ is negative at least at one point $x_0 \in \mathbb{R}$, formal asymptotic expansions predict existence of two one-parametric families of the solutions for the equation \eqref{eq:stationary} collapsing at this point.
 
@@ -180,14 +180,15 @@ Summarizing all above mentioned, one can say that asymptotic expansion \eqref{eq
 These families are connected by the symmetry $u \to -u$.
 When $x \to x_0$, the solutions from one of these families tends to $+\infty$, while solutions from another family tends to $-\infty$ correspondingly.
 
-\subsection{Existence of one-parametric families of collapsing solutions}
+\subsection{Existence of One-Parametric Families of Collapsing Solutions}
 
 The possibility of constructing asymptotic expansions \eqref{eq:expansion} itself does not prove the existence of one-parametric families of solutions collapsing at point $x_0$.
 But at the same time, the following rigorous statement is true.
 
 \begin{proposition}
-	Let $\Omega$ be a neighbourhood of the point $x_0$, $Q(x) \in C^3(\Omega)$ and $P(x) \in C^4(\Omega)$, then there exist two $C^1$-smooth one-parametric families of solutions for the equation \eqref{eq:stationary} corresponding to the expansions \eqref{eq:expansion}, collapsing at the point $x = x_0$ (while approaching from the left, $x , x_0$), and connected by a symmetry $u \to -u$.
+	Let $\Omega$ be a neighbourhood of the point $x_0$, $Q(x) \in C^3(\Omega)$ and $P(x) \in C^4(\Omega)$, then there exist two $C^1$-smooth one-parametric families of solutions for the equation \eqref{eq:stationary} corresponding to the expansions \eqref{eq:expansion}, collapsing at the point $x = x_0$ (while approaching from the left, $x < x_0$), and connected by a symmetry $u \to -u$.
 	Each of these families can be parametrized by a free variable $C \in \mathbb{R}$ from the expansions \eqref{eq:expansion}.
+\label{prop:singular-families}
 \end{proposition}
 \begin{proof}
 	By the initial statement the following expansions are valid:
@@ -215,7 +216,7 @@ But at the same time, the following rigorous statement is true.
 		\label{eq:aux-zt}
 	\end{equation}
 	Here $f(t, z) \sim t e^{-t}$ while $t \to +\infty$.
-	Properties of the function $f(t, z)$ allows us to apply {\it Lemma on Bounded Solutions} from the Appendix \ref{appendix:lemma-on-bounded-solutions} to the equation \eqref{eq:aux-zt}.
+	Properties of the function $f(t, z)$ allows us to apply {\it Lemma on Bounded Solutions} from Appendix \ref{appendix:lemma-on-bounded-solutions} to the equation \eqref{eq:aux-zt}.
 	This lemma states that for $t \to +\infty$ all bounded solutions of the equation \eqref{eq:aux-zt} tend to some constant $C$ when $t \to +\infty$, moreover for each $C \in \mathbb{R}$ there exists unique solution that approaches to that constant asymptotically while $t \to +\infty$.
 	Furthermore these solutions form a $C^1$-smooth family.
 	Finally we can move to the previous equation \eqref{eq:aux-z}, and then to the \eqref{eq:stationary} to get the initial statement of the proposition.
@@ -225,7 +226,7 @@ But at the same time, the following rigorous statement is true.
 Similar one-parametric families of collapsing solutions exist from the right side of the point $x = x_0$.
 The corresponding proof can be performed in the same way.
 
-\section{All solutions are singular: $P(x) \le P_0 < 0$, $Q(x) \le Q_0 < 0$}
+\section{All Solutions Are Singular: $P(x) \le P_0 < 0$, $Q(x) \le Q_0 < 0$}
 
 It turns out that under some assumptions all non-trivial solutions of the equation \eqref{eq:stationary} are singular.
 \begin{proposition}
@@ -274,17 +275,17 @@ Now we can prove the Proposition 3.
 		&& v_{xx} = f(x, v) \label{eq:comparison-v}.
 	\end{eqnarray}
 	In the domain $D_+ = \{ x \in \mathbb{R}, \xi \in (0; +\infty) \}$ we have $f(x, \xi) \le g(x, \xi)$.
-	Let $\tilde{u}(x)$ be a solution to the Cauchy problem for the equation \eqref{eq:comparison-u} with initial conditions $u(x_0) = u_0$, $u_x(x_0) = u_0'$.
-	Chose the initial conditions for the Cauchy problem for the equation \eqref{eq:comparison-v} as follows: $v(x_0) = u(x_0) = u_0$, $v_x(x_0) = u_x(x_0) = u_0'$; let $\tilde{v}(x)$ is a solution for that second problem.
+	Let $\widetilde{u}(x)$ be a solution to the Cauchy problem for the equation \eqref{eq:comparison-u} with initial conditions $u(x_0) = u_0$, $u_x(x_0) = u_0'$.
+	Chose the initial conditions for the Cauchy problem for the equation \eqref{eq:comparison-v} as follows: $v(x_0) = u(x_0) = u_0$, $v_x(x_0) = u_x(x_0) = u_0'$; let $\widetilde{v}(x)$ is a solution for that second problem.
 	Let $u_0 > 0$, then one of the two cases takes place.
 	\begin{enumerate}
 		\item[(i)] $u_0' \ge 0$.
-		Function $\tilde{v}(x)$ increases monotonically; this fact can be easily established from the phase portrait of the equation \eqref{eq:comparison-v}.
-		Solution $\tilde{u}(x)$ limits solution $\tilde{v}(x)$ from above, which is singular.
-		It follows from the Comparison Lemma that solution $\tilde{u}(x)$ is also singular.
+		Function $\widetilde{v}(x)$ increases monotonically; this fact can be easily established from the phase portrait of the equation \eqref{eq:comparison-v}.
+		Solution $\widetilde{u}(x)$ limits solution $\widetilde{v}(x)$ from above, which is singular.
+		It follows from the Comparison Lemma that solution $\widetilde{u}(x)$ is also singular.
 		\item[(ii)] $u_0' < 0$.
 		We make a variable change $\title{x} = -x$.
-		In that case solution $\tilde{v}(\tilde{x})$ also increases monotonically, and since $\tilde{u}(\tilde{x})$ limits $\tilde{v}(\tilde{x})$ from above, $\tilde{u}(\tilde{x})$ is singular by the Comparison Lemma, hence $\tilde{u}(x)$ is also singular.
+		In that case solution $\widetilde{v}(\widetilde{x})$ also increases monotonically, and since $\widetilde{u}(\widetilde{x})$ limits $\widetilde{v}(\widetilde{x})$ from above, $\widetilde{u}(\widetilde{x})$ is singular by the Comparison Lemma, hence $\widetilde{u}(x)$ is also singular.
 	\end{enumerate}
 	Similarly in the domain $D_- = \{ x \in \mathbb{R}, \xi \in (-\infty; 0) \}$, the inequality $f(x, \xi) \ge g(x, \xi)$ holds.
 	One can prove in the same manner that in the domain $D_-$ solution $u(x)$ is also singular.
@@ -292,7 +293,7 @@ Now we can prove the Proposition 3.
 
 \section{Summary}
 
-Our main findings on regular and singular solutions for the stationary states equation \eqref{eq:stationary} are summarised within the Table \ref{tab:first-chapter-results}.
+Our main findings on regular and singular solutions for the stationary states equation \eqref{eq:stationary} are summarised within Table \ref{tab:first-chapter-results}.
 All these results were published by us in \cite{AlfimovLebedev}.
 Our further findings are focused on the case when $P(x)$ changes its sign along the $x$.
 In the next chapter we describe a so-called {\it singular solution elimination method} which allow us under some additional assumptions classify all regular stationary states solution for the equation \eqref{eq:stationary} within the symbolic dynamics framework.

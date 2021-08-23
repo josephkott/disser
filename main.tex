@@ -3,16 +3,20 @@
 
 \usepackage [T2A] {fontenc}
 \usepackage [utf8] {inputenc}
-\usepackage [russian, english] {babel}
+\usepackage [russian, main = english] {babel}
 \usepackage [autostyle] {csquotes}
 \usepackage [intlimits] {amsmath}
-\usepackage {amssymb, amsfonts}
+\usepackage {amssymb}
+\usepackage {amsfonts}
 \usepackage {amsthm}
 \usepackage {hyperref}
 \usepackage {array}
 \usepackage {multicol}
 \usepackage {mathrsfs}
 \usepackage {bm}
+\usepackage {physics}
+\usepackage {units}
+\usepackage [symbol] {footmisc}
 
 % Margins
 \usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry}
@@ -35,12 +39,19 @@
 \newtheorem{remark}{Remark}
 \newtheorem*{lemma*}{Lemma}
 \newtheorem*{remark*}{Remark}
+\newtheorem{theorem}{Theorem}
 
 \newenvironment{psm}
 	{\left( \begin{smallmatrix}}
 	{\end{smallmatrix} \right) }
 
 \DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\sn}{\mathop\mathrm{sn}}
+\newcommand{\cn}{\mathrm{cn}}
+\newcommand{\dn}{\mathop\mathrm{dn}}
+\newcommand{\cd}{\mathop\mathrm{cd}}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \begin{document}
 
