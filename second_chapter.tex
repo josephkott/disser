@@ -1,5 +1,7 @@
 % TODO: Check "islands set" vs "island set".
 % TODO: Avoid "mapped to infinity", because it means "undefined".
+% TODO: Labels in the beginning, not in the end?
+% TODO: Read through this carefully.
 \chapter{Stationary States Classification Within Symbolic Dynamics Framework}
 
 \section{Objections}
@@ -30,7 +32,7 @@ That is what we call singular solution elimination method.
 
 The presence of the horseshoe map structure allows us for each bounded solution uniquely specify a bi-infinite symbolic sequence over some alphabet (finite or even infinite) and such correspondence is also bijective.
 We refer to the result bi-infinite sequence as {\it solution code} and the overall process as {\it solutions coding}.
-Such coding, if possible, provides a complete picture of the bounded solutions family for the equation \eqref{eq:stationary} that can be highly demanded in different physical applications which involves Gross-Pitaevskii equation with both periodic potential and periodic pseudopotential.
+Such coding, if possible, provides a complete picture of the bounded solutions family for the equation \eqref{eq:stationary} that can be highly demanded in different physical applications which involves Gross--Pitaevskii equation with both periodic potential and periodic pseudopotential.
 
 \section{Geometry of the Poincar\'e Map}
 
@@ -58,7 +60,7 @@ On the other hand if $\vb{q} \in \mathscr{U}_L^-$ then $\vb{q}$ has $\mathcal{P}
 Therefore $\vb{p}$ has $\mathcal{P}$-image and hence $\vb{p} \in \mathscr{U}_L^+$.
 Backward statement $\mathcal{P}^{-1}(\mathscr{U}_L^-) = \mathscr{U}_L^+$ is also valid.
 
-We also note here that symmetry in equation \eqref{eq:stationary} naturally produces symmetry in $\mathcal{U}_L^{\pm}$ sets.
+We also note here that symmetry in equation \eqref{eq:stationary} naturally produces symmetry in $\mathscr{U}_L^{\pm}$ sets.
 For example we can prove the following important statement.
 
 \begin{proposition}
@@ -171,14 +173,14 @@ Such curves and strips along with theirs transformations are the object of our a
 \begin{definition}
 	Let $D$ be an island bounded by curves $\alpha^{\pm}$, $\beta^{\pm}$.
 	Consider a curve $\alpha$ that connects the opposite sides $\beta^{\pm}$ of the island $D$. 
-	We call such curve {\bf h-curve} if it represents a graph of a monotonic $\gamma$-Lipschitz function $u' = h(u)$ and its monotonicity type coincide with the functions $u' = h_{\pm}(u)$ that correspond to the $\alpha^{\pm}$ boundaries of the island $D$.
-	We also call {\bf h-strip} an open subset of the island $D$ bounded by two \emph{h}-curves.
+	We call such curve as {\bf h-curve} (or $\mathrm{h}_{\gamma}$-curve) if it represents a graph of a monotonic $\gamma$-Lipschitz function $u' = h(u)$ and its monotonicity type coincide with the functions $u' = h_{\pm}(u)$ that correspond to the $\alpha^{\pm}$ boundaries of the island $D$.
+	We also call {\bf h-strip} (or $\mathrm{h}_{\gamma}$-strip) an open subset of the island $D$ bounded by two $\mathrm{h}_{\gamma}$-curves.
 \end{definition}
 
 \begin{definition}
 	Similarly consider a curve $\beta$ that connects opposite sides $\alpha^{\pm}$ of an island $D$.
-	We call it {\bf v-curve} if it represents a graph of a monotonic $\gamma$-Lipschitz function $u = v(u')$ and its monotonicity type coincide with the functions $u = v_{\pm}(u')$ that correspond to the $\beta^{\pm}$ boundaries of the island $D$.
-	In a like manner we call {\bf v-strip} an open subset of the island $D$ bounded by two \emph{v}-curves.
+	We call it as {\bf v-curve} (or $\mathrm{v}_{\gamma}$-curve) if it represents a graph of a monotonic $\gamma$-Lipschitz function $u = v(u')$ and its monotonicity type coincide with the functions $u = v_{\pm}(u')$ that correspond to the $\beta^{\pm}$ boundaries of the island $D$.
+	In a like manner we call {\bf v-strip} (or $\mathrm{v}_{\gamma}$-strip) an open subset of the island $D$ bounded by two $\mathrm{v}_{\gamma}$-curves.
 \end{definition}
 
 \begin{remark}
@@ -234,12 +236,12 @@ Since $h_{\pm}$ are $\gamma$-Lipschitz functions the new functions $\widetilde{h
 Denote by $\widetilde{\alpha}^{\pm}$ the resulted curves formed by the graphs $\widetilde{h}_{\pm}(u)$.
 
 \begin{definition}
+\label{def:h-thickness}
 	By the {\bf thickness} of an h-strip $H$, denoted $d_\emph{h}(H)$, we mean the distance between curves $\widetilde{\alpha}^{\pm}$ in C-norm, i.e.
 	\begin{equation}
 		d_\emph{h}(H) = d(\widetilde{\alpha}^+, \widetilde{\alpha}^-) = \max \limits_{u \in \Delta} |\widetilde{h}_+(u) - \widetilde{h}_-(u)|.
 	\label{eq:h-thickness}
 	\end{equation}
-\label{def:h-thickness}
 \end{definition}
 
 \begin{remark}
@@ -335,7 +337,7 @@ In each region the stationary states equation has a familiar form of conservativ
 	&& u_{xx} - u + u^3 = 0, \quad x \in [L_*; L_* + L_0] \label{eq:stationary-piecewise-regular}.
 \end{eqnarray}
 Each of the equations \eqref{eq:stationary-piecewise-singular}, \eqref{eq:stationary-piecewise-regular} can be solved explicitly  through Jacobi elliptic functions.
-Exact solutions are given in Appendix \ref{appendix-solutions-of-duffing-equations}.
+Exact solutions are given in Appendix \ref{appendix:solutions-of-duffing-equations}.
 % TODO: Axes size is not consistent with other pictures.
 \begin{figure}[h]
 \centering
@@ -683,8 +685,9 @@ On other hand borders of $\mathscr{U}_L^-$ contain two other borders of each $D_
 Thereby the obtained structure satisfy all the conditions of island set from Definition~\ref{def:island-set}.
 However set $\mathscr{U}_L^-$ entirely contains an image of the curve $\gamma^-$.
 We know that according to Proposition~\ref{prop:separatrix-map} image $\mathcal{P}(\gamma^-)$ has infinitely many intersections with the curve $\gamma^+$.
-That's why outside of the scanning area there exist many other intersections between $\mathscr{U}_L^{\pm}$ sets and they form infinitely many connected components in the result set $\mathscr{U}_L$.
-Due to monotonicity of $\mathscr{U}_L^+$ borders and general geometric properties of the spiral $\mathscr{U}_L^-$ we can hypothesize that all other intersections in $\mathscr{U}_L$ set are also islands.
+That's why outside of the scanning area there exist many other intersections between sets $\mathscr{U}_L^{\pm}$, and they form infinitely many connected components in the result set $\mathscr{U}_L$.
+In a like manner we denote those components by $D_k$, $k \in \{ -1, -2, -3, \dots \}$ for the components on the left side of the $u'$ axis and $k \in \{ +1, +2, +3, \dots \}$ for the components on the right side. 
+Due to monotonicity of $\mathscr{U}_L^+$ borders and general geometric properties of the spiral $\mathscr{U}_L^-$ we can hypothesize that all the components $D_k$ in $\mathscr{U}_L$ set are also islands.
 
 % TODO: Add image of $\gamma^-$ to the pictures.
 \begin{figure}[h]
@@ -750,8 +753,6 @@ Each of them intersects the $\mathscr{U}_L^+$ set infinitely many times and cros
 To illustrate that on Figure~\ref{fig:h-strips-piecewise} we combined Figure~\ref{fig:map-of-islands-piecewise}~(b) with Figure~\ref{fig:island-set-piecewise}~(a).
 We use the following notation $\mathcal{P}(D_i) \cap D_j = H_{ij}$.
 
-\pagebreak
-
 \begin{figure}[h]
 \centering
 	\includegraphics[scale = 1]{pic/h-strips for piecewise equation}
@@ -767,6 +768,17 @@ Island set $\mathscr{U}_L = \bigcup_{i \in S} D_i$ for Eq.~\eqref{eq:stationary-
 It means that $V_{ij} = \mathcal{P}^{-1}(D_i) \cap D_j \neq \varnothing$ for each $i, j \in S$.
 On Figure~\ref{fig:v-strips-piecewise} sets $V_{ij}$ are depicted for $i, j \in \{ -1, 0, +1 \}$.
 
+\section{Symbolic Dynamics: Solutions Coding}
+
+In this sections we show how all the structures and properties introduced above can be used together to classify all bounded solutions of equation \eqref{eq:stationary}.
+Our classification is closely connected with the structure of the $\mathscr{U}_L$ set.
+We demonstrate our approach for the previously considered piecewise pseudopotential equation \eqref{eq:stationary-piecewise}.
+Let's introduce two sets.
+
+\begin{definition}
+	Define set $\mathcal{O}$ as a set of bi-infinite orbits of \underline{all} regular solutions for equation \eqref{eq:stationary}, i.e. $\vb{r} \in \mathcal{O}$, $\vb{r} = \{ \vb{p}_n \}$, $\mathcal{P}(\vb{p}_n) = \vb{p}_{n+1}$, $n \in \mathbb{Z}$.
+\end{definition}
+
 \begin{figure}[h]
 \centering
 	\includegraphics[scale = 1]{pic/v-strips for piecewise equation}
@@ -776,17 +788,6 @@ On Figure~\ref{fig:v-strips-piecewise} sets $V_{ij}$ are depicted for $i, j \in 
 	}
 \label{fig:v-strips-piecewise}
 \end{figure}
-
-\section{Symbolic Dynamics: Solutions Coding}
-
-In this sections we show how all the structures and properties introduced above can be used together to classify all bounded solutions of equation \eqref{eq:stationary}.
-Our classification is closely connected with the structure of the $\mathscr{U}_L$ set.
-We demonstrate our approach for the previously considered piecewise pseudopotential equation \eqref{eq:stationary-piecewise}.
-Let's introduce two sets.
-
-\begin{definition}
-	Define set $\mathcal{O}$ as a set of all orbits of regular solutions for equation \eqref{eq:stationary}, i.e. $\{ \vb{p}_n \} \in \mathcal{O}$, $ \mathcal{P}(\vb{p}_n) = \vb{p}_{n+1}$, where $\mathcal{P}$ is a Poincar\'e map associated with equation \eqref{eq:stationary}.
-\end{definition}
 
 One can define a metric $\mathcal{O}$ as follows.
 Let $v, w \in \mathcal{O}$ are two orbits, $v = \{ \vb{p}_n \}$, $\vb{p}_n = (\phi_n, \phi_n')$, $w = \{ \vb{q}_n \}$, $\vb{q}_n = (\psi_n, \psi_n')$, then the distance $d_{\mathcal{O}}$ between orbits $v$ and $w$ is defined as a Euclidean distance between points $\vb{p}_0$ and $\vb{q}_0$, i.e.
@@ -808,13 +809,13 @@ Let's demonstrate it with an example.
 Let one has a regular solution $u(x)$ of equation \eqref{eq:stationary-piecewise}.
 Suppose that this is a localized solution depicted on Figure~\ref{fig:solution-and-orbit}~(a).
 We inspect the values and the derivatives of the solution $u(x)$ in the points corresponding to the Poincar\'e sections associated with the period $L$, and then put these points $(u, u')$ onto the structure of the set $\mathscr{U}_L$ from the Panel~(b) of Figure~\ref{fig:solution-and-orbit}.
-In the points $x = 0$ value and derivative $\vb{p}_0 = (u(0), u'(0))$ matches island $D_{-1}$.
+In the point $x = 0$ value $u(0)$ and derivative $u'(0)$ match island $D_{-1}$.
 After that in the point $x = L$ our solution $u(x)$ cross the central islands $D_0$ and matches it again for $x = 2L$.
 In the point $x = 3L$ our solution came into the right island $D_{+1}$.
 That allows us to determine four central symbols of the result code: $\{ -1, 0, 0, +1 \}$.
 Moreover since our solution is localized all other points $(u(nL), u'(nL))$ correspond to the central component of $\mathscr{U}_L$ and all the symbols from the left side of ``$-1$'' and the right side of ``$+1$'' are ``$0$''.
-So, finally we obtain the result bi-infinite sequence $\{ \dots, 0, -1, 0, 0, +1, 0, \dots \}$ for the localized solution $u(x)$ from Figure~\ref{fig:solution-and-orbit}~(a).
-Obviously points of orbit of our solution cannot lie down outside of  $\mathscr{U}_L$ because the solution is regular and has bi-infinite orbit, so at each step we have exactly one symbol and the overall process identifies the result bi-infinite sequence uniquely.
+Thereby finally we obtain the result bi-infinite sequence $\{ \dots, 0, -1, 0, 0, +1, 0, \dots \}$ for the localized solution $u(x)$ from Figure~\ref{fig:solution-and-orbit}~(a).
+Obviously points of orbit of our solution cannot lie down outside of  $\mathscr{U}_L$ because the solution is regular and has bi-infinite orbit, so at each step we have exactly one symbol to choose and the overall process identifies the result bi-infinite sequence uniquely.
 
 % TODO: place dots exactly where they are on the Panel (b).
 \begin{figure}[h]
@@ -832,4 +833,275 @@ Obviously points of orbit of our solution cannot lie down outside of  $\mathscr{
 
 \subsection{Uniqueness of Solutions Coding}
 
+The most intriguing question about coding is the following: when is the correspondence between solutions orbits $\mathcal{O}$ and codes $\mathcal{S}$ based on the $\mathscr{U}_L$ set structure for Eq.~\eqref{eq:stationary} is bijective (one-to-one)?
+Or, when there exists a homeomorphism between two topological spaces $\mathcal{O}$ and $\mathcal{S}$?
+In this section we determine sufficient conditions of existence of such correspondence.
+
+% TODO: This part is ugly written...
+First of all let's have a first insight on how the code can be used for a solution identification.
+One can reformulate the question above, could we find initial conditions for a Cauchy problem based on a solution code?
+Let $\vb{s} = \{ \dots, i_{-1}, i_0, i_1, \dots \}$ be a code derived from the structure of a complete island set $\mathscr{U}_L$.
+Consider its left part $\{ \dots, i_{-2}, i_{-1}, i_0 \}$.
+All the points from island $D_{i_0}$ correspond to the symbol $i_0$.
+Now consider a set $H_{i_{-1} i_0} = \mathcal{P}(D_{i_{-1}}) \cap D_{i_0}$.
+Set $H_{i_{-1} i_0} \in D_{i_0}$ consists of such points that the corresponding solution of the Cauchy problem on an interval $[-L; 0]$ with initial conditions $\vb{p}_0 = (u(0), u'(0))$, $\vb{p}_0 \in H_{i_{-1} i_0}$ exists and can be coded with two symbols $\{ i_{-1}, i_0 \}$, since $\vb{p}_0 \in D_{i_0}$ and $\mathcal{P}^{-1}(\vb{p}_0) \in D_{i_{-1}}$.
+Continue this process, consider a set $H_{i_{-2}, i_{-1}, i_0} = \mathcal{P}(H_{i_{-2}, i_{-1}}) \cap D_{i_0}$, where $H_{i_{-2}, i_{-1}} = \mathcal{P}(D_{i_{-2}}) \cap D_{i_{-1}}$.
+Set $H_{i_{-2}, i_{-1}, i_0} \in D_{i_0}$ consists of such points the corresponding solution with initial conditions $\vb{p}_0 = (u(0), u'(0))$, $\vb{p}_0 \in  \in H_{i_{-2}, i_{-1}, i_0}$ exists on an interval $[-2L; 0]$ and can be coded with three symbols $\{ i_{-2}, i_{-1}, i_0 \}$, since $\vb{p}_0 \in D_{i_0}$, $\mathcal{P}^{-1}(\vb{p}_0) \in D_{i_{-1}}$, and $\mathcal{P}^{-2}(\vb{p}_0) \in D_{i_{-2}}$.
+
+In order to formalize this process we introduce an arrow operator $X \xrightarrow{\mathcal{P}} Y = \mathcal{P}(X) \cap Y$.
+This operator is not associative and should be applied strictly from left to right, i.e. $X \xrightarrow{\mathcal{P}} Y \xrightarrow{\mathcal{P}} Z = (\mathcal{P}(X) \cap Y) \xrightarrow{\mathcal{P}} Z$.
+Consider a sequence of nested sets:
+\begin{equation}
+	\begin{alignedat}{2}
+		& D_{i_0} \supseteq H_{i_0} && \ = D_{i_0}; \\
+		& D_{i_0} \supseteq H_{i_{-1}, i_0} && \ = D_{i_{-1}} \xrightarrow{\mathcal{P}} D_{i_0}; \\
+		& D_{i_0} \supseteq H_{i_{-2}, i_{-1}, i_0} && \ = D_{i_{-2}} \xrightarrow{\mathcal{P}} D_{i_{-1}} \xrightarrow{\mathcal{P}} D_{i_0}; \\
+		& D_{i_0} \supseteq H_{i_{-3}, i_{-2}, i_{-1}, i_0} && \ = D_{i_{-3}} \xrightarrow{\mathcal{P}} D_{i_{-2}} \xrightarrow{\mathcal{P}} D_{i_{-1}} \xrightarrow{\mathcal{P}} D_{i_0}; \\
+		& \dots.
+	\end{alignedat}
+\label{eq:nested-h-sets}
+\end{equation}
+All of them are placed inside the island $D_{i_0}$, moreover all of sets $H_{i_{-k}, \dots, i_0}$ are non-empty due to the completeness of the island set $\mathscr{U}_L$.
+Consider an intersection of these sets $H_{\infty} = \bigcap_{k = 0}^{\infty} H_{i_{-k}, \dots, i_0}$.
+By the construction result set $H_{\infty}$, if non-empty, consists of such points that the corresponding solution with initial conditions $(u(0), u'(0)) \in H_{\infty}$ exists on the interval $(-\infty; 0]$ and its code coincide with the left part of the initially considered sequence $\vb{s}$.
+
+Let's do the similar things with the right part of $\vb{s}$: $\{ i_0, i_1, i_2, \dots \}$.
+Consider a sequence of nested sets:
+\begin{alignat*}{2}
+	& D_{i_0} \supseteq V_{i_0} && \ = D_{i_0}; \\
+	& D_{i_0} \supseteq V_{i_0, i_1} && \ = D_{i_1} \xrightarrow{\mathcal{P}^{-1}} D_{i_0}; \\
+	& D_{i_0} \supseteq V_{i_0, i_1, i_2} && \ = D_{i_2} \xrightarrow{\mathcal{P}^{-1}} D_{i_1} \xrightarrow{\mathcal{P}^{-1}} D_{i_0}; \\
+	& D_{i_0} \supseteq V_{i_0, i_1, i_2, i_3} && \ = D_{i_3} \xrightarrow{\mathcal{P}^{-1}} D_{i_2} \xrightarrow{\mathcal{P}^{-1}} D_{i_1} \xrightarrow{\mathcal{P}^{-1}} D_{i_0}; \\
+	& \dots.
+\end{alignat*}
+All of these nested sets $V_{i_0, \dots, i_k}$ are placed inside the island $D_{i_0}$ and are non-empty.
+Consider an intersections $V_{\infty} = \bigcap_{k = 0}^{\infty} V_{i_0, \dots, i_k}$.
+Set $V_{\infty}$, if non-empty, consists of such points that solution with initial conditions from $V_{\infty}$ exists on the interval $[0; +\infty)$ and its code coincide with the right part of $\vb{s}$.
+
+Intersection of these two sets $H_{\infty} \cap V_{\infty}$ consists of such points of initial conditions that gives the result regular solutions with the desired code $\vb{s}$
+Geometry of the $H_{\infty} \cap V_{\infty}$ can be quite complex.
+But if the intersection consists of just one point then we can say that the code identifies a solution uniquely.
+
+Our goal is to formulate sufficient conditions that allows us to state that any bi-infinite code identify a regular solution uniquely.
+Again let $\mathscr{U}_L$ represent a complete island set for equation of type \eqref{eq:stationary}.
+Consider the sequences of nested sets:
+\begin{alignat*}{6}
+	& \mathscr{U}_L = \mathscr{H}_0 && \supseteq \mathscr{H}_1 && \supseteq \mathscr{H}_2 && \supseteq \mathscr{H}_3 && \supseteq \dots, \quad && \mathscr{H}_i = \mathcal{P}(\mathscr{H}_{i-1}) \cap \mathscr{H}_0; \\
+	& \mathscr{U}_L = \mathscr{V}_0 && \supseteq \mathscr{V}_1 && \supseteq \mathscr{V}_2 && \supseteq \mathscr{V}_3 && \supseteq \dots, \quad && \mathscr{V}_i = \mathcal{P}^{-1}(\mathscr{V}_{i-1}) \cap \mathscr{V}_0.
+\end{alignat*} 
+Define the following sets as intersections of the sequences above:
+\begin{alignat*}{6}
+	& \mathscr{H}_{\infty} && = \mathscr{H}_0 && \cap \mathscr{H}_1 && \cap \mathscr{H}_2 && \cap \mathscr{H}_3 && \cap \dots; \\
+	& \mathscr{V}_{\infty} && = \mathscr{V}_0 && \cap \mathscr{V}_1 && \cap \mathscr{V}_2 && \cap \mathscr{V}_3 && \cap \dots.
+\end{alignat*}
+By its construction their intersection $\mathscr{U}_{\infty} = \mathscr{H}_{\infty} \cap \mathscr{V}_{\infty}$ contains initial conditions for all regular solutions of equation \eqref{eq:stationary}.
+Set $\mathscr{U}_{\infty}$ is a central object for describing of the set of regular solutions for equation of such type \cite{AlfimovAvramenko, AlfimovLebedev, AlfimovKizinZezyulin}.
+Its structure may be quite intricate having a form of a complex fractal set.
+One can have a nice illustration on how this set may look like for equation \eqref{eq:stationary-piecewise}.
+For that purpose we combine Figure~\ref{fig:h-strips-piecewise} and Figure~\ref{fig:v-strips-piecewise} into a single plot.
+
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/h- and v-strips for piecewise equation}
+	\caption{
+		Subsets of $\mathscr{H}_1$ (yellow) and $\mathscr{V}_1$ (blue), and their intersection $\mathscr{H}_1 \cap \mathscr{V}_1$ (red).
+		This figure give an illustration on how the partitioning inside the set $\mathscr{U}_L$ (black) starts to occur while considering higher orders of $\mathcal{P}$ and $\mathcal{P}^{-1}$.
+	}
+\label{fig:hv-strips-piecewise}
+\end{figure}
+
+On that Figure~\ref{fig:hv-strips-piecewise} subsets of $\mathscr{H}_1$ (yellow) and $\mathscr{V}_1$ (blue) along with their intersection $\mathscr{H}_1 \cap \mathscr{V}_1$ (red) are presented.
+There exists other parts of $\mathscr{H}_1$ and $\mathscr{V}_1$ that can be obtained by considering $\mathcal{P}$ and $\mathcal{P}^{-1}$-images of other islands lying outside of the scanning area, but we exclude them for the sake of clarity.
+One can see how the partitioning inside the $\mathscr{U}_L$ starts to occur.
+Continuation of that process with higher orders of maps $\mathcal{P}$ and $\mathcal{P}^{-1}$ results in additional partitioning inside the set $\mathscr{H}_1 \cap \mathscr{V}_1$ and reveals the complex nature of the set $\mathscr{U}_{\infty}$.
+Eventually if for each code there exists exactly one point of initial conditions in the set $\mathscr{U}_{\infty}$ then we can state the existence of one-to-one correspondence between regular solutions and symbolic sequences derived from the structure of the set $\mathscr{U}_L$.
+Let's now formulate the sufficient conditions of that.
+We do this in a form of two hypotheses which remains the form of so-called Conley--Moser conditions \cite[Chapter 25]{Wiggins}.
+
+% TODO: make a remark on infinite indices set $S$.
+\begin{hypothesis}
+\label{hypothesis:island-set}
+	For equation \eqref{eq:stationary} with $L$-periodic functions $Q(x)$, $P(x)$ set $\mathscr{U}_L$ represents a complete island set, $\mathscr{U}_L = \bigcup_{i \in S} D_i$, and there exist constants $M, N$ such that $d_{\emph{h}}(D_i) \le M$ and $d_{\emph{v}}(D_i) \le N$ for any $i \in S$.
+\end{hypothesis}
+
+\begin{hypothesis}
+\label{hypothesis:strips-mapping}
+	For each island $D_i \in \mathscr{U}_L$ and any \emph{h}-strip $H \in D_i$ its $\mathcal{P}$-image $\widetilde{H}_j = \mathcal{P}(H) \cap D_j$ is an $\mathrm{h}_{\gamma_{ji}}$-strip for all $j \in S$, and there exists $\mu > 1$ such that
+	\begin{equation}
+		d_{\mathrm{h}}(\widetilde{H}_j) \le (1/\mu) d_{\mathrm{h}}(H).
+	\end{equation}
+	For each island $D_j \in \mathscr{U}_L$ and any \emph{v}-strip $V \in D_j$ its $\mathcal{P}$-pre-image $\widetilde{V}_i = \mathcal{P}^{-1}(V) \cap D_i$ is a $\mathrm{v}_{\delta_{ij}}$-strip for all $i \in S$, and there exists $\nu > 1$ such that
+	\begin{equation}
+		d_{\mathrm{v}}(\widetilde{V}_i) \le (1/\nu) d_{\mathrm{v}}(V).
+	\end{equation}
+\end{hypothesis}
+
+Two hypotheses introduced above allow us to formulate and prove the central theorem of our coding approach.
+This theorem partially reproduce the result initially provided in \cite[Theorem 3.1]{AlfimovAvramenko}.
+However in our current work we made a significant step forward.
+We've managed to remove one of prerequisites from the above mentioned theorem and replaced it with another one that is more suitable for the further numerical analysis.
+
+% TODO: Consider to name this theorem somehow.
+\begin{theorem}
+	Assume that Poincar\'e map associated with equation \eqref{eq:stationary} satisfies Hypotheses \ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping}, then there exists a homeomorphism of topological spaces\footnote{We use the symbol $\mathcal{C}$ for the homeomorphism since it reminds the overall process as ``coding''.} $\mathcal{C}: \mathcal{O} \to \mathcal{S}$, defined as follows: let $\vb{r} \in \mathcal{O}$, $\vb{r} = \{ \vb{p}_k \}$ and $\vb{s} \in \mathcal{S}$, $\vb{s} = \{ i_k \}$, then $i_k$ is the number of the component $D_{i_k} \in \mathscr{U}_L$ where the point $\vb{p}_k$ lies.
+\label{thm:coding}
+\end{theorem}
+\begin{proof}
+	Evidently, for each bi-infinite orbit $\vb{r} \in \mathcal{O}$ of regular solution the image $\vb{s} = \mathcal{C}(\vb{r})$, $\vb{s} \in \mathcal{S}$ is defined uniquely.
+	Let's prove that for each sequence $\vb{s} \in \mathcal{S}$ there exist unique orbit $\vb{r} \in \mathcal{O}$ such that $\vb{s} = \mathcal{C}(\vb{r})$.
+	
+	Consider a sequence $\vb{s} = \{ \dots, i_{-1}, i_0, i_1, \dots \}$.
+	Let's find a location of the points $\vb{p} \in D_{i_0}$ such that $\mathcal{P}^{-1}(\vb{p}) \in D_{i_{-1}}$, $\mathcal{P}^{-2}(\vb{p}) \in D_{i_{-2}}$, etc.
+	First of all, $D_{i_0}$ is a $\gamma_{i_0}$-island, then it's an $\mathrm{h}_{\gamma_{i_0}}$-strip.
+	Define an $\mathrm{h}_{\gamma_{i_0}}$-strip $H_{i_0} = D_{i_0}$ as a base step.
+	From Hypothesis~\ref{hypothesis:island-set} we conclude that
+		\begin{equation}
+		d_{\mathrm{h}}(H_{i_0}) \le M.
+	\end{equation}
+	Points $\vb{p} \in D_{i_0}$ such that $\mathcal{P}^{-1}(\vb{p}) \in D_{i_{-1}}$ are suited in the set $H_{i_{-1}, i_0} = \mathcal{P}(D_{i_{-1}}) \cap D_{i_0}$.
+	Due to Hypothesis~\ref{hypothesis:strips-mapping} set $H_{i_{-1}, i_0}$ is an $\mathrm{h}_{\gamma_{i_0, i_{-1}}}$-strip.
+	Its thickness satisfies an inequality
+	\begin{equation}
+		d_{\mathrm{h}}(H_{i_{-1}, i_0}) \le \mu^{-1} d_{\mathrm{h}}(H_{i_0}) \le \mu^{-1} M.
+	\end{equation}
+	For simplicity define $\gamma = \max \{ \gamma_{i_0}, \gamma_{i_0, i_{-1}} \}$.
+	
+	Points $\vb{p} \in D_{i_0}$ such that $\mathcal{P}^{-1}(\vb{p}) \in D_{i_{-1}}$, $\mathcal{P}^{-2}(\vb{p}) \in D_{i_{-2}}$ are suited in the set $H_{i_{-2}, i_{-1}, i_0} = \mathcal{P}(H_{i_{-2}, i_{-1}}) \cap D_{i_0}$ where $H_{i_{-2}, i_{-1}} = \mathcal{P}(D_{i_{-2}}) \cap D_{i_{-1}}$.
+	By Hypothesis~\ref{hypothesis:strips-mapping} set $H_{i_{-2}, i_{-1}}$ is an h-strip.
+	Hence, set $H_{i_{-2}, i_{-1}, i_0}$ is an $\mathrm{h}_{\gamma}$-strip and its thickness satisfies an inequality
+	\begin{equation}
+		d_{\mathrm{h}}(H_{i_{-2}, i_{-1}, i_0}) \le \mu^{-1} d_{\mathrm{h}}(H_{i_{-2}, i_{-1}}) \le \mu^{-2} d_{\mathrm{h}}(D_{i_{-2}}) \le \mu^{-2} M.
+	\end{equation}
+	
+	Continuation of that process leads us to the sequence of nested $\mathrm{h}_{\gamma}$-strips similar to what we had in \eqref{eq:nested-h-sets}:
+	\begin{equation}
+		D_{i_0} = H_{i_0} \supseteq H_{i_{-1}, i_0} \supseteq H_{i_{-2}, i_{-1}, i_0} \supseteq \dots.
+	\label{eq:nested-h-strips}
+	\end{equation}
+	Let's show that the infinite intersection of the $\mathrm{h}_{\gamma}$-strips \eqref{eq:nested-h-strips} is an $\mathrm{h}_{\gamma}$-curve.
+	Sequence of their thicknesses is bounded from above with a decreasing sequence $\{ \mu^{-n} M \}$, $n = 0, 1, 2, \dots$.
+	Value $\mu > 1$, so the limit $\lim \limits_{n \to \infty} \mu^{-n} M = 0$.	
+	Now consider boundaries of the strips \eqref{eq:nested-h-sets} as a functions of $u$.
+	All of them are $\gamma$-Lipschitz functions.
+	Their domains are different, but all of them lie inside the domain $\Delta$, defined as
+	\begin{equation}
+		\Delta = \mathrm{dom}(\alpha_{i_0}^+) \cup \mathrm{dom}(\alpha_{i_0}^-),
+	\end{equation}
+	where $\alpha_{i_0}^{\pm}$ are opposite boundaries of the first strip $H_{i_0}$.
+	We can continue each $\alpha^{\pm}$ boundary of h-strips \eqref{eq:nested-h-sets} onto the whole $\Delta$.
+	Let $\alpha_{i_{-k}, \dots, i_0}^{\pm}$ be a boundaries of an h-strip $H_{i_{-k}, \dots, i_0}$.
+	They can be considered as a functions of $u$, $u' = h_{i_{-k}, \dots, i_0}^{\pm}(u)$ with the domains $\Delta_{i_{-k}, \dots, i_0}^{\pm} = [a_{i_{-k}, \dots, i_0}^{\pm}; b_{i_{-k}, \dots, i_0}^{\pm}]$, and we can define new functions
+	\begin{equation}
+		\widetilde{h}_{i_{-k}, \dots, i_0}^{\pm}(u) = \begin{cases}
+			h_{i_{-k}, \dots, i_0}^{\pm}(a_{i_{-k}, \dots, i_0}^{\pm}) & u < a_{i_{-k}, \dots, i_0}^{\pm}; \\
+			h_{i_{-k}, \dots, i_0}^{\pm}(u) & u \in \Delta_{i_{-k}, \dots, i_0}^{\pm}; \\
+			h_{i_{-k}, \dots, i_0}^{\pm}(b_{i_{-k}, \dots, i_0}^{\pm}) & u > b_{i_{-k}, \dots, i_0}^{\pm}.
+		\end{cases}
+	\label{eq:nested-h-strips-extension}
+	\end{equation}
+	Such extension allows us to treat boundaries of $H_{{i_{-k}, \dots, i_0}}$ as functions of $u$ with the same domain and consider them as a part of the space $C_{\gamma}(\Delta)$ of $\gamma$-Lipschitz functions defined on the interval $\Delta$.
+	Definition of the h-strip thickness coincide with the metric defined by the maximum norm, and $C_{\gamma}(\Delta)$ is a complete metric space \cite{Arnold}.
+	Now consider the sequence
+	\begin{equation}
+		\{ \widetilde{h}_{i_0}^+(u), \widetilde{h}_{i_0}^-(u), \widetilde{h}_{i_{-1}, i_0}^+, \widetilde{h}_{i_{-1}, i_0}^-, \dots, \widetilde{h}_{i_{-k}, \dots, i_0}^+, \widetilde{h}_{i_{-k}, \dots, i_0}^-, \dots \}.
+	\label{eq:sequence-of-boundaries}
+	\end{equation}
+	Since $H_{i_{-k}, \dots, i_0} \subseteq H_{i_{-k+1, \dots i_0}}$ and $d_{\mathrm{h}}(H_{i_{-k}, \dots, i_0}) \to 0$ as $k \to \infty$, sequence \eqref{eq:sequence-of-boundaries} is a Cauchy sequence.
+	Therefore, since $C_{\gamma}(\Delta)$ is a complete metric space, the Cauchy sequence converges to a unique curve $\widetilde{h}_{\infty}(u)$ which represents an $\mathrm{h}_{\gamma}$-curve inside the island $D_{i_0}$.
+	Since we extend h-strips boundaries onto the whole $\Delta$ there may be other parts of $\widetilde{h}_{\infty}(u)$ lying outside of $D_{i_0}$.
+	Denote by $\alpha_{\infty}$ a part of $\widetilde{h}_{\infty}(u)$ that entirely belongs to $D_{i_0}$.
+	This curve is the intersection of the $\mathrm{h}_{\gamma}$-strips \eqref{eq:nested-h-strips} and is an $\mathrm{h}_{\gamma}$-curve.
+	
+	In the same manner a sequence of nested $\mathrm{v}_{\delta}$-strips can be constructed,
+	\begin{equation}
+		D_{i_0} = V_{i_0} \supseteq V_{i_0, i_1} \supseteq V_{i_0, i_1, i_2} \supseteq \dots.
+	\label{eq:nested-v-strips}
+	\end{equation}
+	Their thicknesses are bounded from above with a decreasing sequence $\{ \nu^{-n} N \}$, $n = 0, 1, 2, \dots$ of a zero limit, $\lim \limits_{n \to \infty} \nu^{-n} N = 0$.
+	Considering a corresponding sequence of $\delta$-Lipschitz functions we conclude that the intersection of the strips \eqref{eq:nested-v-strips} exists and is a $\mathrm{v}_\delta$-curve.
+	Denote this curve by $\beta_{\infty}$.
+	
+	The orbit $\vb{r} \in \mathcal{O}$ corresponding to the bi-infinite sequence $\{ \dots, i_{-1}, i_0, i_1, \dots \}$ is generated by $\mathcal{P}$ and $\mathcal{P}^{-1}$-iterations of the intersection $\alpha_{\infty} \cap \beta_{\infty}$ which according to the definitions of h- and v-curves {\it consists of one point}.
+	Therefore orbit $\vb{r}$ exists and is unique.
+	
+	The continuity of $\mathcal{C}$ and $\mathcal{C}^{-1}$ maps follows from an observation that follows below.
+	Since $\mathcal{P}$ is continuous, if $\vb{r}^{(1)}, \vb{r}^{(2)} \in \mathcal{O}$,
+	\begin{eqnarray*}
+		& \vb{r}^{(1)} = \{ \dots, \vb{p}_{-1}^{(1)}, \vb{p}_0^{(1)}, \vb{p}_1^{(1)}, \dots \}, \\
+		& \vb{r}^{(2)} = \{ \dots, \vb{p}_{-1}^{(2)}, \vb{p}_0^{(2)}, \vb{p}_1^{(2)}, \dots \};
+	\end{eqnarray*}
+	are close enough in $\mathcal{O}$ (i.e. points $\vb{p}_0^{(1)}$ and $\vb{p}_0^{(2)}$ are close in $\mathbb{R}^2$), then their $\mathcal{C}$-images share the same central block $|k| < n$ for some $n$.
+	Therefore they are also close in $\mathcal{S}$-topology.
+	If $\vb{s}^{(1)} = \mathcal{C}(\vb{p}^{(1)})$ and $\vb{s}^{(2)} = \mathcal{C}(\vb{p}^{(2)})$ share the same central block $|k| < n$ for some $n$ then the points $\vb{p}_0^{(1)}$ and $\vb{p}_0^{(2)}$ are suited in the same area $H_{i_{-k}, \dots, i_0} \cap V_{i_0, \dots, i_k}$, so $\vb{p}_0^{(1)}$ and $\vb{p}_0^{(2)}$ are close in $\mathcal{O}$-topology.
+	Theorem is proven.
+\end{proof}
+
+In order to apply Theorem to equation \eqref{eq:stationary} one should get a strong evidence that Hypotheses \ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping} are valid.
+However it's rather difficult to obtain a rigorous mathematical proof of them even for the simplest form of the functions $Q(x)$, $P(x)$ in \eqref{eq:stationary}, so in our current work we rely on numerical procedures and try to stay, at least, within a framework of evidentiary computations.
+
+Hypothesis~\ref{hypothesis:island-set} seems to be pretty straightforward to check in a finite domain, since we can apply our scanning procedure and get a complete picture of the set $\mathscr{U}_L$.
+There may be two scenarios.
+The first scenario is when we can prove that the set $\mathscr{U}_L$ is bounded within a finite domain, like the authors of the work \cite{AlfimovAvramenko} did for $P(x) \equiv -1$.
+Then one can apply a scanning procedure to that domain and thus provide an evidential computations for the Hypothesis~\ref{hypothesis:island-set}.
+The second scenario is when we cannot prove any statement on the boundaries and structure of $\mathscr{U}_L$, or this set is infinite and unbounded, like we saw it previously for equation \eqref{eq:stationary-piecewise}, so the set $\mathcal{S}_{\infty}$ contains sequences oven an alphabet of infinite number of symbols.
+In that case we still can scan only a finite subset of the initial conditions plane.
+If the finite subset represents an island set then we can reduce our consideration to the finite subset of symbols $\mathcal{S}_N \subset \mathcal{S}_{\infty}$ and, if the Hypothesis~\ref{hypothesis:strips-mapping} is also valid for that subset of $\mathscr{U}_L$, establish a homeomorphism between a subset of regular solutions and sequences from $\mathcal{S}_N$.
+
+Hypothesis~\ref{hypothesis:strips-mapping} as it is does not seem to be easily verifiable numerically.
+However we managed to reduce it to another two statements which are applicable for the numerical analysis.
+These statements called Strips Mapping Theorems are formulated and proven in Appendix~\ref{appendix:strips-mapping-theorems}.
+Shortly speaking, in order to check Hypothesis~\ref{hypothesis:strips-mapping} one should analyse linear operators $D \mathcal{P}_{\vb{p}}$, $D \mathcal{P}^{-1}_{\vb{p}}$, which are represented by the Jacobi matrices of $\mathcal{P}$ and $\mathcal{P}^{-1}$, 
+\begin{alignat}{4}
+	& \mathcal{P}(\vb{q}) && = \mathcal{P}(\vb{p}) && + D \mathcal{P}_{\vb{p}} (\vb{q} - \vb{p}) && + o(||\vb{q} - \vb{p}||); \\
+	& \mathcal{P}^{-1}(\vb{q}) && = \mathcal{P}^{-1}(\vb{p}) && + D \mathcal{P}^{-1}_{\vb{p}} (\vb{q} - \vb{p}) && + o(||\vb{q} - \vb{p}||).
+\end{alignat}
+Such linear operators can be constructed numerically.
+If for an island set $\mathscr{U}_L = \bigcup_{i \in S} D_i$ matrix of the linear operator $D \mathcal{P}_{\vb{p}}$ in each point $\vb{p} \in \mathcal{P}^{-1}(D_j) \cap D_i$ satisfies a specific structure established in Theorem~\ref{thm:h-strips-mapping} of Appendix~\ref{appendix:strips-mapping-theorems} then Hypothesis~\ref{hypothesis:strips-mapping} is valid for h-strips.
+On other hand if matrix of the linear operator $D \mathcal{P}^{-1}_{\vb{p}}$ in each point $\vb{p} \in \mathcal{P}^{-1}(D_i) \cap D_j$ satisfies a specific structure established in Theorem~\ref{thm:v-strips-mapping} of Appendix~\ref{appendix:strips-mapping-theorems} then Hypothesis~\ref{hypothesis:strips-mapping} is also valid for v-strips.
+Again we cannot apply our analysis to an infinite set $\mathscr{U}_L$, but we can reduce the task to the finite subset of the islands set in order to establish a homeomorphism between a subset of regular solutions and sequences from $\mathcal{S}_N$, and at the same time stay within a framework of evidential computations.
+
+% (Finally at the end of this chapter ...)
+We applied both of the above mentioned techniques to Eq.~\eqref{eq:stationary-piecewise} with the parameters $(L_*, L_0) = (2, 1)$.
+We restricted our consideration by the first five central components $D_i$, $i \in \{ -2, -1, 0, +1, +2 \}$ of the islands set $\mathscr{U}_L$ (see Figure~\ref{fig:island-set-piecewise}).
+Our numerical analysis shown that both Hypothesis~\ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping} are valid, so Theorem~\ref{thm:coding} allows us to conclude that there exists a homeomorphism between a subset of regular solutions and the set $\mathcal{S}_5$.
+
+Such correspondence allows us to make conclusion on different types of regular solutions equation \eqref{eq:stationary-piecewise} has.
+For examples there exist periodic solutions of a period $nL$ for any number $n \in \mathbb{N}$.
+Their symbolic codes have a periodic structure $\{ \dots, i_0, \dots i_n, i_0, \dots, i_n, \dots \}$.
+There also exist localized solutions of a plenty of different shapes.
+Their symbolic codes have a central block of non-zero symbols, and all other symbols on the left and right sides of this block equals ``$0$'', $\{ \dots, 0, 0, i_0, \dots, i_n, 0, 0, \dots \}$.
+Regular solution of the domain wall shapes can also be found.
+They are coded with sequences which has ``$0$'' symbols only on the left or on the right side, $\{ \dots, 0, 0, i_0, i_1, \dots \}$, $\{ \dots, i_{-1}, i_0, 0, 0 \dots \}$.
+
+Several periodic and localized solutions are presented on Figure~\ref{fig:solutions-piecewise}.
+Numerical computation of solution by its code in a general case is a separate complex task.
+Nevertheless localized solutions can be easily found by the shooting method, and periodic solutions of a period $nL$ can be found by solving the nonlinear equation $\vb{p} - \mathcal{P}^n(\vb{p}) = 0$, $\vb{p} \in \mathbb{R}^2$, with a right initial approximation which can be obtained from the $\mathscr{U}_L$ structure.
+It's worth to mention one remarkable work on the topic of solutions computation.
+In \cite{AlfimovKizinZezyulin} authors provide an algorithm which allows to reconstruct the profile of a localized solution by its code for equation of type \eqref{eq:stationary} with $P(x) \equiv -1$.
+It seems that the analogous technique can be also applied for a periodic pseudopotential $P(x)$.
+
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/solutions for the piecewise equation}
+	\caption{
+		Different solutions for the equation \eqref{eq:stationary-piecewise} with parameters $(L_*, L_0) = (2, 1)$.
+		Each solution has a corresponding symbolic code, this code identify the solution uniquely.
+		Gray rectangles divide the $x$ axis according to the period $L$.
+		First three panels represent periodic solutions, their codes have periodic structure: (a) $L$-periodic solution $\{ \dots, -1, -1, -1, \dots \}$; (b) $2L$-periodic solution $\{ \dots, -1, +1, -1, +1 \dots \}$; (c) $3L$-periodic solution $\{ \dots, -1, +1, 0, -1, +1, 0 \dots \}$.
+		Other six panels represent localized solutions, their codes have ``$0$'' symbol to the left and right of the central block: (d) $\{ \dots, 0, 0, +1, 0, 0, \dots \}$; (e) $\{ \dots, 0, 0, +1, +1, 0, 0, \dots \}$ (f) $\{ \dots, 0, 0, +1, -1, 0, 0 \dots \}$ (g) $\{ \dots, 0, 0, -2, 0, 0 \dots \}$ (h) $\{ \dots, 0, 0, +1, -1, +1, 0, 0 \dots \}$ (i) $\{ \dots, 0, 0, +1, +2, -2, +1, 0, 0 \dots \}$.
+	}
+\label{fig:solutions-piecewise}
+\end{figure}
+
 \section{Summary}
+
+In this chapter the regular solutions classification approach for equation \eqref{eq:stationary} has been exposed.
+This approach is related to the analysis of the dynamics of Poincar\'e map $\mathcal{P}$ on the set $\mathscr{U}_L$.
+It turns out that under additional circumstances the map $\mathcal{P}$ reveals the structure of a horseshoe map.
+This allows us to establish a homeomorphism between orbits of regular solutions of \eqref{eq:stationary} and symbolic sequences over some alphabet derived from the structure of the set $\mathscr{U}_L$.
+We've formulated sufficient conditions for the existence of this	 homeomorphism in a form of two hypotheses.
+We've also shown how these hypotheses can be reduced to the numerical procedures suitable for the evidential computations in a finite domain, and applied them to the equation \eqref{eq:stationary-piecewise} with the simplest form of periodic pseudopotential $P(x)$.
+
+With the example equation \eqref{eq:stationary-piecewise} we shown that the presence of periodic pseudopotential that changes its sign along the period $L$ results in the existence of two regimes, \eqref{eq:stationary-piecewise-singular} and \eqref{eq:stationary-piecewise-regular}.
+The interplay between these two regimes results in a great variety of regular solutions.
+Such observation allows us we to expect that similar variety of regular solutions is a common property for the overall class of equations \eqref{eq:stationary}.

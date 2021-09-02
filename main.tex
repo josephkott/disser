@@ -1,3 +1,5 @@
+% TODO: Rename "thm" to "theorem" in labels.
+% TODO: Put "label" at the beginning of sentences.
 \documentclass[candidate, subf, href, colorlinks]{disser}
 % Add `fixint` for straight integral signs
 
@@ -40,6 +42,9 @@
 \newtheorem*{lemma*}{Lemma}
 \newtheorem*{remark*}{Remark}
 \newtheorem{theorem}{Theorem}
+\newtheorem{hypothesis}{Hypothesis}
+% TODO: Try to remove "thehypothesis" from the command below.
+\renewcommand\thehypothesis{\Roman{hypothesis}}
 
 \newenvironment{psm}
 	{\left( \begin{smallmatrix}}
@@ -52,6 +57,7 @@
 \newcommand{\cd}{\mathop\mathrm{cd}}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand\multicitedelim{\addcomma\space}
 
 \begin{document}
 
@@ -67,9 +73,17 @@
 % Literature review
 % \input{review}
 
+% First chapter
 \input{first_chapter}
 
+% Second chapter
 \input{second_chapter}
+
+% Third chapter
+\input{third_chapter}
+
+% Fourth chapter
+\input{fourth_chapter}
 
 % Conclusion
 % \input{conclusion}
