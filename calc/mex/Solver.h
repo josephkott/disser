@@ -25,7 +25,7 @@ public:
 		sol.nodesCount = intCount + 1;
 		sol.step = (OP.tspan[1] - OP.tspan[0]) / intCount;
 		sol.points = new Point<dim>[sol.nodesCount];
-		sol.isInfinit = false;
+		sol.isInfinite = false;
 		sol.points[0] = OP.Init;
 		sol.tspan = new double[2];
 		sol.tspan[0] = OP.tspan[0];
@@ -45,7 +45,7 @@ public:
 
 			if (sol.points[i + 1].abs() > UPPER_BOUND)
 			{
-				sol.isInfinit = true;
+				sol.isInfinite = true;
 				sol.tspan[1] = t;
 				sol.nodesCount = i;
 				return sol;

@@ -12,7 +12,7 @@ public:
 	int nodesCount;
 	double step;
 	Point<dim>* points;
-	bool isInfinit;
+	bool isInfinite;
 	double* tspan;
 	int* pCopyCounter;
 
@@ -20,7 +20,7 @@ public:
 		: nodesCount(s.nodesCount)
 		, step(s.step)
 		, points(s.points)
-		, isInfinit(s.isInfinit)
+		, isInfinite(s.isInfinite)
 		, tspan(s.tspan)
 		, pCopyCounter(s.pCopyCounter)
 	{

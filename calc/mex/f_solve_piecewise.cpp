@@ -46,7 +46,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	int M = Sol.nodesCount;
 	plhs[0] = mxCreateDoubleMatrix(M, 1, mxREAL);
 	plhs[1] = mxCreateDoubleMatrix(M, 2, mxREAL);
-	plhs[2] = mxCreateDoubleScalar((double)Sol.isInfinit);
+	plhs[2] = mxCreateDoubleScalar((double)Sol.isInfinite);
 	double *X = mxGetPr(plhs[0]), *U = mxGetPr(plhs[1]);
 	const Point<2>* Data = Sol.GetData();
 	for (int i = 0; i < M; i++)

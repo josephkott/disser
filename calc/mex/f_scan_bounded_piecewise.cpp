@@ -53,9 +53,9 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 			Point<2> Y0(i_Y0);
 			
 			OdeProblem<2> OP(piecewise, i_param, Y0, i_tspan);
-			Solution<2> Sol = Slv.SolveSolve(OP, intCount);
+			Solution<2> Sol = Slv.Solve(OP, intCount);
 
-			Point<2> endpoint = Sol.points[Sol.nodesCount - 1]
+			Point<2> endpoint = Sol.points[Sol.nodesCount - 1];
 			o_Plane[i + N*j] = (double) (Sol.isInfinite || (abs(endpoint[0]) > xBound) || (abs(endpoint[1]) > yBound));
 		}
 	}

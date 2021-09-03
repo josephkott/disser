@@ -35,7 +35,7 @@ Point<2> piecewise(double x, Point<2> u, double* param)
 Point<2> cosine(double x, Point<2> u, double* param)
 {
 	Point<2> du;
-	double omega = param[0], alpha = param[1]
+	double omega = param[0], alpha = param[1];
 
 	du[0] = u[1];
 	du[1] = omega * u[0] - (alpha + cos(2 * x)) * pow(u[0], 3);

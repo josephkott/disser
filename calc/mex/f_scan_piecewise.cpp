@@ -50,7 +50,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 			
 			OdeProblem<2> OP(piecewise, i_param, Y0, i_tspan);
 			Solution<2> Sol = Slv.Solve(OP, intCount);
-			o_Plane[i + N*j] = (double)Sol.isInfinit;
+			o_Plane[i + N*j] = (double) Sol.isInfinite;
 		}
 	}
 	
