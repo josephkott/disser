@@ -40,3 +40,6 @@
 ## Other latex/pdflatex generated files
 *.nav
 *.snm
+
+## MATLAB MEX libraries
+*.mexmaci64
