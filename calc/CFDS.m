@@ -13,7 +13,7 @@ alpha = params(2);
 % Nonlinear cosine potential
 g = @(x) alpha + cos(2 * x);
 
-xstep = 0.01;
+xstep = 0.02;
 xspan = [-5*pi 5*pi];
 xgrid = xspan(1):xstep:xspan(2);
 Nx = length(xgrid);

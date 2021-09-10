@@ -528,7 +528,7 @@ yticks([-4 -2 0 2 4])
 xticklabels({'-2\pi','-\pi','0','\pi', '2\pi', '3\pi'})
 grid on
 
-%% Picture (4) Stability demonstration, left column, (0 +1 0 -1 0) stable
+%% Picture (4). Stability demonstration, left column, (0 +1 0 -1 0) stable
 
 clc; clear
 addpath('./mex/')
@@ -568,7 +568,7 @@ plot_evolution(Grid, Solution, [-3*pi 3*pi])
 yticks([-2*pi -pi 0 pi 2*pi])
 yticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
 
-%% Picture (4) Stability demonstration, middle column, (0 +1 +1 +1 0) unstable
+%% Picture (4). Stability demonstration, middle column, (0 +1 +1 +1 0) unstable
 
 clc; clear
 addpath('./mex/')
@@ -610,7 +610,7 @@ plot_evolution(Grid, Solution, [-3*pi 3*pi])
 yticks([-2*pi -pi 0 pi 2*pi])
 yticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
 
-%% Picture (4) Stability demonstration, middle column, (0 0 +2 0 0) unstable
+%% Picture (4). Stability demonstration, middle column, (0 0 +2 0 0) unstable
 
 clc; clear
 addpath('./mex/')
@@ -651,3 +651,145 @@ figure('Position', [100, 100, 350, 250])
 plot_evolution(Grid, Solution, [-2*pi 2*pi])
 yticks([-pi 0 pi])
 yticklabels({'-\pi','0','\pi'})
+
+%% Picture (6). Dipole soliton stability, stable FS
+
+clc; clear
+addpath('./mex/')
+
+params = [1.5 0];
+xspan = [-5 * pi,  0];
+
+f = @(c) get_ux_end_cosine(params, xspan, c);
+
+eps = 1e-9;
+c_left = 2;
+c_right = 5;
+c_root = dichotomy(f, c_left, c_right, eps);
+
+u0 = c_root * exp(sqrt(params(1)) * xspan(1));
+du0 = c_root * exp(sqrt(params(1)) * xspan(1));
+[X, U] = f_solve_cosine(params, [xspan(1) xspan(2)], [u0 du0], 8192);
+
+figure('Position', [100, 100, 350, 200])
+X = [X; -X((end-1):-1:1)];
+U = [U(:, 1); U((end-1):-1:1, 1)];
+plot(X, U, 'Color', 'black')
+
+axis([-3*pi 3*pi -0.5 2.5])
+xticks([-2*pi -pi 0 pi 2*pi])
+xticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
+grid on
+
+eigenvalues = get_spectrum(params, X, U, 512);
+figure('Position', [100, 100, 350, 250])
+plot_spectrum(params, eigenvalues);
+axis([-1.5 1.5 -5 5])
+yticks([-4 -2 0 2 4])
+
+[Grid, Solution, Norm] = CFDS(params, X, U, 400, 0.05);
+
+figure('Position', [100, 100, 350, 250])
+plot_evolution(Grid, Solution, [-2*pi 2*pi])
+yticks([-pi 0 pi])
+yticklabels({'-\pi','0','\pi'})
+
+%% Picture (6). Dipole soliton stability, stable DS
+
+clc; clear
+addpath('./mex/')
+
+params = [1.5 0];
+xspan = [-5 * pi,  0];
+
+f = @(c) get_u_end_cosine(params, xspan, c);
+
+eps = 1e-9;
+c_left = 4;
+c_right = 8;
+c_root = dichotomy(f, c_left, c_right, eps);
+
+u0 = c_root * exp(sqrt(params(1)) * xspan(1));
+du0 = c_root * exp(sqrt(params(1)) * xspan(1));
+[X, U] = f_solve_cosine(params, [xspan(1) xspan(2)], [u0 du0], 8192);
+
+figure('Position', [100, 100, 350, 200])
+X = [X; -X((end-1):-1:1)];
+U = [U(:, 1); -U((end-1):-1:1, 1)];
+plot(X, U, 'Color', 'black')
+
+axis([-3*pi 3*pi -5.5 5.5])
+xticks([-2*pi -pi 0 pi 2*pi])
+yticks([-4 -2 0 2 4])
+xticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
+grid on
+
+eigenvalues = get_spectrum(params, X, U, 512);
+figure('Position', [100, 100, 350, 250])
+plot_spectrum(params, eigenvalues);
+axis([-1.5 1.5 -5 5])
+yticks([-4 -2 0 2 4])
+
+[Grid, Solution, Norm] = CFDS(params, X, U, 400, 0.05);
+
+figure('Position', [100, 100, 350, 250])
+plot_evolution(Grid, Solution, [-2*pi 2*pi])
+yticks([-pi 0 pi])
+yticklabels({'-\pi','0','\pi'})
+
+%% Picture (6). Dipole soliton stability, unstable DS
+
+clc; clear
+addpath('./mex/')
+
+params = [0.4 0];
+xspan = [-5 * pi,  0];
+
+f = @(c) get_u_end_cosine(params, xspan, c);
+
+eps = 1e-9;
+c_left = 2;
+c_right = 4;
+c_root = dichotomy(f, c_left, c_right, eps);
+
+u0 = c_root * exp(sqrt(params(1)) * xspan(1));
+du0 = c_root * exp(sqrt(params(1)) * xspan(1));
+[X, U] = f_solve_cosine(params, [xspan(1) xspan(2)], [u0 du0], 8192);
+
+X = [X; -X((end-1):-1:1)];
+U = [U(:, 1); -U((end-1):-1:1, 1)];
+figure('Position', [100, 100, 350, 200])
+plot(X, U, 'Color', 'black')
+
+axis([-3*pi 3*pi -5.5 5.5])
+xticks([-2*pi -pi 0 pi 2*pi])
+yticks([-4 -2 0 2 4])
+xticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
+grid on
+
+eigenvalues = get_spectrum(params, X, U, 512);
+figure('Position', [100, 100, 350, 250])
+plot_spectrum(params, eigenvalues);
+axis([-1.5 1.5 -5 5])
+yticks([-4 -2 0 2 4])
+
+[Grid, Solution, Norm] = CFDS(params, X, U, 400, 0.05);
+
+figure('Position', [100, 100, 350, 250])
+plot_evolution(Grid, Solution, [-2*pi 2*pi])
+yticks([-pi 0 pi])
+yticklabels({'-\pi','0','\pi'})
+
+%% Usefull
+
+c = 0:0.1:50;
+left = zeros(length(c), 2);
+
+for i = 1:length(c)
+	u0 = c(i) * exp(sqrt(params(1)) * xspan(1));
+	du0 = c(i) * exp(sqrt(params(1)) * xspan(1));
+	[~, U] = f_solve_cosine(params, xspan, [u0 du0], 8192);
+	left(i, :) = U(end, :);
+end
+
+plot(c, left(:, 1))
