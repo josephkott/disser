@@ -652,6 +652,331 @@ plot_evolution(Grid, Solution, [-2*pi 2*pi])
 yticks([-pi 0 pi])
 yticklabels({'-\pi','0','\pi'})
 
+%% Picture (5). Branches with stability
+
+clc; clear
+addpath('./mex/')
+
+params = [6 0];
+xspan = [-5 * pi 0];
+
+%% Picutre (5). Get FS
+
+f = @(c) get_ux_end_cosine(params, xspan, c);
+
+eps = 1e-9;
+c_left = 5;
+c_right = 10;
+FS_c_root = dichotomy(f, c_left, c_right, eps);
+
+u0 = FS_c_root * exp(sqrt(params(1)) * xspan(1));
+du0 = FS_c_root * exp(sqrt(params(1)) * xspan(1));
+[Xh_FS, Uh_FS] = f_solve_cosine(params, [xspan(1) xspan(2)], [u0 du0], 16384);
+
+X_FS = [Xh_FS; -Xh_FS((end-1):-1:1)];
+U_FS = [Uh_FS(:, 1); Uh_FS((end-1):-1:1, 1)];
+figure; plot(X_FS, U_FS)
+
+%% Picture (5). Continuation of FS
+
+FS_omegas  = [6:-0.01:0.1, 0.099:-0.001:0.05];
+FS_norms   = zeros(1, length(FS_omegas));
+FS_c_roots = zeros(1, length(FS_omegas));
+FS_stability = zeros(1, length(FS_omegas));
+
+FS_c_roots(1) = FS_c_root;
+FS_norms(1) = trapz(X_FS, U_FS .^ 2);
+FS_stability(1) = is_stable([FS_omegas(1) 0], X_FS, U_FS, 128);
+
+for i = 2:length(FS_omegas)
+    f = @(c) get_ux_end_cosine([FS_omegas(i), 0], xspan, c);
+    FS_c_roots(i) = newton(f, FS_c_roots(i - 1));
+    
+    u0 = FS_c_roots(i) * exp(sqrt(FS_omegas(i)) * xspan(1));
+    du0 = FS_c_roots(i) * exp(sqrt(FS_omegas(i)) * xspan(1));
+    [Xh_FS, Uh_FS] = f_solve_cosine([FS_omegas(i), 0], xspan, [u0 du0], 8192);
+    
+    X_FS = [Xh_FS; -Xh_FS((end-1):-1:1)];
+    U_FS = [Uh_FS(:, 1); Uh_FS((end-1):-1:1, 1)];
+    FS_norms(i) = trapz(X_FS, U_FS .^ 2);
+    FS_stability(i) = is_stable([FS_omegas(i) 0], X_FS, U_FS, 128);
+    
+    fprintf('iter: %g/%g, omega: %g, c_root: %g, norm: %g, is_stable: %1.g\n', ...
+            i, length(FS_omegas), FS_omegas(i), FS_c_roots(i), FS_norms(i), FS_stability(i))
+end
+
+%% Picture (5). Get DS
+
+f = @(c) get_u_end_cosine(params, xspan, c);
+
+eps = 1e-9;
+c_left = 25;
+c_right = 30;
+DS_c_root = dichotomy(f, c_left, c_right, eps);
+
+u0 = DS_c_root * exp(sqrt(params(1)) * xspan(1));
+du0 = DS_c_root * exp(sqrt(params(1)) * xspan(1));
+[Xh_DS, Uh_DS] = f_solve_cosine(params, [xspan(1) xspan(2)], [u0 du0], 16384);
+
+X_DS = [Xh_DS; -Xh_DS((end-1):-1:1)];
+U_DS = [Uh_DS(:, 1); -Uh_DS((end-1):-1:1, 1)];
+figure; plot(X_DS, U_DS)
+
+%% Picture (5). Continuation of DS
+
+DS_omegas  = [6:-0.01:0.27, 0.2699:-0.0001:0.26];
+DS_norms   = zeros(1, length(DS_omegas));
+DS_c_roots = zeros(1, length(DS_omegas));
+DS_stability = zeros(1, length(DS_omegas));
+FS_stability(1) = is_stable([DS_omegas(1) 0], X_DS, U_DS, 256);
+
+DS_c_roots(1) = DS_c_root;
+DS_norms(1) = trapz(X_DS, U_DS .^ 2);
+
+for i = 2:length(DS_omegas)
+    f = @(c) get_u_end_cosine([DS_omegas(i), 0], xspan, c);
+    DS_c_roots(i) = newton(f, DS_c_roots(i - 1));
+    
+    u0 = DS_c_roots(i) * exp(sqrt(DS_omegas(i)) * xspan(1));
+    du0 = DS_c_roots(i) * exp(sqrt(DS_omegas(i)) * xspan(1));
+    [Xh_DS, Uh_DS] = f_solve_cosine([DS_omegas(i), 0], xspan, [u0 du0], 8192);
+    
+    X_DS = [Xh_DS; -Xh_DS((end-1):-1:1)];
+    U_DS = [Uh_DS(:, 1); -Uh_DS((end-1):-1:1, 1)];
+    DS_norms(i) = trapz(X_DS, U_DS .^ 2);
+    DS_stability(i) = is_stable([DS_omegas(i) 0], X_DS, U_DS, 256);
+    
+    fprintf('iter: %g/%g, omega: %g, c_root: %g, norm: %g, is_stable: %1.g\n', ...
+            i, length(DS_omegas), DS_omegas(i), DS_c_roots(i), DS_norms(i), DS_stability(i))
+end
+
+%% Picture (5). Get (... 0 +1 -1i -1 0 ...), DSb (bifurcate with DS)
+
+f = @(c) get_u_end_cosine(params, xspan, c);
+
+eps = 1e-9;
+c_left = 18391;
+c_right = 18616;
+DSb_c_root = dichotomy(f, c_left, c_right, eps);
+
+u0 = DSb_c_root * exp(sqrt(params(1)) * xspan(1));
+du0 = DSb_c_root * exp(sqrt(params(1)) * xspan(1));
+[Xh_DSb, Uh_DSb] = f_solve_cosine(params, [xspan(1) xspan(2)], [u0 du0], 16384);
+
+X_DSb = [Xh_DSb; -Xh_DSb((end-1):-1:1)];
+U_DSb = [Uh_DSb(:, 1); -Uh_DSb((end-1):-1:1, 1)];
+figure
+plot(X_DSb, U_DSb)
+
+%% Picture (5). Continuation of DSb
+
+DSb_omegas  = [6:-0.005:0.27, 0.2699:-0.0001:0.26];
+DSb_norms   = zeros(1, length(DSb_omegas));
+DSb_c_roots = zeros(1, length(DSb_omegas));
+DSb_stability = zeros(1, length(DSb_omegas));
+
+DSb_c_roots(1) = DSb_c_root;
+DSb_norms(1) = trapz(X_DSb, U_DSb .^ 2);
+DSb_stability(1) = is_stable([DSb_omegas(1) 0], X_DSb, U_DSb, 256);
+
+for i = 2:length(DSb_omegas)
+    f = @(c) get_u_end_cosine([DSb_omegas(i), 0], xspan, c);
+    DSb_c_roots(i) = newton(f, DSb_c_roots(i - 1));
+    
+    u0 = DSb_c_roots(i) * exp(sqrt(DSb_omegas(i)) * xspan(1));
+    du0 = DSb_c_roots(i) * exp(sqrt(DSb_omegas(i)) * xspan(1));
+    [Xh_DSb, Uh_DSb] = f_solve_cosine([DSb_omegas(i), 0], xspan, [u0 du0], 8192);
+    
+    X_DSb = [Xh_DSb; -Xh_DSb((end-1):-1:1)];
+    U_DSb = [Uh_DSb(:, 1); -Uh_DSb((end-1):-1:1, 1)];
+    DSb_norms(i) = trapz(X_DSb, U_DSb .^ 2);
+    DSb_stability(i) = is_stable([DSb_omegas(i) 0], X_DSb, U_DSb, 256);
+    
+    fprintf('iter: %g/%g, omega: %g, c_root: %g, norm: %g, is_stable: %1.g\n', ...
+            i, length(DSb_omegas), DSb_omegas(i), DSb_c_roots(i), DSb_norms(i), DSb_stability(i))
+end
+
+%% Picture (5). Get (0 +1 -1 +1 0), complex of FS
+
+f = @(c) get_ux_end_cosine(params, xspan, c);
+
+eps = 1e-9;
+c_left = 18829;
+c_right = 19044;
+FSc_c_root = dichotomy(f, c_left, c_right, eps);
+
+u0 = FSc_c_root * exp(sqrt(params(1)) * xspan(1));
+du0 = FSc_c_root * exp(sqrt(params(1)) * xspan(1));
+[Xh_FSc, Uh_FSc] = f_solve_cosine(params, [xspan(1) xspan(2)], [u0 du0], 16384);
+
+X_FSc = [Xh_FSc; -Xh_FSc((end-1):-1:1)];
+U_FSc = [Uh_FSc(:, 1); Uh_FSc((end-1):-1:1, 1)];
+figure; plot(X_FSc, U_FSc)
+
+%% Picture (5). Continuation of FSc
+
+FSc_omegas  = [6:-0.005:0.1, 0.099:-0.001:0.05];
+FSc_norms   = zeros(1, length(FSc_omegas));
+FSc_c_roots = zeros(1, length(FSc_omegas));
+FSc_stability = zeros(1, length(FSc_omegas));
+
+FSc_c_roots(1) = FSc_c_root;
+FSc_norms(1) = trapz(X_FSc, U_FSc .^ 2);
+FSc_stability(1) = is_stable([FSc_omegas(1) 0], X_FSc, U_FSc, 256);
+
+for i = 2:length(FSc_omegas)
+    f = @(c) get_ux_end_cosine([FSc_omegas(i), 0], xspan, c);
+    FSc_c_roots(i) = newton(f, FSc_c_roots(i - 1));
+    
+    u0 = FSc_c_roots(i) * exp(sqrt(FSc_omegas(i)) * xspan(1));
+    du0 = FSc_c_roots(i) * exp(sqrt(FSc_omegas(i)) * xspan(1));
+    [Xh_FSc, Uh_FSc] = f_solve_cosine([FSc_omegas(i), 0], xspan, [u0 du0], 8192);
+    
+    X_FSc = [Xh_FSc; -Xh_FSc((end-1):-1:1)];
+    U_FSc = [Uh_FSc(:, 1); Uh_FSc((end-1):-1:1, 1)];
+    FSc_norms(i) = trapz(X_FSc, U_FSc .^ 2);
+    FSc_stability(i) = is_stable([FSc_omegas(i) 0], X_FSc, U_FSc, 256);
+    
+    fprintf('iter: %g/%g, omega: %g, c_root: %g, norm: %g, is_stable: %1.g\n', ...
+            i, length(FSc_omegas), FSc_omegas(i), FSc_c_roots(i), FSc_norms(i), FSc_stability(i))
+end
+
+%% Picture (5). Get (0 +1 0 -1 0), 2nd complex of FS
+
+f = @(c) get_u_end_cosine(params, xspan, c);
+
+eps = 1e-9;
+c_left = 18740;
+c_right = 18877;
+FSc2_c_root = dichotomy(f, c_left, c_right, eps);
+
+u0 = FSc2_c_root * exp(sqrt(params(1)) * xspan(1));
+du0 = FSc2_c_root * exp(sqrt(params(1)) * xspan(1));
+[Xh_FSc2, Uh_FSc2] = f_solve_cosine(params, [xspan(1) xspan(2)], [u0 du0], 16384);
+
+X_FSc2 = [Xh_FSc2; -Xh_FSc2((end-1):-1:1)];
+U_FSc2 = [Uh_FSc2(:, 1); -Uh_FSc2((end-1):-1:1, 1)];
+figure; plot(X_FSc2, U_FSc2)
+
+%% Picture (5). Coninuation of FSc2
+
+FSc2_omegas  = 6:-0.001:0.05;
+FSc2_norms   = zeros(1, length(FSc2_omegas));
+FSc2_c_roots = zeros(1, length(FSc2_omegas));
+FSc2_stability = zeros(1, length(FSc2_omegas));
+
+FSc2_c_roots(1) = FSc2_c_root;
+FSc2_norms(1) = trapz(X_FSc2, U_FSc2 .^ 2);
+FSc2_stability(1) = is_stable([FSc2_omegas(1) 0], X_FSc2, U_FSc2, 256);
+
+for i = 2:length(FSc2_omegas)
+    f = @(c) get_u_end_cosine([FSc2_omegas(i), 0], xspan, c);
+    FSc2_c_roots(i) = newton(f, FSc2_c_roots(i - 1));
+    
+    u0 = FSc2_c_roots(i) * exp(sqrt(FSc2_omegas(i)) * xspan(1));
+    du0 = FSc2_c_roots(i) * exp(sqrt(FSc2_omegas(i)) * xspan(1));
+    [Xh_FSc2, Uh_FSc2] = f_solve_cosine([FSc2_omegas(i), 0], xspan, [u0 du0], 8192);
+    
+    X_FSc2 = [Xh_FSc2; -Xh_FSc2((end-1):-1:1)];
+    U_FSc2 = [Uh_FSc2(:, 1); Uh_FSc2((end-1):-1:1, 1)];
+    FSc2_norms(i) = trapz(X_FSc2, U_FSc2 .^ 2);
+    FSc2_stability(i) = is_stable([FSc2_omegas(i) 0], X_FSc2, U_FSc2, 256);
+    
+    fprintf('iter: %g/%g, omega: %g, c_root: %g, norm: %g, is_stable: %1.g\n', ...
+            i, length(FSc2_omegas), FSc2_omegas(i), FSc2_c_roots(i), FSc2_norms(i), FSc2_stability(i))
+end
+
+%% Picture (5). Wrap everything up
+
+figure('Position', [100, 100, 350, 300])
+hold on
+
+plot_with_stability(FS_omegas, FS_norms, FS_stability)
+plot_with_stability(DS_omegas(1:619), DS_norms(1:619), DS_stability(1:619))
+plot_with_stability(DSb_omegas(1:1192), DSb_norms(1:1192), DSb_stability(1:1192))
+plot_with_stability(FSc_omegas, FSc_norms, FSc_stability)
+plot_with_stability(FSc2_omegas, FSc2_norms, FSc2_stability)
+
+index = find(FS_omegas == 4);
+
+u0 = FS_c_roots(index) * exp(sqrt(FS_omegas(index)) * xspan(1));
+du0 = FS_c_roots(index) * exp(sqrt(FS_omegas(index)) * xspan(1));
+[Xh_FS, Uh_FS] = f_solve_cosine([FS_omegas(index), 0], xspan, [u0 du0], 8192);
+    
+X_FS = [Xh_FS; -Xh_FS((end-1):-1:1)];
+U_FS = [Uh_FS(:, 1); Uh_FS((end-1):-1:1, 1)];
+
+figure('Position', [100, 100, 350, 250])
+plot(X_FS, U_FS, 'Color', 'black')
+
+axis([-3*pi 3*pi -0.5 3.5])
+xticks([-2*pi -pi 0 pi 2*pi])
+xticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
+
+index = find(FSc2_omegas == 4);
+
+u0 = FSc2_c_roots(index) * exp(sqrt(FSc2_omegas(index)) * xspan(1));
+du0 = FSc2_c_roots(index) * exp(sqrt(FSc2_omegas(index)) * xspan(1));
+[Xh_FSc2, Uh_FSc2] = f_solve_cosine([FSc2_omegas(index), 0], xspan, [u0 du0], 8192);
+    
+X_FSc2 = [Xh_FSc2; -Xh_FSc2((end-1):-1:1)];
+U_FSc2 = [Uh_FSc2(:, 1); -Uh_FSc2((end-1):-1:1, 1)];
+
+figure('Position', [100, 100, 350, 250])
+plot(X_FSc2, U_FSc2, 'Color', 'black')
+
+axis([-3*pi 3*pi -3.5 3.5])
+xticks([-2*pi -pi 0 pi 2*pi])
+xticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
+
+index = find(FSc_omegas == 4);
+
+u0 = FSc_c_roots(index) * exp(sqrt(FSc_omegas(index)) * xspan(1));
+du0 = FSc_c_roots(index) * exp(sqrt(FSc_omegas(index)) * xspan(1));
+[Xh_FSc, Uh_FSc] = f_solve_cosine([FSc_omegas(index), 0], xspan, [u0 du0], 8192);
+    
+X_FSc = [Xh_FSc; -Xh_FSc((end-1):-1:1)];
+U_FSc = [Uh_FSc(:, 1); Uh_FSc((end-1):-1:1, 1)];
+
+figure('Position', [100, 100, 350, 250])
+plot(X_FSc, U_FSc, 'Color', 'black')
+
+axis([-3*pi 3*pi -3.5 3.5])
+xticks([-2*pi -pi 0 pi 2*pi])
+xticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
+
+index = find(DS_omegas == 4);
+
+u0 = DS_c_roots(index) * exp(sqrt(DS_omegas(index)) * xspan(1));
+du0 = DS_c_roots(index) * exp(sqrt(DS_omegas(index)) * xspan(1));
+[Xh_DS, Uh_DS] = f_solve_cosine([DS_omegas(index), 0], xspan, [u0 du0], 8192);
+    
+X_DS = [Xh_DS; -Xh_DS((end-1):-1:1)];
+U_DS = [Uh_DS(:, 1); -Uh_DS((end-1):-1:1, 1)];
+
+figure('Position', [100, 100, 350, 250])
+plot(X_DS, U_DS, 'Color', 'black')
+
+axis([-3*pi 3*pi -6 6])
+xticks([-2*pi -pi 0 pi 2*pi])
+xticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
+
+index = find(DSb_omegas == 4);
+
+u0 = DSb_c_roots(index) * exp(sqrt(DSb_omegas(index)) * xspan(1));
+du0 = DSb_c_roots(index) * exp(sqrt(DSb_omegas(index)) * xspan(1));
+[Xh_DSb, Uh_DSb] = f_solve_cosine([DSb_omegas(index), 0], xspan, [u0 du0], 8192);
+    
+X_DSb = [Xh_DSb; -Xh_DSb((end-1):-1:1)];
+U_DSb = [Uh_DSb(:, 1); -Uh_DSb((end-1):-1:1, 1)];
+
+figure('Position', [100, 100, 350, 250])
+plot(X_DSb, U_DSb, 'Color', 'black')
+
+axis([-3*pi 3*pi -6 6])
+xticks([-2*pi -pi 0 pi 2*pi])
+xticklabels({'-2\pi','-\pi','0','\pi', '2\pi'})
+
 %% Picture (6). Dipole soliton stability, stable FS
 
 clc; clear
