@@ -132,10 +132,10 @@
 \begin{theorem}[On h-strips mapping]
 \label{thm:h-strips-mapping}
 	Let Poincar\'e map $\mathcal{P}$ and its inverse $\mathcal{P}^{-1}$ are defined on a complete (see Definition~\ref{def:complete-island-set}) island set $\bigcup_{i \in S} D_i$, where $S$ is a finite or countable set of indices.
-	Let for all $i, j \in S$ set $V_{ji} = \mathcal{P}^{-1} (D_j) \cap D_i$ is non-empty, $\mathcal{P}$ is defined on a
-	 closure $\overline{V_{ji}}$, and one of the following two conditions is met:
+	Let for all $i, j \in S$ set $V_{ij} = \mathcal{P}^{-1} (D_j) \cap D_i$ is non-empty, $\mathcal{P}$ is defined on a
+	 closure $\overline{V_{ij}}$, and one of the following two conditions is met:
 	\begin{enumerate}
-		\item[(1)] borders $\alpha_i^{\pm}$ of an island $D_i$ are increasing curves, $\forall \vb{p} \in \overline{V_{ji}}$ signs of values $\{ a_{mn} \}$ in the matrix of the linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$ have exactly one of the following configurations\footnote{By ``$+$'' and ``$-$'' sign we mean \underline{strict} inequalities $a_{mn} > 0$, $a_{mn} < 0$ to be held.}:
+		\item[(1)] borders $\alpha_i^{\pm}$ of an island $D_i$ are increasing curves, $\forall \vb{p} \in \overline{V_{ij}}$ signs of values $\{ a_{mn} \}$ in the matrix of the linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$ have exactly one of the following configurations\footnote{By ``$+$'' and ``$-$'' sign we mean \underline{strict} inequalities $a_{mn} > 0$, $a_{mn} < 0$ to be held.}:
 			\begin{center}
 				(a) $\begin{psm} + & + \\ + & + \end{psm}$, \quad
 				(b) $\begin{psm} - & - \\ - & - \end{psm}$, \quad
@@ -143,7 +143,7 @@
 				(d) $\begin{psm} - & - \\ + & + \end{psm}$;
 			\end{center}
 			and at the same time borders $\alpha_j^{\pm}$ of $D_j$ are increasing curves for cases (a), (b), and decreasing curves for (c), (d);
-		\item[(2)] borders $\alpha_i^{\pm}$ of an island $D_i$ are decreasing curves, $\forall \vb{p} \in \overline{V_{ji}}$ signs of values $\{ a_{mn} \}$ in the matrix of the linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$ have exactly one of the following configurations:
+		\item[(2)] borders $\alpha_i^{\pm}$ of an island $D_i$ are decreasing curves, $\forall \vb{p} \in \overline{V_{ij}}$ signs of values $\{ a_{mn} \}$ in the matrix of the linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$ have exactly one of the following configurations:
 			\begin{center}
 				(a) $\begin{psm} + & - \\ - & + \end{psm}$, \quad
 				(b) $\begin{psm} - & + \\ + & - \end{psm}$,	\quad
@@ -152,7 +152,7 @@
 			\end{center}
 			and at the same time borders $\alpha_j^{\pm}$ of $D_j$ are decreasing curves for cases (a), (b), and increasing for (c), (d);
 	\end{enumerate}
-	and moreover $\exists \mu > 1$ such that $\forall p \in \overline{V_{ji}}$, $|a_{11}| \ge \mu$, then for any \emph{h}-strip $H \in D_i$, $\mathcal{P} (H) \cap D_j = \widetilde{H}_j$ is also an \emph{h}-strip, and $d_{\mathrm{h}}(\widetilde{H}_j) \le (1 / \mu) d_{\mathrm{h}}(H)$ (here $d_{\mathrm{h}}(\cdot)$ is an \emph{h}-strip thickness in a sence of Definition~\ref{def:h-thickness}).
+	and moreover $\exists \mu > 1$ such that $\forall p \in \overline{V_{ij}}$, $|a_{11}| \ge \mu$, then for any \emph{h}-strip $H \in D_i$, $\mathcal{P} (H) \cap D_j = \widetilde{H}_j$ is also an \emph{h}-strip, and $d_{\mathrm{h}}(\widetilde{H}_j) \le (1 / \mu) d_{\mathrm{h}}(H)$ (here $d_{\mathrm{h}}(\cdot)$ is an \emph{h}-strip thickness in a sence of Definition~\ref{def:h-thickness}).
 \end{theorem}
 \begin{proof}
 	Let's fix indices $i, j$ and prove the theorem for a pair of islands $D_i$, $D_j$.
@@ -174,7 +174,7 @@
 		\mathbb{R}_{--}^2 = \{ \mathbf{v} \, | \, \mathbf{v} = x \mathbf{e}_1 + y \mathbf{e}_2, \; x < 0, y < 0 \}; \\
 		\overline{\mathbb{R}}_{--}^2 = \{ \mathbf{v} \, | \, \mathbf{v} = x \mathbf{e}_1 + y \mathbf{e}_2, \; x \le 0, y \le 0 \}. \\
 	\end{align*}
-	As a \underline{first} step in the proof, we show that values signs in the matrix of linear operator $D \mathcal{P}_{\vb{p}} = ( a_{mn} )$ uniquely determine the structure of cones mapping in each point $\vb{p}$ of the set $\overline{V_{ji}}$.
+	As a \underline{first} step in the proof, we show that values signs in the matrix of linear operator $D \mathcal{P}_{\vb{p}} = ( a_{mn} )$ uniquely determine the structure of cones mapping in each point $\vb{p}$ of the set $\overline{V_{ij}}$.
 	For the case (a) we have:
 	\begin{equation*}
 	\forall \mathbf{v} = \begin{pmatrix} x \\ y \end{pmatrix} \in \overline{\mathbb{R}}_{++}^2, \ D \mathcal{P}_{\vb{p}}(\mathbf{v}) = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} \widetilde{x} > 0 \\ \widetilde{y} > 0\end{pmatrix} \in \mathbb{R}_{++}^2.	
@@ -194,13 +194,13 @@
 		(\textup{d}) & D \mathcal{P}_{\vb{p}} (\overline{\mathbb{R}}_{-+}^2) \in \mathbb{R}_{++}^2, \quad D \mathcal{P}_{\vb{p}} (\overline{\mathbb{R}}_{+-}^2) \in \mathbb{R}_{--}^2.
 	\end{eqnarray*}
 	
-	As a \underline{second} step we show that such cones mapping preserve in some way Lipschitz constraints and monotonicity properties for curves from $\overline{V_{ji}}$ under the $\mathcal{P}$ mapping.
+	As a \underline{second} step we show that such cones mapping preserve in some way Lipschitz constraints and monotonicity properties for curves from $\overline{V_{ij}}$ under the $\mathcal{P}$ mapping.
 	Show that for the case (1a).
-	For that first of all we note that from compactness of $\overline{V_{ji}}$ the existence of the following supremum follows:
+	For that first of all we note that from compactness of $\overline{V_{ij}}$ the existence of the following supremum follows:
 	\begin{equation*}
-		\widetilde{\gamma}_{ji} = \sup \dfrac{y}{x}, \ \begin{pmatrix} x \\ y \end{pmatrix} = D \mathcal{P}_{\vb{p}} (\mathbf{v}), \ \vb{p} \in \overline{V_{ji}}, \ \mathbf{v} \in \overline{\mathbb{R}}_{++}^2.
+		\widetilde{\gamma}_{ij} = \sup \dfrac{y}{x}, \ \begin{pmatrix} x \\ y \end{pmatrix} = D \mathcal{P}_{\vb{p}} (\mathbf{v}), \ \vb{p} \in \overline{V_{ij}}, \ \mathbf{v} \in \overline{\mathbb{R}}_{++}^2.
 	\end{equation*}
-	Further, let there be two tow different points $\vb{p}_1 \, \vb{p}_2 \in \overline{V_{ji}}$, $\vb{p}_1 = (\psi_1, \psi_1')$, $\vb{p}_2 = (\psi_2, \psi_2')$, and besides $\psi_2 \ge \psi_1$, $\psi_2' \ge \psi_2$.
+	Further, let there be two tow different points $\vb{p}_1 \, \vb{p}_2 \in \overline{V_{ij}}$, $\vb{p}_1 = (\psi_1, \psi_1')$, $\vb{p}_2 = (\psi_2, \psi_2')$, and besides $\psi_2 \ge \psi_1$, $\psi_2' \ge \psi_2$.
 	Let points $\vb{q}_1$, $\vb{q}_2$ be the $\mathcal{P}$-images of the points $\vb{p}_1$, $\vb{p}_2$ correspondingly, $\mathcal{P}(\vb{p}_1) = \vb{q}_1 = (\phi_1, \phi_1')$, $\mathcal{P}(\vb{p}_2) = \vb{q}_2 = (\phi_2, \phi_2')$.
 	Let $D \mathcal{P}_{\vb{p}_1}$ is a linearization of $\mathcal{P}$ at the point $\vb{p}_1$.
 	Then the following expansion is valid:
@@ -213,35 +213,35 @@
 		\vb{q}_2 - \vb{q}_1 = \mathbf{q}_{\Delta} + r(||\vb{p}_2 - \vb{p}_1||).
 	\end{equation}
 	Expression above means that for ``close enough'' points $\vb{p}_1$, $\vb{p}_2$ their images satisfy the relationship $\vb{q}_2 - \vb{q}_1 \in \mathbb{R}_{++}^2$, i.e. $\phi_2 > \phi_1$, $\phi_2' > \phi_1'$.
-	Moreover one can choose a value $\gamma_{ji} > \widetilde{\gamma_{ji}}$ such that the following inequality is held:
+	Moreover one can choose a value $\gamma_{ij} > \widetilde{\gamma_{ij}}$ such that the following inequality is held:
 	\begin{equation}
-		0 < \phi_2' - \phi_1' < \gamma_{ji} (\phi_2 - \phi_1).
+		0 < \phi_2' - \phi_1' < \gamma_{ij} (\phi_2 - \phi_1).
 	\label{eq:ordering}
 	\end{equation}
 	This ordering is transitive, i.e. from the relation \eqref{eq:ordering} and the second analogous relation for ``close enough'' point $\vb{p}_2$, $\vb{p}_3$,
 	\begin{equation}
-		0 < \phi_3' - \phi_2' < \gamma_{ji} (\phi_3 - \phi_2),
+		0 < \phi_3' - \phi_2' < \gamma_{ij} (\phi_3 - \phi_2),
 	\end{equation}
 	follow the analogous relation for the points $\vb{p}_1$, $\vb{p}_3$ as well.
-	That allows to spread the relation \eqref{eq:ordering} over all points $\vb{p}_1, \, \vb{p}_2 \in \overline{V_{ji}}$ that satisfies the conditions $\psi_2 \ge \psi_1$, $\psi_2' \ge \psi_1'$.
+	That allows to spread the relation \eqref{eq:ordering} over all points $\vb{p}_1, \, \vb{p}_2 \in \overline{V_{ij}}$ that satisfies the conditions $\psi_2 \ge \psi_1$, $\psi_2' \ge \psi_1'$.
 	Other cases (1b)-(1d), (2a)-(2d) can be considered in a similar way.
 	
-	Thus for the case (1) for all points $\vb{p}_1, \, \vb{p}_2 \in \overline{V_{ji}}$, which coordinates satisfy the relations $\psi_2 \ge \psi_1$, $\psi_2' \ge \psi_1'$, coordinates of their $\mathcal{P}$-images $\vb{q}_1 = (\phi_1, \phi_1'), \, \vb{q}_2~=~(\phi_2, \phi_2')$ depending on sings of values in matrix of $D \mathcal{P}_{\vb{p}}$, $\vb{p} \in \overline{V_{ji}}$, met exactly one of the following inequalities ($\exists \gamma_{ji}$):
+	Thus for the case (1) for all points $\vb{p}_1, \, \vb{p}_2 \in \overline{V_{ij}}$, which coordinates satisfy the relations $\psi_2 \ge \psi_1$, $\psi_2' \ge \psi_1'$, coordinates of their $\mathcal{P}$-images $\vb{q}_1 = (\phi_1, \phi_1'), \, \vb{q}_2~=~(\phi_2, \phi_2')$ depending on sings of values in matrix of $D \mathcal{P}_{\vb{p}}$, $\vb{p} \in \overline{V_{ij}}$, met exactly one of the following inequalities ($\exists \gamma_{ij}$):
 	\begin{subequations}
 	\begin{eqnarray}
-		(\textup{a}) & 0 < \phi_2' - \phi_1' < \gamma_{ji} (\phi_2 - \phi_1); \label{eq:ordering_1a} \\
-		(\textup{b}) & 0 < \phi_1' - \phi_2' < \gamma_{ji} (\phi_1 - \phi_2); \label{eq:ordering_1b} \\
-		(\textup{c}) & 0 < \phi_1' - \phi_2' < \gamma_{ji} (\phi_2 - \phi_1); \label{eq:ordering_1c} \\
-		(\textup{d}) & 0 < \phi_2' - \phi_1' < \gamma_{ji} (\phi_1 - \phi_2). \label{eq:ordering_1d}
+		(\textup{a}) & 0 < \phi_2' - \phi_1' < \gamma_{ij} (\phi_2 - \phi_1); \label{eq:ordering_1a} \\
+		(\textup{b}) & 0 < \phi_1' - \phi_2' < \gamma_{ij} (\phi_1 - \phi_2); \label{eq:ordering_1b} \\
+		(\textup{c}) & 0 < \phi_1' - \phi_2' < \gamma_{ij} (\phi_2 - \phi_1); \label{eq:ordering_1c} \\
+		(\textup{d}) & 0 < \phi_2' - \phi_1' < \gamma_{ij} (\phi_1 - \phi_2). \label{eq:ordering_1d}
 	\end{eqnarray}
 	\end{subequations}
-	For the case (2) in its turn we have that for all points $\vb{p}_1, \, \vb{p}_2 \in \overline{V_{ji}}$, which coordinates satisfy the relations $\psi_2 \le \psi_1$, $\psi_2' \ge \psi_1'$, exactly one of the following inequalities is met:
+	For the case (2) in its turn we have that for all points $\vb{p}_1, \, \vb{p}_2 \in \overline{V_{ij}}$, which coordinates satisfy the relations $\psi_2 \le \psi_1$, $\psi_2' \ge \psi_1'$, exactly one of the following inequalities is met:
 	\begin{subequations}
 	\begin{eqnarray}
-		(\textup{a}) & 0 < \phi_2' - \phi_1' < \gamma_{ji} (\phi_1 - \phi_2); \label{eq:ordering_2a} \\
-		(\textup{b}) & 0 < \phi_1' - \phi_2' < \gamma_{ji} (\phi_2 - \phi_1); \label{eq:ordering_2b} \\
-		(\textup{c}) & 0 < \phi_1' - \phi_2' < \gamma_{ji} (\phi_1 - \phi_2); \label{eq:ordering_2c} \\
-		(\textup{d}) & 0 < \phi_2' - \phi_1' < \gamma_{ji} (\phi_2 - \phi_1). \label{eq:ordering_2d}
+		(\textup{a}) & 0 < \phi_2' - \phi_1' < \gamma_{ij} (\phi_1 - \phi_2); \label{eq:ordering_2a} \\
+		(\textup{b}) & 0 < \phi_1' - \phi_2' < \gamma_{ij} (\phi_2 - \phi_1); \label{eq:ordering_2b} \\
+		(\textup{c}) & 0 < \phi_1' - \phi_2' < \gamma_{ij} (\phi_1 - \phi_2); \label{eq:ordering_2c} \\
+		(\textup{d}) & 0 < \phi_2' - \phi_1' < \gamma_{ij} (\phi_2 - \phi_1). \label{eq:ordering_2d}
 	\end{eqnarray}
 	\end{subequations}
 	
@@ -256,7 +256,7 @@
 	Let $\mathcal{P} (\widetilde{\alpha}_i^+)$ cross one of the boundaries $\beta_j^{\pm}$ of the island $D_j$ twice.
 	Denote those intersection points by $\vb{q}_1 = \mathcal{P}(\vb{p}_1), \, \vb{q}_2 = \mathcal{P}(\vb{p}_2)$.
 	For the case (1a) boundaries $\alpha_j^{\pm}$ are increasing curves, and $\beta_j^{\pm}$ are decreasing, hence the points $\vb{q}_1, \, \vb{q}_2$ belong to a decreasing curve.
-	From the other side points $\vb{p}_1, \, \vb{p}_2 \in \overline{V_{ji}}$ belong to increasing curve $\widetilde{\alpha}_i^+$, and hence for their $\mathcal{P}$-image coordinates $\vb{q}_1 = (\phi_1, \phi_1'), \, \vb{q}_2 = (\phi_2, \phi_2')$ inequality \eqref{eq:ordering_1a} must be held.
+	From the other side points $\vb{p}_1, \, \vb{p}_2 \in \overline{V_{ij}}$ belong to increasing curve $\widetilde{\alpha}_i^+$, and hence for their $\mathcal{P}$-image coordinates $\vb{q}_1 = (\phi_1, \phi_1'), \, \vb{q}_2 = (\phi_2, \phi_2')$ inequality \eqref{eq:ordering_1a} must be held.
 	This inequality means that points $\vb{q}_1, \, \vb{q}_2$ cannot belong to a decreasing curve, and $\mathcal{P} (\widetilde{\alpha}_i^+)$ cross each boundary $\beta_j^{\pm}$ only once.
 	Similar statement is valid also for the $\mathcal{P} (\widetilde{\alpha}_i^-)$.
 	% TODO: Add a remark on Lipschitz conditions here.
@@ -275,8 +275,8 @@
 	Since $\widetilde{H}_j = \mathcal{P} H \cap D_j$ there exists a pre-image $\vb{p}(t) = \mathcal{P}^{-1} (\vb{q}(t)) = (\psi(t), \psi'(t))$, $\vb{p}(t) \subset H$ and $\vb{q}(t) = \mathcal{P} (\vb{p}(t))$.
 	For the case (1a) let's demonstrate that $\vb{p}(t)$ is a decreasing curve connecting point from the opposite boundaries $\widetilde{\alpha}_i^{\pm}$ of the strip $H$ inside $D_i$.
 	Remark, here by ``decreasing'' we mean that the curve is a graph of decreasing function in $(u, u')$ coordinates, not as a function of $t$.
-	The curve $\vb{q}(t)$ belongs to some set which is a $\mathcal{P}$-image of a part of the set $\overline{V_{ji}}$.
-	The signs of values in the matrix of $D \mathcal{P}_{\vb{p}}$, $\vb{p} \in \overline{V_{ji}}$ have the form $\begin{psm} + & + \\ + & + \end{psm}$, so the signs of values for the linearized inverse map $D \mathcal{P}^{-1}_{\vb{q}}$ have a configuration $\begin{psm} + & - \\ - & + \end{psm}$ on the curve $\vb{q}(t)$.
+	The curve $\vb{q}(t)$ belongs to some set which is a $\mathcal{P}$-image of a part of the set $\overline{V_{ij}}$.
+	The signs of values in the matrix of $D \mathcal{P}_{\vb{p}}$, $\vb{p} \in \overline{V_{ij}}$ have the form $\begin{psm} + & + \\ + & + \end{psm}$, so the signs of values for the linearized inverse map $D \mathcal{P}^{-1}_{\vb{q}}$ have a configuration $\begin{psm} + & - \\ - & + \end{psm}$ on the curve $\vb{q}(t)$.
 	This allows to conclude the corresponding cones mapping:
 	\begin{equation}
 		D \mathcal{P}^{-1}_{\vb{q}(t)} (\overline{\mathbb{R}}_{-+}^2) \in \mathbb{R}_{-+}^2, \quad D \mathcal{P}^{-1}_{\vb{q}(t)} (\overline{\mathbb{R}}_{+-}^2) \in \mathbb{R}_{+-}^2.
