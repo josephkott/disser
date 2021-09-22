@@ -1,7 +1,10 @@
 % TODO: Avoid "mapped to infinity", because it means "undefined".
 % TODO: Labels in the beginning, not in the end?
 % TODO: Use $u'$ instead of $u_x$.
+% TODO: Check that "panel" written with lower letter "p".
+% TODO: Describe Hypothesis II validation in details.
 \chapter{Stationary States Classification Within Symbolic Dynamics Framework}
+\label{chapter:II}
 
 \section{Objectives}
 
@@ -301,8 +304,8 @@ For that purpose consider equation \eqref{eq:stationary} with $Q(x) \equiv -1$ a
 \begin{equation}
 	\eta(x) = \left\{
 		\begin{array}{rl}
-			-1, & x \in [0; L_*]; \\
-			+1, & x \in [L_*; L_* + L_0],
+			-1, & x \in [0; L_*); \\
+			+1, & x \in [L_*; L_* + L_0),
 		\end{array}
 	\right.
 \label{eq:eta}
@@ -441,7 +444,7 @@ The following proposition is valid.
 	Result points of intersections $\mathcal{P}_0(\gamma^-) \cap \gamma_2^+$ can be divided into two groups: $\mathcal{P}_0(\gamma_1^-) \cap \gamma_2^+$ and $\mathcal{P}_0(\gamma_2^-) \cap \gamma_2^+$.
 
 	Consider points from the first group.
-	Let a point $\vb{q}$ belongs to the intersection $\mathcal{P}_0(\gamma_1^-) \cap \gamma_2^+$.
+	Let a point $\vb{q}$ belong to the intersection $\mathcal{P}_0(\gamma_1^-) \cap \gamma_2^+$.
 	Then there exists a point $\vb{p} = (u_s, u_s') \in \gamma_1^-$ such that $\mathcal{P}_0(\vb{p}) \in \gamma_2^+$.
 	Due to the symmetries of the phase portraits for equations \eqref{eq:stationary-piecewise-singular} and \eqref{eq:stationary-piecewise-regular}, $\vb{q} = (u_s, -u_s')$, see Figure~\ref{fig:separatrix-map}~(a).
 	Consider a phase trajectory of \eqref{eq:stationary-piecewise-regular} that lies outside of separatrix loop and connects points $\vb{p}$ and $\vb{q}$.
@@ -888,6 +891,7 @@ Its structure may be quite sophisticated having a form of a complex fractal set.
 One can have a nice illustration on how this set may look like for equation \eqref{eq:stationary-piecewise}.
 For that purpose we combine Figure~\ref{fig:h-strips-piecewise} and Figure~\ref{fig:v-strips-piecewise} into a single plot.
 
+% TODO: Red color looks ugly.
 \begin{figure}[h]
 \centering
 	\includegraphics[scale = 1]{pic/h- and v-strips for piecewise equation}

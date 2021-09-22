@@ -12,7 +12,7 @@ q_right = f_imap_cosine(params, p_right, intervals);
 q_down  = f_imap_cosine(params,  p_down, intervals);
 q_up    = f_imap_cosine(params,    p_up, intervals);
 
-J = [(q_right(1) - q_left(1)) / (2 * eps), (q_right(2) - q_left(2)) / (2 * eps);
-     (q_up(1) - q_down(1)) / (2 * eps), (q_up(2) - q_down(2)) / (2 * eps)];
+J = [(q_right(1) - q_left(1)) / (2 * eps), (q_up(1) - q_down(1)) / (2 * eps);
+     (q_right(2) - q_left(2)) / (2 * eps), (q_up(2) - q_down(2)) / (2 * eps)];
 
 end

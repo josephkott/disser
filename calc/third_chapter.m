@@ -160,21 +160,17 @@ plot_scan(u_span, du_span, U2mb, true, 'gray')
 
 %% Picture (2). Island "+1", signs of the $D \mathcal{P}^{-1}$ operator (H)
 
-M = 1024; N = 1024;
+M = 128; N = 128;
 u_span = [1.6 2.8]; du_span = [-3 3];
 
 backward_linearization_plots_cosine(params, u_span, du_span, M, N)
 
-% From the up to down: 7 2 8 2 7
-
 %% Picture (2). Island "+1", signs of the $D \mathcal{P}$ operator (V)
 
-M = 1024; N = 1024;
+M = 128; N = 128;
 u_span = [1.6 2.8]; du_span = [-3 3];
 
 forward_linearization_plots_cosine(params, u_span, du_span, M, N)
-
-% From the up to down: 3 6 4 6 3
 
 %% Picure (2). Island "+1i", "+" set
 
@@ -220,14 +216,14 @@ plot_scan(u_span, du_span, U2mb, true, 'gray')
 
 %% Picture (2). Island "+1i", signs of the $D \mathcal{P}^{-1}$ operator (H)
 
-M = 1024; N = 1024;
+M = 128; N = 128;
 u_span = [-0.4 +0.4]; du_span = [12.5 14.3];
 
 backward_linearization_plots_cosine(params, u_span, du_span, M, N)
 
 %% Picture (2). Island "+1i", signs of the $D \mathcal{P}$ operator (V)
 
-M = 1024; N = 1024;
+M = 128; N = 128;
 u_span = [-0.4 +0.4]; du_span = [12.5 14.3];
 
 forward_linearization_plots_cosine(params, u_span, du_span, M, N)
@@ -276,14 +272,14 @@ plot_scan(u_span, du_span, U2mb, true, 'gray')
 
 %% Picture (2). Island "+2", signs of the $D \mathcal{P}^{-1}$ operator (H)
 
-M = 1024; N = 1024;
+M = 128; N = 128;
 u_span = [7.06 7.16]; du_span = [-1.2 1.2];
 
 backward_linearization_plots_cosine(params, u_span, du_span, M, N)
 
 %% Picture (2). Island "+2", signs of the $D \mathcal{P}$ operator (V)
 
-M = 1024; N = 1024;
+M = 128; N = 128;
 u_span = [7.06 7.16]; du_span = [-1.2 1.2];
 
 forward_linearization_plots_cosine(params, u_span, du_span, M, N)
