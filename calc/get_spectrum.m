@@ -52,5 +52,5 @@ end
 
 % ------------------------------------------------------------------------
 function potential = f_potential(params, x)
-potential = params(2) + cos(2*x);
+potential = params(2) + cos(2 * x);
 end

@@ -97,7 +97,7 @@ for i = 2:Nt
 	Norm(i) = trapz(xgrid, abs(U(i, :)) .^ 2);
     
 	% Logging
-	fprintf('iter = %i, max = %g, norm = %g\n', i, max(abs(U(i, :))), Norm(i));
+	fprintf('iter = %i/%i, max = %g, norm = %g\n', i, Nt, max(abs(U(i, :))), Norm(i));
 	
 end
 

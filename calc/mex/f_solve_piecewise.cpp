@@ -9,7 +9,7 @@ using namespace NR;
 // [xgrid, solution] =  f_solve(params, xspan, y0, intCount)
 
 // INPUT:
-// :params:   [\omega \alpha]
+// :params:   [\omega L1 L2]
 // :xspan:	  spatial interval of solution
 // :y0:		  initial values for Cauchy problem
 // :intCount: number of intervals

@@ -21,9 +21,4 @@ else
 	stable = false;
 end
 
-% For debug purpoces
-% plot_spectrum(params, eigenvalues);
-% pause()
-	
 end
-
