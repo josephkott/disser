@@ -1,3 +1,7 @@
+% TODO: $\Gamma_n^{\Omega}$ is ugly notation. May it's worth to fix it somehow?
+% TODO: "parabolic-pseudopotential" to "periodic-pseudopotential".
+% TODO: Check all references and labels again.
+
 \chapter{Localized Solutions of Nonlinear Harmonic Oscillator with Periodic Pseudopotential}
 
 \section{Objectives}
@@ -6,7 +10,7 @@ In this chapter we study localized solutions of Gross--Pitaevskii equation with 
 The effective one-dimensional GPE for mean-fields wave function $\Psi(t, x)$ is
 \begin{equation}
 	i \Psi_t + \Psi_{xx} - \dfrac{1}{2} a^2 x^2 \Psi + P(x) |\Psi|^2 \Psi = 0,
-\label{eq:nho}
+\label{eq:gpe-parabolic-non-scaled}
 \end{equation}
 where $a^2$ is the strength of the harmonic-oscillator potential, and pseudopotential $P(x)$ is a function of period $L = 2 \pi / \Omega$:
 \begin{equation}
@@ -21,10 +25,10 @@ Let's introduce additional rescaling
 \begin{equation}
 	t \to \dfrac{a}{\sqrt{2}} t, \quad x \to \dfrac{\sqrt{a}}{\sqrt[4]{2}} x, \quad \Psi \to \dfrac{\sqrt[4]{2}}{\sqrt{a}} \Psi.
 \end{equation}
-This allows to fix $a \equiv 1$ and convert \eqref{eq:nho} into a normalized form
+This allows to fix $a \equiv 1$ and convert \eqref{eq:gpe-parabolic-non-scaled} into a normalized form
 \begin{equation}
 	i \Psi_t + \Psi_{xx} - x^2 \Psi + P(x) |\Psi|^2 \Psi = 0,
-\label{eq:nho-scaled}
+\label{eq:gpe-parabolic}
 \end{equation}
 where $P(x)$ is periodic with spatial frequency $\widetilde{\Omega} = \Omega / \sqrt{a}$.
 In what follows below, symbol $\widetilde{\Omega}$ is replaced by $\Omega$.
@@ -32,7 +36,7 @@ To estimate physically relevant values of $\Omega$ we use the results of experim
 There the corresponding scaled spatial frequency being $\Omega \sim 100$.
 It can be made smaller, taking larger $a$.
 
-Equation \eqref{eq:nho-scaled} is our basic model.
+Equation \eqref{eq:gpe-parabolic} is our basic model.
 The objective of our analysis is to study its localized stationary solutions of the form
 \begin{equation}
 	\Psi(t, x) = u(x) e^{-i \omega t},
@@ -40,26 +44,26 @@ The objective of our analysis is to study its localized stationary solutions of 
 where real-valued function $u(x)$ satisfies equation
 \begin{equation}
 	u_{xx} + (\omega - x^2) u + P(x) u^3 = 0
-\label{eq:stationary-nho}
+\label{eq:nho-periodic}
 \end{equation}
 with localization boundary conditions
 \begin{equation}
 	\lim \limits_{x \to \pm \infty} u(x) = 0.
 \end{equation}
-During our numerical analysis we focus on the practically important case when the pseudopotential function $P(x)$ in \eqref{eq:nho-scaled} is taken as a sum of constant and harmonic parts of a prototypical cosine form:
+During our numerical analysis we focus on the practically important case when the pseudopotential function $P(x)$ in \eqref{eq:gpe-parabolic} is taken as a sum of constant and harmonic parts of a prototypical cosine form:
 \begin{equation}
 	P(x) = P_0 + P_1 \cos (\Omega x).
-\label{eq:nho-pseudopotential}
+\label{eq:gpe-parabolic-pseudopotential}
 \end{equation}
 
 As we say it in Chapter~\ref{chapter:III} stability of solutions is a critically important property.
 Linear stability of localized solutions is addressed by considering of small perturbations of a solution $u(x)$ of the form:
 \begin{equation}
 	\Psi(t, x) = \left( u(x) + (v(x) + w(x)) e^{\lambda t} + (v^{\dagger}(x) - w^{\dagger}(x)) e^{\lambda^{\dagger} t} \right) e^{-i \omega t},
-\label{eq:perturabation-nho}
+\label{eq:gpe-parabolic-perturabation}
 \end{equation}
 where $|v(x)| \ll 1$, $|w(x)| \ll 1$.
-Substituting \eqref{eq:perturabation-nho} into \eqref{eq:nho-scaled} and performing linearization with respect to $v(x)$ and $w(x)$, we arrive at eigenvalue problem
+Substituting \eqref{eq:gpe-parabolic-perturabation} into \eqref{eq:gpe-parabolic} and performing linearization with respect to $v(x)$ and $w(x)$, we arrive at eigenvalue problem
 \begin{equation}
 	i
 	\begin{pmatrix}
@@ -73,7 +77,7 @@ Substituting \eqref{eq:perturabation-nho} into \eqref{eq:nho-scaled} and perform
 	\begin{pmatrix}
 		v \\ w	
 	\end{pmatrix},
-\label{eq:eigenvalue-problem-nho}
+\label{eq:eigenvalue-problem-gpe-parabolic}
 \end{equation}
 where 
 \begin{eqnarray*}
@@ -81,24 +85,24 @@ where
 	&& \mathcal{L}_+ = \partial_{xx} + \omega -x^2 + 3 P(x) u^2.
 \end{eqnarray*}
 This problem is similar to the previously considered problem \eqref{eq:eigenvalue-problem}.
-Fourier Collocation Method from Chapter~\ref{chapter:III} is also applicable for effective numerical evaluation of spectrum \eqref{eq:eigenvalue-problem-nho}.
+Fourier Collocation Method from Chapter~\ref{chapter:III} is also applicable for effective numerical evaluation of spectrum \eqref{eq:eigenvalue-problem-gpe-parabolic}.
 Eigenvalues with non-zero real part rise to the instability, while pure imaginary spectrum indicates that solutions is linearly stable.
 Again, we note that the eigenvalues appears in pairs and quadruples, i.e. if $\lambda$ is an eigenvalue, then $-\lambda$, $\lambda^{\dagger}$, $-\lambda^{\dagger}$ are eigenvalues too.
 
-For the analytical analysis during this chapter it's convenient to rewrite eigenvalue problem \eqref{eq:eigenvalue-problem-nho} in the equivalent form:
+For the analytical analysis during this chapter it's convenient to rewrite eigenvalue problem \eqref{eq:eigenvalue-problem-gpe-parabolic} in the equivalent form:
 \begin{equation}
 	\mathcal{L}_+ \mathcal{L}_- w = \Lambda w, \quad \Lambda = -\lambda^2.
-\label{eq:eigenvalue-problem-nho-analytical}
+\label{eq:eigenvalue-problem-gpe-parabolic-analytical}
 \end{equation}
-In terms of \eqref{eq:eigenvalue-problem-nho-analytical}, a solution $u(x)$ passes the linear stability test if the spectrum of eigenvalues $\Lambda$ is all-real positive.
+In terms of \eqref{eq:eigenvalue-problem-gpe-parabolic-analytical}, a solution $u(x)$ passes the linear stability test if the spectrum of eigenvalues $\Lambda$ is all-real positive.
 
 \subsection{Solutions with linear counterpart}
 
-An important class of localized solutions of equation \eqref{eq:stationary-nho} is {\it nonlinear solutions with linear counterpart}.
+An important class of localized solutions of equation \eqref{eq:nho-periodic} is {\it nonlinear solutions with linear counterpart}.
 Such terminology has been adopted in \cite{AgostaMalomedPresilla, AgostaPresilla}.
 Existence of such solution came from the consideration of the low-amplitude limit.
 % TODO: Add reference to the definition of norm from the overall introduction, not from Chapter III.
-For a small value of norm $N$, see \eqref{eq:norm}, the nonlinear term in \eqref{eq:stationary-nho} may be neglected, which leads to the ordinary harmonic-oscillator equation
+For a small value of norm $N$, see \eqref{eq:norm}, the nonlinear term in \eqref{eq:nho-periodic} may be neglected, which leads to the ordinary harmonic-oscillator equation
 \begin{equation}
 	u_{xx} + (\omega - x^2) u = 0.
 \label{eq:ho}
@@ -114,53 +118,54 @@ In particular,
 	H_0(x) = 1, \quad H_1(x) = 2x, \quad H_2(x) = 4x^2 - 2.	
 \end{equation*}
 
-When the nonlinearity is switched on, each linear eigenstate $(\tilde{\omega}_n, \tilde{u}_n(x))$ bifurcates into a one-parameter set $\Gamma_n = (\omega_n, u_n(x))$ of small-amplitude localized solutions of \eqref{eq:stationary-nho}.
-These solutions are produced by equation \eqref{eq:stationary-nho} and become essentially nonlinear with the increase of $N$ and distance between $\omega_n$ and $\tilde{\omega}_n$.
+When the nonlinearity is switched on, each linear eigenstate $(\tilde{\omega}_n, \tilde{u}_n(x))$ bifurcates into a one-parameter set $\Gamma_n = (\omega_n, u_n(x))$ of small-amplitude localized solutions of \eqref{eq:nho-periodic}.
+These solutions are produced by equation \eqref{eq:nho-periodic} and become essentially nonlinear with the increase of $N$ and distance between $\omega_n$ and $\tilde{\omega}_n$.
 Localized solutions from family $\Gamma_n$ feature the same parity as the corresponding linear eigenfunction $\tilde{u}_n(x)$, solution with even $n$ are even functions of $x$, and those with the odd $n$ are odd.
 Localized solution with $n = 0$ originates form the ground state of the harmonic-oscillator.
 
-During our analysis it's interesting to compare the results with the well-studied case of Gross--Pitaevskii equation \eqref{eq:nho-scaled} with constant $P(x)$ (negative or positive).
-In this case $P_1 \equiv 0$ in \eqref{eq:nho-pseudopotential} and equation \eqref{eq:stationary-nho} takes form
+During our analysis it's interesting to compare the results with the well-studied case of Gross--Pitaevskii equation \eqref{eq:gpe-parabolic} with constant $P(x)$ (negative or positive).
+In this case $P_1 \equiv 0$ in \eqref{eq:gpe-parabolic-pseudopotential}, and after additional rescaling $\Psi \to \Psi / \sqrt{|P_0|}$ equation \eqref{eq:nho-periodic} takes form
 \begin{equation}
-	u_{xx} + (\omega - x^2) u + P_0 u^3 = 0.
-\label{eq:nho-constant}
+	u_{xx} + (\omega - x^2) u + \sigma_0 u^3 = 0,
+\label{eq:nho}
 \end{equation}
-Let's call \eqref{eq:nho-constant} the {\it nonlinear harmonic-oscillator} equation with constant pseudopotential.
-The case $P_0 > 0$ ($P_0 < 0$) corresponds to the attractive (repulsive) interparticle interactions.
-It's convenient to illustrate branches of localized solutions of equation \eqref{eq:nho-constant} by means of respective $N(\omega)$ curves, which are presented in Figure~\ref{fig:branches-constant-nho}, as per \cite{ZezyulinAlfimovKonotopPerecGarcia2007, ZezyulinAlfimovKonotopPerecGarcia2008} for the cases $P_0 = \pm 1$.
+where $\sigma_0 = P_0 / |P_0| = \mathrm{sign}(P_0)$.
+Let's call equation \eqref{eq:nho} the {\it nonlinear harmonic-oscillator equation with constant pseudopotential} (we also refer to this equation simply as {\it nonlinear harmonic-oscillator}).
+The case $\sigma_0 = 1$ ($\sigma_0 = -1$) corresponds to the attractive (repulsive) interparticle interactions.
+It's convenient to illustrate branches of localized solutions of equation \eqref{eq:nho} by means of respective $N(\omega)$ curves, which are presented in Figure~\ref{fig:branches-nho}, as per \cite{ZezyulinAlfimovKonotopPerecGarcia2007, ZezyulinAlfimovKonotopPerecGarcia2008} for the cases $\sigma_0 = \pm 1$.
 The branches $\Gamma_n$, $n = 0, 1, \dots$, correspond to the solutions with linear counterparts, bifurcating from them at the points $\tilde{\omega}_n = 2n + 1$, $N = 0$.
 All the branches being represented by monotonous functions $N(\omega)$.
-Other results obtained for localized solutions of \eqref{eq:nho-constant} can be presented as follows.
+Other results obtained for localized solutions of \eqref{eq:nho} can be presented as follows.
 \begin{itemize}
-	\item Presumably, there exist no nonlinear solutions of \eqref{eq:nho-constant} without linear counterpart \cite{AlfimovZezyulin}.
-	\item Solutions corresponding to families $\Gamma_0$, $\Gamma_1$ are stable in the small-amplitude limit and for moderate and large amplitudes as well for both signs of $P_0$.
+	\item Presumably, there exist no nonlinear solutions of \eqref{eq:nho} without linear counterpart \cite{AlfimovZezyulin}.
+	\item Solutions corresponding to families $\Gamma_0$, $\Gamma_1$ are stable in the small-amplitude limit and for moderate and large amplitudes as well for both cases $\sigma_0 = \pm 1$.
 	\item
 		The small-amplitude solutions belonging to the branch $\Gamma_2$ are unstable.
-		For the case $P_0 > 0$, the instability of the branch $\Gamma_2$ persists for $\omega^* < \omega < 5$, where $\omega^* \approx 3.83$.
+		For the case $\sigma_0 = 1$, the instability of the branch $\Gamma_2$ persists for $\omega^* < \omega < 5$, where $\omega^* \approx 3.83$.
 		According to the numerical study at $\omega < \omega^*$ these solutions was reported to be stable \cite{AlfimovZezyulin}.
-		For the case $P_0 < 0$ the branch $\Gamma_2$ is fully unstable. 
+		For the case $\sigma_0 = -1$ the branch $\Gamma_2$ is fully unstable. 
 \end{itemize}
 
 \begin{figure}[h]
 \centering
 	\includegraphics[scale = 1]{pic/stability for nho with constant pseudopotential}
 	\caption{
-		$N(\omega)$ curves for equation \eqref{eq:nho-constant}, with (a) $P_0 = 1$, (b) $P_0 = -1$.
+		$N(\omega)$ curves for equation \eqref{eq:nho}, with (a) $\sigma_0 = 1$, (b) $\sigma_0 = -1$.
 		Bold (thin) segments correspond to stable (unstable) solutions.
 		Insets show schematic profiles of solutions $u_n(x)$ from each family $\Gamma_n$.
 	}
-\label{fig:branches-constant-nho}
+\label{fig:branches-nho}
 \end{figure}
 
 Before we can move on let's briefly resume our goals in this chapter.
-We study localized solutions of equation \eqref{eq:nho-scaled} with periodic pseudopotential \eqref{eq:nho-pseudopotential}.
+We study localized solutions of equation \eqref{eq:gpe-parabolic} with periodic pseudopotential \eqref{eq:gpe-parabolic-pseudopotential}.
 We apply linear stability analysis to find stable solutions among them.
-Our baseline model for comparison is well-studied equation \eqref{eq:nho-constant} for nonlinear harmonic-oscillator with constant pseudopotential.
-We pay special attention to the localized solutions with linear counterpart, and study how the presence of periodic pseudopotential $P(x)$ of the cosine form \eqref{eq:nho-pseudopotential} affects their stability.
+Our baseline model for comparison is well-studied equation \eqref{eq:nho} for nonlinear harmonic-oscillator with constant pseudopotential.
+We pay special attention to the localized solutions with linear counterpart, and study how the presence of periodic pseudopotential $P(x)$ of the cosine form \eqref{eq:gpe-parabolic-pseudopotential} affects their stability.
 
 \section{Small-Amplitude Localized Solutions with Linear Counterpart}
 
-For Eq.~\eqref{eq:nho-scaled} let's consider a small-amplitude limit of solutions with linear counterpart.
+For Eq.~\eqref{eq:nho-periodic} let's consider a small-amplitude limit of solutions with linear counterpart.
 As we say above, such solutions $u_n(x)$ originate from the bifurcation of eigenstates $(\tilde{\omega}_n, \tilde{u}_n(x))$ of harmonic-oscillator equation \eqref{eq:ho} and form families $\Gamma_n = (\omega_n, u_n(x))$.
 If the amplitude of $u_n(x)$ is small the localized solutions from branch $\Gamma_n$ are approximated by expansions \cite{ZezyulinAlfimovKonotopPerecGarcia2008},
 \begin{equation}
@@ -173,7 +178,7 @@ where $\varepsilon \ll 1$ is a small parameter, and
 \end{equation}
 
 Let's address stability of these small-amplitude solutions.
-We note that with the help of expansion \eqref{eq:small-amplitude-expansion}, operator $\mathcal{L}_+ \mathcal{L}_-$ in \eqref{eq:eigenvalue-problem-nho-analytical} may be considered as a perturbation of operator $\mathcal{L}_n^2$, where
+We note that with the help of expansion \eqref{eq:small-amplitude-expansion}, operator $\mathcal{L}_+ \mathcal{L}_-$ in \eqref{eq:eigenvalue-problem-gpe-parabolic-analytical} may be considered as a perturbation of operator $\mathcal{L}_n^2$, where
 \begin{equation}
 	\mathcal{L}_n = \partial_{xx} + 2n + 1 - x^2.
 \end{equation}
@@ -233,10 +238,10 @@ Formulas \eqref{eq:Mn11} -- \eqref{eq:Mn22} with $P(x) = \pm 1$ were used in \ci
 
 \section{Branches of Nonlinear Localized Solutions for Periodic Pseudopotential, $P(x) = P_0 + P_1 \cos (\Omega x)$}
 
-We present our numerical and analytical results for pseudopotential of the cosine form \eqref{eq:nho-pseudopotential}.
+We present our numerical and analytical results for pseudopotential of the cosine form \eqref{eq:gpe-parabolic-pseudopotential}.
 It represents a sum of a constant part $P_0$ and a periodic part $P_1 \cos (\Omega x)$.
 In what follow below we conclude that the relation between the magnitudes of $|P_0|$ and $|P_1|$ is important.
-Hence, it's necessary to consider two cases separately: (a) $|P_0| \gtrsim |P_1|$, when the constant component is not negligible, and (b) $|P_0| \ll |P_1|$, when the constant component is negligible and pseudopotential \eqref{eq:nho-pseudopotential} should be treated as a function with zero mean. 
+Hence, it's necessary to consider two cases separately: (a) $|P_0| \gtrsim |P_1|$, when the constant component is not negligible, and (b) $|P_0| \ll |P_1|$, when the constant component is negligible and pseudopotential \eqref{eq:gpe-parabolic-pseudopotential} should be treated as a function with zero mean. 
 We consider each of these cases separately.
 
 \subsection{Periodic pseudopotential with Non-Zero Mean, $|P_0| \gtrsim |P_1|$}
@@ -245,53 +250,128 @@ If $P_0$ component of pseudopotential is not negligible, one can scale out the a
 \begin{equation}
 	\Psi \to \Psi / \sqrt{|P_0|}, \quad P_1 / |P_0| \to P_1.
 \end{equation}
-Equation \eqref{eq:nho-scaled} takes form
+Equation \eqref{eq:gpe-parabolic} takes form
 \begin{equation}
 	i \Psi_t + \Psi_{xx} + x^2 \Psi + (\sigma_0 + P_1 \cos (\Omega x)) |\Psi|^2 \Psi = 0.
-\label{eq:nho-non-zero-mean}
+\label{eq:gpe-non-zero-mean}
 \end{equation}
 where $\sigma_0 \equiv P_0 / |P_0| = \mathrm{sign} (P_0)$.
 Stationary states equation in this case has form
 \begin{equation}
 	u_{xx} + (\omega - x^2) u + (\sigma_0 + P_1 \cos (\Omega x)) u^3 = 0.
-\label{eq:stationary-nho-non-zero-mean}
+\label{eq:nho-non-zero-mean}
 \end{equation}
-A generic picture of localized solutions of equation \eqref{eq:stationary-nho-non-zero-mean} can be obtained by means of a numerical shooting algorithm.
-A representative example of the respective $N(\omega)$ curves with $\sigma_0 = 1$, $P_1 = 2$ (which implies that the sign of the pseudopotential periodically flips), and $\Omega = 12$ is displayed in Figure~\ref{fig:branches-cosine-nho-attractive}.
+A generic picture of localized solutions of equation \eqref{eq:nho-non-zero-mean} can be obtained by means of a numerical shooting algorithm.
+A representative example of the respective $N(\omega)$ curves with $\sigma_0 = 1$, $P_1 = 2$ (which implies that the sign of the pseudopotential periodically flips), and $\Omega = 12$ is displayed in Figure~\ref{fig:branches-nho-periodic-attractive}.
 One can immediately observe that, apart from branches $\Gamma_n$ originating from their linear counterparts, numerous branches of localized solutions {\it without linear counterpart} exist too.
 Thus, the presence of the periodic component in the pseudopotential essentially enriches the diversity of available solutions.
-This contrasts with the case of nonlinear harmonic-oscillator with constant pseudopotential, see Figure~\ref{fig:branches-constant-nho}.
+This contrasts with the case of nonlinear harmonic-oscillator with constant pseudopotential, see Figure~\ref{fig:branches-nho}.
 However, we did not find stable solutions without linear counterpart.
-On Figure~\ref{fig:branches-cosine-nho-attractive} only stables solutions correspond to branches $\Gamma_0$, $\Gamma_1$, $\Gamma_2$.
+On Figure~\ref{fig:branches-nho-periodic-attractive} the only stables solutions correspond to branches $\Gamma_0$, $\Gamma_1$, $\Gamma_2$.
 
 \begin{figure}[h]
 \centering
 	\includegraphics[scale = 1]{pic/branches for cosine nho, case (a)}
 	\caption{
-		Curves $N(\omega)$ of solution families for equation \eqref{eq:stationary-nho-non-zero-mean} with non-zero mean cosine pseudopotential with $\sigma_0 = 1$, $P_1 = 2$, and $\Omega = 12$.
-		This and bold lines show unstable and stable solution families.
+		Curves $N(\omega)$ of solution families for equation \eqref{eq:nho-non-zero-mean} with non-zero mean cosine pseudopotential with $\sigma_0 = 1$, $P_1 = 2$, and $\Omega = 12$.
+		Thin and bold lines show unstable and stable solution families.
 		Branches $\Gamma_n$, $n = 0, 1, 2, 3$ represent solutions with linear counterpart.
-		Insets on top of branches are representative profiles $u(x)$ of solutions obtained from those families.
+		Insets on top and outside of the branches are representative profiles $u(x)$ of solutions obtained from the corresponding families.
 		Branches (a), (b), (c), and (d) represent solutions without linear counterpart.
 		All of them were found to be unstable.
 	}
-\label{fig:branches-cosine-nho-attractive}
+\label{fig:branches-nho-periodic-attractive}
+\end{figure}
+
+Similar situation takes place for $\sigma_0 = -1$, while all other parameters remain the same, $P_1 = 2$ and $\Omega = 12$.
+Respective $N(\omega)$ curves are presented in Figure~\ref{fig:branches-nho-periodic-repulsive}.
+Localized solutions without linear counterpart correspond to branches (a) and (b).
+Branches $\Gamma_0$, $\Gamma_1$ have stability regions.
+All other families were found to be unstable.
+
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/branches for cosine nho, case (b)}
+	\caption{
+		Curves $N(\omega)$ of solution families for equation \eqref{eq:nho-non-zero-mean} with non-zero mean cosine pseudopotential with $\sigma_0 = -1$, $P_1 = 2$, and $\Omega = 12$.
+		Thin and bold lines show unstable and stable solution families.
+		Branches $\Gamma_n$, $n = 0, 1, 2, 3$ represent solutions with linear counterpart, two of them, $\Gamma_0$ and $\Gamma_1$, have regions of stability.
+		All other families are unstable.
+		Insets with blue dashed lines represent profiles $u(x)$ of the solutions.
+	}
+\label{fig:branches-nho-periodic-repulsive}
+\end{figure}
+
+In the limit of the rapidly oscillation of $P(x)$, $\Omega \to \infty$, localized solutions of \eqref{eq:nho-non-zero-mean} may be approximated by solutions of nonlinear harmonic-oscillator equation with constant pseudopotential \eqref{eq:nho}.
+The asymptotic formula can be obtained by means of averaging with respect to fast oscillations (see, e.g. \cite{AbdullaevCaputoKraenkelMalomed}):
+\begin{equation}
+	u(x) = v(x) + \frac{1}{\Omega^2} \bigg( w(x) + P_1 w^3(x) \cos (\Omega x) \bigg) + o \bigg( \frac{1}{\Omega^2} \bigg), \quad \Omega \to \infty.
+\label{eq:nho-non-zero-mean-asymptotic}
+\end{equation}
+Here $v(x)$ is a solution of Eq.~\eqref{eq:nho}, and $w(x)$ is a localized solution of the linear equation
+\begin{equation}
+	w_{xx} + (\omega - x^2 + 3 \sigma_0 v^2(x)) w = -\frac{3}{2} P_1^2 v^5(x).
+\end{equation}
+We stress that asymptotic relation \eqref{eq:nho-non-zero-mean-asymptotic} is valid for nonlinear solutions of arbitrary amplitudes (i.e. not only in the small-amplitude limit), provided that $\Omega^2$ is large enough.
+
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/branches with linear counterpart, non-zero mean cosine nho}
+	\caption{
+		Curves $N(\omega)$ of branches $\Gamma_n^{\Omega}$ for equation \eqref{eq:nho-non-zero-mean} with $\sigma_0 = 1$, $P_1 = 2$, and $\Omega = 8, 12, 16$.
+		Only branches with $n = 0, 1, 2$ are shown.
+		For comparison, the corresponding dependencies $\Gamma_n$ for nonlinear harmonic-oscillator \eqref{eq:nho} for the case $\sigma_0 = 1$ are show too.
+		These curves are identical to those in Figure~\ref{fig:branches-nho}~(a).
+		According to \eqref{eq:nho-non-zero-mean-asymptotic} branches $\Gamma_n^{\Omega}$ approaches $\Gamma_n$ as $\Omega$ grows.
+		Bold (thin) lines correspond to stable (unstable) solutions.
+		For convenience the stability of the families $\Gamma_n^{\Omega}$ and $\Gamma_n$ is duplicated by straight lines under the main plot.
+	}
+\label{fig:branches-with-linear-counterpart-non-zero-mean}
+\end{figure}
+
+Figure~\ref{fig:branches-with-linear-counterpart-non-zero-mean} shows the branches $\Gamma_0$, $\Gamma_1$, and $\Gamma_2$ for different spatial frequencies of the periodic pseudopotential, $\Omega = 8$, $\Omega = 12$, and $\Omega = 16$.
+For convenience in Figure~\ref{fig:branches-with-linear-counterpart-non-zero-mean} we use the following notation.
+We denote $\Gamma_n$ branches of equation \eqref{eq:nho} for nonlinear harmonic-oscillator with constant pseudopotential with parameter $\sigma_0 = 1$.
+Branches $\Gamma_n^{\Omega}$ correspond to solutions of equation \eqref{eq:nho-non-zero-mean} with different frequencies $\Omega$ of pseudopotential.
+According to the asymptotic prediction \eqref{eq:nho-non-zero-mean-asymptotic}, branches $\Gamma_n^{\Omega}$ approach the corresponding branches $\Gamma_n$ of equation \eqref{eq:nho} as $\Omega$ grows.
+Additionally, Eq.~\eqref{eq:nho-non-zero-mean-asymptotic} implies that stability of a localized solution under the action of the rapidly oscillating pseudopotential is determined by stability of its counterpart in the nonlinear harmonic-oscillator model \eqref{eq:nho} with constant pseudopotential.
+Indeed, the presence of eigenvalues with non-zero real parts in the perturbative spectrum of a nonlinear harmonic-oscillator solution implies the existence of such eigenvalues in the spectrum of the corresponding localized solution of \eqref{eq:nho-non-zero-mean} if $\Omega$ is large enough.
+For example, the segment of the branch $\Gamma_1^8$ (obtained for parameters $\sigma_0 = 1$, $P_1 = 2$, $\Omega = 8$) shown in Figure~\ref{fig:branches-with-linear-counterpart-non-zero-mean} is completely unstable, but stability of the corresponding family for $n = 1$ restores for higher values of $\Omega$, which agrees with nonlinear harmonic-oscillator limit, where this branch is entirely stable.
+For the branch $\Gamma_2$ the situation is more complex.
+Small-amplitude solutions belonging to $\Gamma_2^8$ are unstable, but they become stable for $\Gamma_2^{12}$.
+However, Eq.~\eqref{eq:nho-non-zero-mean-asymptotic} implies that the further increase of $\Omega$ will necessarily leads to the destabilization of these solutions (see branch $\Gamma_2^{16}$), because in the nonlinear harmonic-oscillator limit the small amplitude solutions belonging to $\Gamma_2$ are unstable.
+
+To check predictions of the linear-stability analysis, we have performed simulations of the evolutions of localized solutions in the framework of time-dependent GPE \eqref{eq:gpe-non-zero-mean}, using an implicit finite-difference scheme from \cite{TrofimovPeskov} that has been already used in Chapter~\ref{chapter:III}.
+In the simulation, solutions which are predicted to be linearly stable keep their shape indefinitely long, see Figure~\ref{fig:stability-nho-non-zero-mean}~(e).
+Solutions that are predicted to be unstable typically transform into a pulsating object localized over one period of the pseudopotential, see Figure~\ref{fig:stability-nho-non-zero-mean}~(f).
+
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/stability, non-zero cosine nho}
+	\caption{
+		Results of stability analysis for solutions belonging to the branch $\Gamma_1$ of \eqref{eq:gpe-non-zero-mean} with pseudopotential $P(x) = 1 + 2 \cos (12 x)$, and different parameters of $\omega$.
+		Shapes $u(x)$ of the stationary solutions are presented in panels (a) $\omega = 2$ and (b) $\omega = 0$.
+		The linear-stability spectrums are in panels (c) and (d) correspondingly.
+		The evolutionary simulations are presented in panels (e) and (f).
+		Localized solution with parameter $\omega = 2$ is stable, while solutions with parameter $\omega = 0$ is unstable.
+	}
+\label{fig:stability-nho-non-zero-mean}
 \end{figure}
 
 \subsection{Periodic pseudopotential with Zero Mean, $|P_0| \ll |P_1|$}
 
-If $P_0$ component of the pseudopotential can be neglected, we drop $P_0$, and rescale equation \eqref{eq:nho-scaled} by replacing
+If $P_0$ component of the pseudopotential can be neglected, we drop $P_0$, and rescale equation \eqref{eq:gpe-parabolic} by replacing
 \begin{equation}
 	\Psi \to \Psi / \sqrt{|P_1|},
 \end{equation}
 which leads to the equation
 \begin{equation}
 	i \Psi_t + \Psi_{xx} + x^2 \Psi - \sigma_1 \cos (\Omega x) |\Psi|^2 \Psi = 0,
-\label{eq:stationary-nho-zero-mean}
+\label{eq:nho-zero-mean}
 \end{equation}
 where $\sigma_1 = P_1 / |P_1| = \mathrm{sign}(P_1)$.
 
+
 \section{Summary}
 
-In this chapter we ...
-Our main finding can be summarized as follows.
+The possibility to manage the stability of small-amplitude nonlinear localized solutions by tuning frequency of the periodic component of the pseudopotential has been reported in \cite{KevrekidisFrantzeskakis}.
