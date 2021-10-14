@@ -175,6 +175,7 @@ If the amplitude of $u_n(x)$ is small the localized solutions from branch $\Gamm
 where $\varepsilon \ll 1$ is a small parameter, and
 \begin{equation}
 	\Delta_n = \int \limits_{-\infty}^{+\infty} P(x) \tilde{u}_n^4(x) dx = \dfrac{1}{2^{2n} (n!)^2 \pi} \int \limits_{-\infty}^{+\infty} P(x) H_n^4(x) e^{-2x^2} dx.
+\label{eq:Delta_n}
 \end{equation}
 
 Let's address stability of these small-amplitude solutions.
@@ -215,6 +216,7 @@ To address the splitting of double eigenvalues when passing from operator $\math
 Under the actions of the perturbation, each double eigenvalue $\widetilde{\Lambda}_k$ splits into two simple ones:
 \begin{equation}
 	\Lambda_{k, 1} = \widetilde{\Lambda}_k + \varepsilon^2 \gamma_1 + o(\varepsilon^2), \quad \Lambda_{k, 2} = \widetilde{\Lambda}_k + \varepsilon^2 \gamma_2 + o(\varepsilon^2),
+\label{eq:eigenvalues-split}
 \end{equation}
 where the coefficients $\gamma_{1,2}$ are the eigenvalues of the 2$\times$2 matrix
 \begin{equation}
@@ -223,6 +225,7 @@ where the coefficients $\gamma_{1,2}$ are the eigenvalues of the 2$\times$2 matr
 		\langle M_n \tilde{u}_k, \tilde{u}_k \rangle & \langle M_n \tilde{u}_k, \tilde{u}_{2n - k} \rangle \\
 		\langle M_n \tilde{u}_{2n - k}, \tilde{u}_k \rangle & \langle M_n \tilde{u}_{2n - k}, \tilde{u}_{2n - k} \rangle
 	\end{pmatrix}.
+\label{eq:M}
 \end{equation}
 Therefore, if the eigenvalues of $\widetilde{M}_n$ are real for each $k = 0, 1, \dots, n - 1$, then the spectrum of $\mathcal{L}_+ \mathcal{L}_-$ remains real and the nonlinear localized solution $u_n(x)$ is stable, at least for sufficiently small $\varepsilon$.
 Otherwise, if eigenvalues of $\widetilde{M}_n$ are complex for some $k = 0, 1, \dots, n - 1$, then solution $u_n(x)$ is unstable in a vicinity of the bifurcation.
@@ -273,7 +276,7 @@ On Figure~\ref{fig:branches-nho-periodic-attractive} the only stables solutions 
 \centering
 	\includegraphics[scale = 1]{pic/branches for cosine nho, case (a)}
 	\caption{
-		Curves $N(\omega)$ of solution families for equation \eqref{eq:nho-non-zero-mean} with non-zero mean cosine pseudopotential with $\sigma_0 = 1$, $P_1 = 2$, and $\Omega = 12$.
+		Curves $N(\omega)$ of localized solution families for equation \eqref{eq:nho-non-zero-mean} with non-zero mean cosine pseudopotential with $\sigma_0 = 1$, $P_1 = 2$, and $\Omega = 12$.
 		Thin and bold lines show unstable and stable solution families.
 		Branches $\Gamma_n$, $n = 0, 1, 2, 3$ represent solutions with linear counterpart.
 		Insets on top and outside of the branches are representative profiles $u(x)$ of solutions obtained from the corresponding families.
@@ -293,7 +296,7 @@ All other families were found to be unstable.
 \centering
 	\includegraphics[scale = 1]{pic/branches for cosine nho, case (b)}
 	\caption{
-		Curves $N(\omega)$ of solution families for equation \eqref{eq:nho-non-zero-mean} with non-zero mean cosine pseudopotential with $\sigma_0 = -1$, $P_1 = 2$, and $\Omega = 12$.
+		Curves $N(\omega)$ of localized solution families for equation \eqref{eq:nho-non-zero-mean} with non-zero mean cosine pseudopotential with $\sigma_0 = -1$, $P_1 = 2$, and $\Omega = 12$.
 		Thin and bold lines show unstable and stable solution families.
 		Branches $\Gamma_n$, $n = 0, 1, 2, 3$ represent solutions with linear counterpart, two of them, $\Gamma_0$ and $\Gamma_1$, have regions of stability.
 		All other families are unstable.
@@ -340,6 +343,7 @@ For example, the segment of the branch $\Gamma_1^8$ (obtained for parameters $\s
 For the branch $\Gamma_2$ the situation is more complex.
 Small-amplitude solutions belonging to $\Gamma_2^8$ are unstable, but they become stable for $\Gamma_2^{12}$.
 However, Eq.~\eqref{eq:nho-non-zero-mean-asymptotic} implies that the further increase of $\Omega$ will necessarily leads to the destabilization of these solutions (see branch $\Gamma_2^{16}$), because in the nonlinear harmonic-oscillator limit the small amplitude solutions belonging to $\Gamma_2$ are unstable.
+% The possibility to manage the stability of small-amplitude nonlinear localized solutions by tuning frequency of the periodic component of the pseudopotential has been reported in \cite{KevrekidisFrantzeskakis}.
 
 To check predictions of the linear-stability analysis, we have performed simulations of the evolutions of localized solutions in the framework of time-dependent GPE \eqref{eq:gpe-non-zero-mean}, using an implicit finite-difference scheme from \cite{TrofimovPeskov} that has been already used in Chapter~\ref{chapter:III}.
 In the simulation, solutions which are predicted to be linearly stable keep their shape indefinitely long, see Figure~\ref{fig:stability-nho-non-zero-mean}~(e).
@@ -347,7 +351,7 @@ Solutions that are predicted to be unstable typically transform into a pulsating
 
 \begin{figure}[h]
 \centering
-	\includegraphics[scale = 1]{pic/stability, non-zero cosine nho}
+	\includegraphics[scale = 1]{pic/stability, non-zero mean cosine nho}
 	\caption{
 		Results of stability analysis for solutions belonging to the branch $\Gamma_1$ of \eqref{eq:gpe-non-zero-mean} with pseudopotential $P(x) = 1 + 2 \cos (12 x)$, and different parameters of $\omega$.
 		Shapes $u(x)$ of the stationary solutions are presented in panels (a) $\omega = 2$ and (b) $\omega = 0$.
@@ -360,18 +364,203 @@ Solutions that are predicted to be unstable typically transform into a pulsating
 
 \subsection{Periodic pseudopotential with Zero Mean, $|P_0| \ll |P_1|$}
 
+According to the results of the previous section, the effect of a rapidly oscillating pseudopotential with non-zero mean may be approximated using the standard nonlinear harmonic-oscillator model with uniform nonlinearity.
+However, the situation becomes essentially different for the case $|P_0| \ll |P_1|$.
 If $P_0$ component of the pseudopotential can be neglected, we drop $P_0$, and rescale equation \eqref{eq:gpe-parabolic} by replacing
 \begin{equation}
 	\Psi \to \Psi / \sqrt{|P_1|},
 \end{equation}
 which leads to the equation
 \begin{equation}
-	i \Psi_t + \Psi_{xx} + x^2 \Psi - \sigma_1 \cos (\Omega x) |\Psi|^2 \Psi = 0,
-\label{eq:nho-zero-mean}
+	i \Psi_t + \Psi_{xx} + x^2 \Psi + \sigma_1 \cos (\Omega x) |\Psi|^2 \Psi = 0,
+\label{eq:gpe-zero-mean}
 \end{equation}
 where $\sigma_1 = P_1 / |P_1| = \mathrm{sign}(P_1)$.
+Stationary states equation has the form
+\begin{equation}
+	u_{xx} + (\omega - x^2) u + \sigma_1 \cos (\Omega x) u^3 = 0.
+\label{eq:nho-zero-mean}
+\end{equation}
+The $N(\omega)$ curves for \eqref{eq:nho-zero-mean} with $\sigma_1 = $ and $\Omega = 8$ are shown in Figure~\ref{fig:stability-nho-zero-mean}.
+Here we again observe the branches $\Gamma_n$ bifurcating from the linear limit and various families without linear counterparts, see branches (a), (b), (b'), (c), (d) in Figure~\ref{fig:stability-nho-zero-mean}.
+The branches $\Gamma_n$ feature stable and unstable segments.
+Most part of the localized solutions without linear counterpart being unstable, however we found one branch  without linear counterpart, family (b) on the corresponding inset of Figure~\ref{fig:stability-nho-zero-mean}, that features small stability region.
 
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/branches for cosine nho, zero mean}
+	\caption{
+		Curves $N(\omega)$ for localized solutions of equation \eqref{eq:nho-zero-mean} with parameters $\sigma_1 = 1$ and $\Omega = 8$.
+		Thin and bold lines show unstable and stable solution families.
+		Insets depicts profiles of the solutions.
+		Additional window in the upper left corner shows stability region for solutions from the branch (b) without linear counterpart.
+	}
+\label{fig:stability-nho-zero-mean}
+\end{figure}
+
+Let's focus on the localized solutions with linear counterpart under action of rapidly oscillating pseudopotential.
+In the limit $N \\ 1$, weakly nonlinear solutions belonging to branches $\Gamma_n$, $n = 0, 1, \dots$, are produced by equations \eqref{eq:small-amplitude-expansion} where $\Delta_n$ is given by \eqref{eq:Delta_n}, with $P(x) = \sigma_1 \cos (\Omega x)$.
+The numerical found values of $\Delta_n$, $n = 0, 1, 2$ for $\sigma_1$ and several different values of $\Omega$ are presented in Table~\ref{tab:Delta_n}.
+\begin{table}[tbp]
+\centering
+\begin{tabular}{ccccc}
+\hline
+	$\Omega$ & \, 0 \, & \, 2 \, & \, 8 \, & \, 18 \\ \hline
+	$n = 0$ & \, $3.9894 \cdot 10^{-1}$ \, & \, $2.4197 \cdot 10^{-1}$ \, & \, $1.3383 \cdot 10^{-4}$ \, & \, $1 \cdot 10^{-18}$ \\
+	$n = 1$ & \, $2.9921 \cdot 10^{-1}$ \, & \, $-1.2100 \cdot 10^{-1}$ & $5.4536 \cdot 10^{-3} $ \, & \, $2 \cdot 10^{-15}$ \\
+	$n = 2$ & \, $2.5557 \cdot 10^{-1}$ \, & \, $-1.3611 \cdot 10^{-1}$ \, & \, $2.1097 \cdot 10^{-2} $ \, & \, $5 \cdot 10^{-13}$ \\ \hline
+\end{tabular}
+\caption{
+	The values of $\Delta _{n}$, $n = 0, 1, 2$, calculated as per Eq.~\eqref{eq:Delta_n} for $P(x) = \cos \left( \Omega x \right)$, $\Omega = 0, 2, 8, 18$.
+	They determine the perturbative shift of chemical potential of weakly nonlinear localized solutions, pursuant to Eq.~\eqref{eq:small-amplitude-expansion}.
+}
+\label{tab:Delta_n}
+\end{table}
+
+To find the asymptotic form of $\Delta_n$ for $\Omega \to \infty$, we note that, for any arbitrary polynomial of degree $2m$
+\begin{equation}
+	Q_{2m}(x) = a_{2m} x^{2m} + a_{2m - 1} x^{2m - 1} + \dots + a_0,
+\end{equation}
+the following asymptotic relation holds
+\begin{equation}
+	\int \limits_{-\infty}^{+\infty} Q_{2m}(x) e^{-2 x^2} \cos (\Omega x)~dx \approx (-1)^m \frac{a_{2m} \sqrt{2 \pi} \Omega^{2m}}{2^{4m + 1}} e^{-\Omega^2 / 8}, \quad \Omega \to \infty.
+\label{eq:polynomial-asymptotic}
+\end{equation}
+Since the coefficient in front of the highest-power term in the Hermite polynomial $H_n(x)$ is $2^n$, equation \eqref{eq:polynomial-asymptotic} with $Q_{2m}(x)$ substituted by  $H_n(x)$ yields
+\begin{equation}
+	\Delta_n \approx \frac{\sqrt{2} \Omega^{4n}}{2^{6n + 1} (n!)^2 \sqrt{\pi}} e^{-\Omega^2 / 8}, \quad \Omega \to \infty.
+\label{eq:Delta_n-asymptotic}
+\end{equation}
+Therefore, for sufficiently large $\Omega$, $\Delta_n$ are all positive and decay exponentially, which agrees with the data in Table~\ref{tab:Delta_n}.
+
+In the small-amplitude limit, the stability of localized solutions with linear counterpart is determined by the eigenvalues of matrix $\widetilde{M}_n$, see \eqref{eq:M}.
+One can compute these eigenvalues numerically with any necessary accuracy.
+The results for tow different values of frequency, $\Omega = 8$ and $\Omega = 16$, are summarized in Tables~\ref{tab:M-eigenvalues-8} and \ref{tab:M-eigenvalues-16}.
+In these tables, $n$ is the index of the branch $\Gamma_n$.
+For instance, $n = 2$ means that the brach $\Gamma_2$, which starts from $\tilde{\omega}_2 = 2 \cdot 2 + 1 = 5$, is under consideration.
+While $k$, running from $0$ to $n - 1$, enumerates double eigenvalues $\widetilde{\Lambda}_k = 4(n - k)^2$.
+Each cell with $n > k$ contains either tow real numbers or symbol ``$\mathbb{C}$''.
+These number are real eigenvalues of matrix $\widetilde{M}_n$, whereas symbol ``$\mathbb{C}$'' indicates that eigenvalues of $\widetilde{M}_n$ are complex, and the corresponding low-amplitude solutions of the branch $\Gamma_n$ are unstable.
+For $n < k$ the double eigenvalues do not exist (marked with dashes at the corresponding positions in the tables).
+
+\begin{table}[tbp]
+\centering
+\begin{tabular}{cccccc}
+\hline
+	& \, $n = 1$ \, & \, $n = 2$ \, & \, $n = 3$ \, & \, $n = 4$ \, & \, $n = 5$ \\ \hline
+	$k = 0$ & \, $\begin{array}{c} 0.132 \\ -0.028 \end{array}$ \, & \, $\begin{array}{c} -0.012 \\ 0.203 \end{array}$ \, & \, $\mathbb{C}$ \, & \, $\begin{array}{c} 0.424 \\ -0.828 \end{array}$ \, & \, $\begin{array}{c} -0.845 \\ -0.660 \end{array}$ \\ \hline
+	$k = 1$ & \, $-$ \, & \, $\begin{array}{c} -0.176 \\ 0.159 \end{array}$ \, & \, $\begin{array}{c} 0.432 \\ -0.190 \end{array}$ \, & \, $\begin{array}{c} -0.486 \\ 0.048 \end{array}$ \, & \, $\begin{array}{c} 0.356 \\ 0.944 \end{array}$ \\ \hline
+	$k = 2$ & \, $-$ \, & \, $-$ \, & \, $\begin{array}{c} -0.068 \\ -0.132 \end{array}$ \, & \, $\begin{array}{c} -0.206 \\ 0.196 \end{array}$ \, & \, $\begin{array}{c} 0.531 \\ -0.600 \end{array}$ \\ \hline
+	$k = 3$ & \, $-$ \, & \, $-$ \, & \, $-$ \, & \, $\mathbb{C}$ \, & \, $\begin{array}{c} 0.166 \\ -0.122 \end{array}$ \\ \hline
+	$k = 4$ & \, $-$ \, & \, $-$ \, & \, $-$ \, & \, $-$ \, & \, $\mathbb{C}$ \\ \hline
+\end{tabular}
+\caption{
+	Eigenvalues of matrix $\widetilde{M}_n$ in the case $P(x) = \cos (8x)$.
+	Here $n$ is the index of branch $\Gamma_n$, and $k$ enumerates double eigenvalues $\widetilde{\Lambda}_k = 4(n - k)^2$.
+	Each cell with $n > k$ contains either tow real numbers or symbol ``$\mathbb{C}$''.
+	These number are real eigenvalues of matrix $\widetilde{M}_n$, whereas symbol ``$\mathbb{C}$'' indicates that eigenvalues of $\widetilde{M}_n$ are complex, and the corresponding low-amplitude solutions of the branch $\Gamma_n$ are unstable.
+	Results in this table agree with Figure~\ref{fig:stability-nho-zero-mean}.
+}
+\label{tab:M-eigenvalues-8}
+\end{table}
+
+% TODO: Check the values in the table. Possible there is mistake, $\Omega = 18$, not $16$.
+\begin{table}[tbp]
+\centering
+\begin{tabular}{cccccc}
+\hline
+	& $n = 1$ & $n = 2$ & $n = 3$ & $n = 4$ & $n = 5$ \\ \hline
+	$k = 0$ & $\begin{array}{c} -2.0 \cdot 10^{-11} \\ 5.7 \cdot 10^{-10} \end{array}$ & $\begin{array}{c} -7.6 \cdot 10^{-9} \\ -9.2 \cdot 10^{-7} \end{array}$ & $\begin{array}{c} -8.7 \cdot 10^{-7} \\ 2.2 \cdot 10^{-4} \end{array}$ & $\begin{array}{c} -4.0 \cdot 10^{-5} \\ -1.2 \cdot 10^{-2} \end{array}$ & $\begin{array}{c} -9.5 \cdot 10^{-4} \\ 1.5 \cdot 10^{-1} \end{array}$ \\ \hline
+	$k = 1$ & $-$ & $\begin{array}{c} -4.2 \cdot 10^{-9} \\ 7.3 \cdot 10^{-8} \end{array}$ & $\begin{array}{c} -5.8 \cdot 10^{-7} \\ -3.6 \cdot 10^{-5} \end{array}$ & $\begin{array}{c} -3.0 \cdot 10^{-5} \\ 3.3 \cdot 10^{-3} \end{array}$ & $\begin{array}{c} -7.6 \cdot 10^{-4} \\ -6.8 \cdot 10^{-2} \end{array}$ \\ \hline
+	$k = 2$ & $-$ & $-$ & $\begin{array}{c} -3.4 \cdot 10^{-7} \\ 3.9 \cdot 10^{-6} \end{array}$ & $\begin{array}{c} -2.0 \cdot 10^{-5} \\ -6.8 \cdot 10^{-4} \end{array}$ & $\begin{array}{c} -5.7 \cdot 10^{-4} \\ 2.6 \cdot 10^{-2} \end{array}$ \\ \hline
+	$k = 3$ & $-$ & $-$ & $-$ & $\begin{array}{c} -1.3 \cdot 10^{-5} \\ 1.0 \cdot 10^{-4} \end{array}$ & $\begin{array}{c} -3.6 \cdot 10^{-4} \\ -6.8 \cdot 10^{-3} \end{array}$ \\ \hline
+	$k = 4$ & $-$ & $-$ & $-$ & $-$ & $\begin{array}{c} -2.7 \cdot 10^{-4} \\ 1.5 \cdot 10^{-3} \end{array}$ \\ \hline
+\end{tabular}
+\caption{
+	Eigenvalues of matrix $\widetilde{M}_n$ for $P(x) = \cos (16 x)$.
+	The same notation as for Table~\ref{tab:M-eigenvalues-8} is used.
+}
+\label{tab:M-eigenvalues-16}
+\end{table}
+
+To be specific, let us describe in details the branch $\Gamma_2$ in the case of $P(x) = \cos (8x)$, Table~\ref{tab:M-eigenvalues-8}.
+In this case, there are tow double eigenvalues in the spectrum, $\widetilde{\Lambda}_0 = 16$ and $\widetilde{\Lambda}_1 = 4$.
+According to Table~\ref{tab:M-eigenvalues-8} and equation \eqref{eq:eigenvalues-split}, they split as
+\begin{eqnarray}
+	&& \Lambda_{0, 1} = 16 - 0.012 \cdot \varepsilon^2 + \dots, \quad \Lambda_{0, 2} = 16 + 0.203 \cdot \varepsilon^2 + \dots; \\
+	&& \Lambda_{1, 1} = 4 - 0.176 \cdot \varepsilon^2 + \dots, \quad \Lambda_{1, 2} = 4 + 0.159 \cdot \varepsilon^2 + \dots.
+\end{eqnarray}
+Hence, the small-amplitude solutions belonging to branch $\Gamma_2$ are stable in this case.
+The situation is different for branches $\Gamma_{3,4,5}$ from Table~\ref{tab:M-eigenvalues-8}.
+For each of these branches the bifurcation of a complex-conjugate pair occurs: for $n = 3$ the eigenvalue $\widetilde{\Lambda}_0 = 36$ splits into complex eigenvalues, while for $n = 4$ and $n = 5$ the same happens for $\widetilde{\Lambda}_2 = 4$.
+Therefore, for $\Omega = 8$ the small-amplitude solutions are stable  for branches $\Gamma_{0, 1, 2}$, but unstable for $\Gamma_{3, 4, 5}$.
+Table~\ref{tab:M-eigenvalues-16} is produced for $\Omega = 16$.
+It implies that the small-amplitude solutions are stable for all branches $\Gamma_{1, \dots, 5}$.
+
+To explain the different stability of small-amplitude solutions with different values of frequency $\Omega$, we consider the behaviour of the eigenvalues of $\widetilde{M}_n$ at $\Omega \to \infty$.
+Using explicit results given by equations \eqref{eq:Mn11}--\eqref{eq:Mn22} and asymptotic relation \eqref{eq:Delta_n-asymptotic}, we obtain
+\begin{align}
+\langle M_n \tilde{u}_k, \tilde{u}_k \rangle & \sim -\frac{2\sqrt{2} (n - k) \Omega^{4n}}{2^{6n} (n!)^2 \sqrt{\pi}} e^{-\Omega^2 / 8}; \\
+\langle M_n \tilde{u}_k, \tilde{u}_{2n-k} \rangle = -\langle M_n \tilde{u}_{2n-k}, \tilde{u}_k \rangle & \sim \frac{2\sqrt{2} (n - k) \Omega^{4n}}{2^{6n} n! \sqrt{k! (2n - k)!} \sqrt{\pi}} e^{-\Omega^2 / 8}; \\
+\langle M_n \tilde{u}_{2n-k}, \tilde{u}_{2n-k} \rangle & \sim -\frac{4\sqrt{2} (n - k) \Omega^{2(3n - k)}}{\sqrt{\pi} 2^{3 (3n - k)} n! (2n - k)!} e^{-\Omega^2 / 8}.
+\end{align}
+These relations imply that
+\begin{equation}
+	\widetilde{M}_n =
+	\begin{pmatrix}
+		O(\Omega^{4n} e^{-\Omega^2 / 8}) & O(\Omega^{4n} e^{-\Omega^2 / 8}) \\
+		O(\Omega^{4n} e^{-\Omega^2 / 8}) & O(\Omega^{2(3n-k)} e^{-\Omega^2 / 8})
+	\end{pmatrix},
+	\quad \Omega \to \infty.
+\end{equation}
+All elements of the matrix $\widetilde{M}_n$ are of the same order, except for the one in the right lower corner which is of greater order since $n > k$.
+It mean that, for $\Omega$ large enough, eigenvalues of $\widetilde{M}_n$ are real, hence the solutions from branches $\Gamma_n$ for arbitrary $n$ are stable in the small-amplitude limit.
+This explains the difference between Table~\ref{tab:M-eigenvalues-8} and Table~\ref{tab:M-eigenvalues-16}.
+The increase of the frequency from $\Omega = 8$ to $\Omega = 16$ results in stabilization of some small-amplitude solutions. 
+
+Results of our asymptotic findings are illustrated in Figure~\ref{fig:branches-with-linear-counterpart-zero-mean}, where numerically generated $N(\omega)$ curves for $\Omega = 8$, $\Omega = 12$, and $\Omega = 16$ are depicted.
+It follows from these plots that the branch $\Gamma_0$ is the ``most stable'' one for all the three values of $\Omega$.
+One also notice that, for the greatest value $\Omega = 16$ there exist a ``stability window'' in a vicinity of the bifurcations for all branches $\Gamma_{0,1,2,3}$, in agreement with the asymptotic results presented above.
+
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/branches with linear counterpart, zero mean cosine nho}
+	\caption{
+		Curves $N(\omega)$ of branches $\Gamma_n$, $n = 0, 1, 2, 3$ for equation \eqref{eq:nho-zero-mean} with $\sigma_1 = 1$ and $\Omega = 8, 12, 16$.
+		The following notation is used: branch $\Gamma_n^{\Omega}$ corresponds to the branch with linear counterpart $\Gamma_n$, obtained for equation \eqref{eq:nho-zero-mean} where the frequency of pseudopotential equals $\Omega$.
+		Bold (thin) lines correspond to stable (unstable) solutions.
+		For convenience the stability of the families $\Gamma_n^{\Omega}$ is duplicated by straight lines under the main plot.
+	}
+\label{fig:branches-with-linear-counterpart-zero-mean}
+\end{figure}
+
+Numerical study of the temporal evolution of localized solutions in the framework of time-dependent GPE \eqref{eq:gpe-parabolic} confirms the prediction of the linear-stability analysis, see Figure~\ref{fig:stability-nho-zero-mean}.
+As an example of a distinctive pattern of dynamical behaviour of unstable stationary solution under small perturbation, in Figure~\ref{fig:stability-nho-zero-mean} we display the transformation of an unstable solution from the branch $\Gamma_1$ into a pulsating object localized over one period of the pseudopotential $P(x) = \cos (8x)$.
+
+\pagebreak
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/stability, zero mean cosine nho}
+	\caption{
+		Results of stability analysis for solutions belonging to the branch $\Gamma_1$ of \eqref{eq:gpe-zero-mean} with pseudopotential $P(x) = \cos (8 x)$, and different parameters of $\omega$.
+		Shapes $u(x)$ of the stationary solutions are presented in panels (a) $\omega = 2$ and (b) $\omega = 2.5$.
+		The linear-stability spectrums are in panels (c) and (d) correspondingly.
+		The evolutionary simulations are presented in panels (e) and (f).
+		Localized solution with parameter $\omega = 2$ is stable, while solutions with parameter $\omega = 2.5$ is unstable.
+	}
+\label{fig:stability-nho-zero-mean}
+\end{figure}
+\pagebreak
 
 \section{Summary}
 
-The possibility to manage the stability of small-amplitude nonlinear localized solutions by tuning frequency of the periodic component of the pseudopotential has been reported in \cite{KevrekidisFrantzeskakis}.
+In this chapter we studied localized stationary solutions of Gross--Pitaevskii equation with the harmonic-oscillator potential and pseudopotential $P(x)$, which is a periodic function oscillating with spatial frequency $\Omega$.
+Let's summarize out results.
+It was found that the presence of periodic pseudopotential significantly enrich the variety of localized solutions, in comparison with the well-studied case of the uniform nonlinearity \eqref{eq:nho}.
+Specifically, GPE with periodic pseudopotential admits solutions without linear counterpart which do not exist in the case of $P(x) = \pm 1$.
+As concerns solutions bifurcating from eigenstate of linear problem, their properties are essentially different depending on the presence constant additive term in $P(x)$ (non-zero mean value).
+If the mean is non-zero, then properties of nonlinear solutions in a rapidly oscillating pseudopotential may be approximated using solutions for the standard nonlinear harmonic-oscillator model (with constant pseudopotential).
+However, the reduction to the standard model with constant nonlinearity does not work for the system with zero-mean periodic pseudopotential.
+Most interesting, in this we have found that the rapidly oscillating pseudopotential can stabilize small-amplitude localized solutions belonging to higher families, which are unstable in the model with $P(x)$ of non-zero mean.
+Specifically, for any given branch with index $n$, there exists a threshold value of the spatial frequency $\Omega_n$, such that the small-amplitude solutions belonging to this branch are stable for $\Omega > \Omega_n$.
+All results of our work were published in \cite{AlfimovGegelLebedevMalomedZezyulin}.
