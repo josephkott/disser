@@ -124,8 +124,101 @@
 	That completes the proof of lemma.
 \end{proof}
 
-\chapter{Solutions of Duffing equations}
+\chapter{Solutions of Duffing Equations}
 \label{appendix:solutions-of-duffing-equations}
+
+\section{Equation with Positive Nonlinearity}
+
+Consider an equation
+\begin{equation}
+	u_{xx} - u + u^3 = 0.
+\label{eq:duffing-positive}
+\end{equation}
+The first integral of \eqref{eq:duffing-positive} is
+\begin{equation}
+	H_0 = (u')^2 - u^2 + \frac{u^4}{2}.
+\end{equation}
+Equation \eqref{eq:duffing-positive} has three equilibria points: $u_* = 0$, and $u_* = \pm 1$.
+Its general solution can be written in terms of Jacobi elliptic functions as follows
+\begin{equation}
+	u(x) = x_0 \cn \left( \sqrt{x_0^2 - 1} x + x_1, k \right), \quad x_0^2 - 1 \neq 0,
+\label{eq:duffing-positive-solution}
+\end{equation}
+where $k$ is an elliptic modulus,
+\begin{equation}
+	k = \sqrt{\frac{x_0^2}{2(x_0^2 - 1)}},
+\end{equation}
+and $x_0$, $x_1$ are determined by initial conditions $u(0) = u_0$, $u'(0) = u_0'$:
+\begin{equation}
+\begin{cases}
+	u(0) = u_0 = x_0 \cn (x_1, k); \\
+	u'(0) = u_0' = -x_0 \sqrt{x_0^2 - 1} \dn (x_1, k) \sn (x_1, k).
+\end{cases}
+\end{equation}
+
+\section{Equation with Negative Nonlinearity}
+
+Consider an equation
+\begin{equation}
+	u_{xx} - u - u^3 = 0.
+\label{eq:duffing-negative}
+\end{equation}
+The first integral of \eqref{eq:duffing-negative} is
+\begin{equation}
+	H_* = (u')^2 - u^2 - \frac{u^4}{2}.
+\end{equation}
+Equation \eqref{eq:duffing-negative} has one equilibria point: $u_* = 0$.
+It's convenient to illustrate the solutions of equation \eqref{eq:duffing-negative} by the following picture, see Figure~\ref{fig:duffing-negative}.
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/duffing negative illustration}
+	\caption{
+		Illustration to solutions of equation \eqref{eq:duffing-negative}.
+		Dark-gray, light-gray, and white areas correspond to solutions \eqref{eq:duffing-negative-solution-1}, \eqref{eq:duffing-negative-solution-2}, and \eqref{eq:duffing-negative-solution-3}.
+		Black lines correspond to separatrices \eqref{eq:duffing-negative-separatrices}.
+		Red dashed lines correspond to trajectories \eqref{eq:duffing-negative-dashed-trajectories}, they split areas (2) and (3) of solutions.
+	}
+\label{fig:duffing-negative}
+\end{figure}
+
+In dark-gray areas the solutions are
+\begin{equation}
+	u_1(x) = \frac{\sqrt{2}}{\sqrt{2k^2 - 1}} \frac{\dn \left( \frac{x}{\sqrt{2k^2 - 1}}, k \right)}{\sn \left( \frac{x}{\sqrt{2k^2 - 1}}, k \right)}.
+\label{eq:duffing-negative-solution-1}
+\end{equation}
+The parameter $k$ changes from $k = 1 / \sqrt{2}$ to $k = 1$.
+When $k$ approaches $1 / \sqrt{2}$ the trajectories that correspond to \eqref{eq:duffing-negative-solution-1} become more distant form the origin.
+When $k \to 1$ the trajectories approaches the separatrices $\gamma_{1, 2}^{\pm}$
+\begin{equation}
+	u(x) = \pm \frac{\sqrt{2}}{\sinh x}.
+\label{eq:duffing-negative-separatrices}
+\end{equation}
+Solutions \eqref{eq:duffing-negative-solution-1} correspond to $H_* > 1/2$.
+
+In white areas the solutions are
+\begin{equation}
+	u_2(x) = \frac{1 - k^2}{\sqrt{k^2 + 1}} \frac{\sn \left( \frac{x}{\sqrt{2k^2 + 2}}, k \right)}{\cn \left( \frac{x}{\sqrt{2k^2 + 2}}, k \right) \dn \left( \frac{x}{\sqrt{2k^2 + 2}}, k \right)}.
+\label{eq:duffing-negative-solution-2}
+\end{equation}
+The parameter $k$ changes from $0$ to $1$.
+When $k$ approaches $1$ the solutions $u_2(x)$ degenerates into zero solution.
+When $k$ approaches $0$ the solution becomes
+\begin{equation}
+	u(x) = \pm \tan \frac{x}{\sqrt{2}}.
+\label{eq:duffing-negative-dashed-trajectories}
+\end{equation}
+The trajectories corresponding to \eqref{eq:duffing-negative-dashed-trajectories} are shown by red dashed lines.
+For solutions of type \eqref{eq:duffing-negative-solution-2}, $0 < H_* < 1/2$.
+
+In the light-gray areas the solutions are
+\begin{equation}
+	u_3(x) = \frac{1}{\sqrt{1 - 2k^2}} \frac{\sn \left( \frac{x}{\sqrt{2 - 4k^2}}, k \right) \dn \left( \frac{x}{\sqrt{2 - 4k^2}}, k \right)}{\cn \left( \frac{x}{\sqrt{2 - 4k^2}}, k \right)}.
+\label{eq:duffing-negative-solution-3}
+\end{equation}
+The parameter $k$ changes from $k = 0$ to $k = 1 / \sqrt{2}$.
+When $k \to 0$, the solution \eqref{eq:duffing-negative-solution-3} takes form \eqref{eq:duffing-negative-dashed-trajectories}.
+When $k \to 1 / \sqrt{2}$ the corresponding trajectories becomes more distant form the origin.
+For solutions of type \eqref{eq:duffing-negative-solution-3}, $H_* < 0$.
 
 \chapter{Strips Mapping Theorems}
 \label{appendix:strips-mapping-theorems}
