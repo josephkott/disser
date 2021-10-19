@@ -39,4 +39,3 @@ plot_scan(u_span, du_span, Types, true, 'gray');
 plot_hist(b22)
 
 end
-

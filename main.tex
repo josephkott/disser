@@ -20,6 +20,9 @@
 \usepackage {physics}
 \usepackage {units}
 \usepackage [symbol] {footmisc}
+\usepackage {algorithm}
+\usepackage {algorithmic}
+\usepackage {caption}
 
 % Margins
 \usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry}
@@ -43,6 +46,7 @@
 \newtheorem*{lemma*}{Lemma}
 \newtheorem*{remark*}{Remark}
 \newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
 \newtheorem{hypothesis}{Hypothesis}
 % TODO: Try to remove "thehypothesis" from the command below.
 \renewcommand\thehypothesis{\Roman{hypothesis}}
@@ -59,6 +63,11 @@
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \renewcommand\multicitedelim{\addcomma\space}
+
+\captionsetup[algorithm]{
+  labelfont = bf,
+  labelsep = period
+}
 
 \begin{document}
 

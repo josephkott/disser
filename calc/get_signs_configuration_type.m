@@ -23,4 +23,3 @@ else
     type = -1;
     
 end
-

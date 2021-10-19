@@ -6,7 +6,8 @@
 
 ### Статьи не по теме диссертации
 
-1. D. A. Zezyulin, M. E. Lebedev, G. L. Alfimov, and B. A. Malomed, _Symmetry breaking in competing single-well linear-nonlinear potentials_ // Phys. Rev. E **98**, 042209 (2018).
+1. M. E. Lebedev, D. A. Dolinina, K. B. Hong, *et al.* _Exciton-polariton Josephson junctions at finite temperatures_ // Scientific Reports **7,** 9515 (2017).
+2. D. A. Zezyulin, M. E. Lebedev, G. L. Alfimov, and B. A. Malomed, _Symmetry breaking in competing single-well linear-nonlinear potentials_ // Phys. Rev. E **98**, 042209 (2018).
 
 ### Конференции по теме диссертации
 

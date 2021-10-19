@@ -899,18 +899,17 @@ Its structure may be quite sophisticated having a form of a complex fractal set.
 One can have a nice illustration on how this set may look like for equation \eqref{eq:stationary-piecewise}.
 For that purpose we combine Figure~\ref{fig:h-strips-piecewise} and Figure~\ref{fig:v-strips-piecewise} into a single plot.
 
-% TODO: Red color looks ugly.
 \begin{figure}[h]
 \centering
 	\includegraphics[scale = 1]{pic/h- and v-strips for piecewise equation}
 	\caption{
-		Subsets of $\mathscr{H}_1$ (yellow) and $\mathscr{V}_1$ (blue), and their intersection $\mathscr{H}_1 \cap \mathscr{V}_1$ (red).
+		Subsets of $\mathscr{H}_1$ (yellow) and $\mathscr{V}_1$ (blue), and their intersection $\mathscr{H}_1 \cap \mathscr{V}_1$ (magenta).
 		This figure give an illustration on how the partitioning inside the set $\mathscr{U}_L$ (black) starts to occur while considering higher orders of $\mathcal{P}$ and $\mathcal{P}^{-1}$.
 	}
 \label{fig:hv-strips-piecewise}
 \end{figure}
 
-In Figure~\ref{fig:hv-strips-piecewise} subsets of $\mathscr{H}_1$ (yellow) and $\mathscr{V}_1$ (blue) along with their intersection $\mathscr{H}_1 \cap \mathscr{V}_1$ (red) are presented.
+In Figure~\ref{fig:hv-strips-piecewise} subsets of $\mathscr{H}_1$ (yellow) and $\mathscr{V}_1$ (blue) along with their intersection $\mathscr{H}_1 \cap \mathscr{V}_1$ (magenta) are presented.
 There exist other parts of $\mathscr{H}_1$ and $\mathscr{V}_1$ that can be obtained by considering $\mathcal{P}$ and $\mathcal{P}^{-1}$-images of other islands lying outside of the scanning area, but we exclude them for the sake of clarity.
 One can see how the partitioning inside the $\mathscr{U}_L$ occurs.
 Continuation of that process with higher orders of maps $\mathcal{P}$ and $\mathcal{P}^{-1}$ results in additional partitioning inside the set $\mathscr{H}_1 \cap \mathscr{V}_1$ and reveals the complex nature of the set $\mathscr{U}_{\infty}$.
@@ -1038,37 +1037,166 @@ Hypothesis~III from \cite{AlfimovAvramenko} requires a sophisticated analyses of
 	Theorem is proven.
 \end{proof}
 
+\section{Numerical Test of Existence of Coding Homeomorphism}
+
 In order to apply Theorem to equation \eqref{eq:stationary} one should get a strong evidence that Hypotheses \ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping} are valid.
-However it's rather difficult to obtain a rigorous mathematical proof of them even for the simplest form of the functions $Q(x)$, $P(x)$ in \eqref{eq:stationary}, so in our current work we rely on computing procedures that provide a numerical evidence.
+However it's rather difficult to obtain a rigorous mathematical proof of them even for the simplest form of the functions $Q(x)$, $P(x)$ in \eqref{eq:stationary}.
+Instead, in our current work we provide a computing procedure that allows to check numerically that Hypotheses~\ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping} are valid at least at finite domain of plane of initial conditions.
 
-Hypothesis~\ref{hypothesis:island-set} seems to be pretty straightforward to check in a finite domain, since we can apply the scanning procedure and get a picture of the set $\mathscr{U}_L$.
-There may be two scenarios.
-The first scenario is when we can prove that the set $\mathscr{U}_L$ is bounded within a finite domain, like the authors of the work \cite{AlfimovAvramenko} did for $P(x) \equiv -1$.
-Then one can apply a scanning procedure to that domain and thus provide a numerical evidence that Hypothesis~\ref{hypothesis:island-set} holds.
-The second scenario is when we cannot prove any statement on the boundaries and structure of $\mathscr{U}_L$, or this set is infinite and unbounded.
-We saw previously that for equation \eqref{eq:stationary-piecewise} the set $\mathscr{U}_L$ is unbounded, so the set $\mathcal{S}_{\infty}$ may contain sequences oven an alphabet of infinite number of symbols.
-In that case we still can scan only a finite subset of the initial conditions plane.
-If the finite subset represents an island set then we can reduce our consideration to the finite subset of symbols $\mathcal{S}_N \subset \mathcal{S}_{\infty}$ and, if the Hypothesis~\ref{hypothesis:strips-mapping} is also valid for that subset of $\mathscr{U}_L$, establish a homeomorphism between a subset of regular solutions and sequences from $\mathcal{S}_N$.
+Hypothesis~\ref{hypothesis:island-set} can be verified in a straightforward way, since we can apply the scanning procedure and get a structure of the set $\mathscr{U}_L$.
+There may be two possible scenarios.
+The \underline{first} scenario is when we can prove that the set $\mathscr{U}_L$ is bounded within a finite domain, like the authors of the work \cite{AlfimovAvramenko} did for $P(x) \equiv -1$.
+Then one can apply a scanning procedure to that domain and thus provide a numerical evidence that Hypothesis~\ref{hypothesis:island-set} holds for the whole set $\mathscr{U}_L$.
 
-Hypothesis~\ref{hypothesis:strips-mapping} as it is does not seem to be easily verifiable numerically.
-However it can be reduced to another two statements which admit numerical verification.
-These statements called Strips Mapping Theorems are formulated and proved in Appendix~\ref{appendix:strips-mapping-theorems}.
-Shortly speaking, in order to check Hypothesis~\ref{hypothesis:strips-mapping} one should analyse linear operators $D \mathcal{P}_{\vb{p}}$, $D \mathcal{P}^{-1}_{\vb{p}}$, which are represented by the Jacobi matrices of $\mathcal{P}$ and $\mathcal{P}^{-1}$, 
+The \underline{second} scenario is when we cannot prove any statement on the boundaries and structure of $\mathscr{U}_L$, or this set is infinite and unbounded.
+For example, we saw previously that for equation \eqref{eq:stationary-piecewise} set $\mathscr{U}_L$ is unbounded.
+In that case we cannot compute the whole set $\mathscr{U}_L$, since it's possible to scan only a finite subset of the initial conditions plane.
+But if the finite subset of $\mathscr{U}_L$ represents an island set of $N$ islands, the coding approach still can be possibly applied.
+Let's denote $\mathcal{D}_N = \bigcup_{k \in S_N} D_k$ the finite subset of $\mathscr{U}_L$ obtained by the scanning procedure.
+We can reduce our consideration to regular solutions which orbits visit only islands from $\mathcal{D}_N$.
+Denote $\mathcal{O}_N$ this set of orbits.
+If Hypothesis~\ref{hypothesis:strips-mapping} is valid for the $\mathcal{D}_N$, we can conclude that conditions of Theorem~\ref{thm:coding} and there exists a homeomorphism between a {\it subset of orbits of regular solutions} $\mathcal{O}_N$ and set of bi-infinite sequences $\mathcal{S}_N$ of symbols from finite set $S_N$.
+
+Hypothesis~\ref{hypothesis:strips-mapping} does not admit straightforward numerical verification by itself.
+However, it can be reduced to another two statements, called Strips Mapping Theorems, which admit numerical verification.
+This statements rely on properties of linear operators $D \mathcal{P}_{\vb{p}}$, $D \mathcal{P}^{-1}_{\vb{p}}$, which are represented by the Jacobi matrices of $\mathcal{P}$ and $\mathcal{P}^{-1}$, 
 \begin{alignat}{4}
 	& \mathcal{P}(\vb{q}) && = \mathcal{P}(\vb{p}) && + D \mathcal{P}_{\vb{p}} (\vb{q} - \vb{p}) && + o(||\vb{q} - \vb{p}||); \\
 	& \mathcal{P}^{-1}(\vb{q}) && = \mathcal{P}^{-1}(\vb{p}) && + D \mathcal{P}^{-1}_{\vb{p}} (\vb{q} - \vb{p}) && + o(||\vb{q} - \vb{p}||).
 \end{alignat}
-Such linear operators can be constructed numerically.
-If for an island set $\mathscr{U}_L = \bigcup_{i \in S} D_i$ matrix of the linear operator $D \mathcal{P}_{\vb{p}}$ in each point $\vb{p} \in \mathcal{P}^{-1}(D_j) \cap D_i$ satisfies a specific structure established in Theorem~\ref{thm:h-strips-mapping} of Appendix~\ref{appendix:strips-mapping-theorems} then Hypothesis~\ref{hypothesis:strips-mapping} is valid for h-strips.
-On other hand if matrix of the linear operator $D \mathcal{P}^{-1}_{\vb{p}}$ in each point $\vb{p} \in \mathcal{P}^{-1}(D_i) \cap D_j$ satisfies a specific structure established in Theorem~\ref{thm:v-strips-mapping} of Appendix~\ref{appendix:strips-mapping-theorems} then Hypothesis~\ref{hypothesis:strips-mapping} is also valid for v-strips.
-Again we cannot apply our analysis to an infinite set $\mathscr{U}_L$.
-But we can reduce the task to the finite subset of the island set, provide numerical evidence, and establish a homeomorphism between a subset of regular solutions and sequences from $\mathcal{S}_N$.
+Let's formulate the first statement that cover a part of Hypothesis~\ref{hypothesis:island-set} related to the h-strips mapping.
 
-We applied both of the above mentioned techniques to Eq.~\eqref{eq:stationary-piecewise} with the parameters $(L_*, L_0) = (2, 1)$.
-We restricted our consideration by the first five central components $D_i$, $i \in \{ -2, -1, 0, +1, +2 \}$ of the island set $\mathscr{U}_L$ (see Figure~\ref{fig:island-set-piecewise}).
-Our numerical analysis shown that both Hypothesis~\ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping} are valid, so Theorem~\ref{thm:coding} allows us to conclude that there exists a homeomorphism between a subset of regular solutions and the set $\mathcal{S}_5$.
+\begin{theorem}[On h-strips mapping]
+\label{thm:h-strips-mapping}
+	Let Poincar\'e map $\mathcal{P}$ and its inverse $\mathcal{P}^{-1}$ be defined on a complete (see Definition~\ref{def:complete-island-set}) island set $\bigcup_{i \in S} D_i$, where $S$ is a finite or countable set of indices.
+	Let for all $i, j \in S$ the set $V_{ij} = \mathcal{P}^{-1} (D_j) \cap D_i$ is non-empty, $\mathcal{P}$ is defined on a closure $\overline{V_{ij}}$, and one of the following two conditions holds:
+	\begin{enumerate}
+		\item[(1)] the borders $\alpha_i^{\pm}$ of an island $D_i$ are increasing curves, $\forall \vb{p} \in \overline{V_{ij}}$ the signs of $\{ a_{mn} \}$ in the matrix of the linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$ have exactly one of the following configurations\footnote{By ``$+$'' and ``$-$'' sign we mean \underline{strict} inequalities $a_{mn} > 0$, $a_{mn} < 0$ to be held.}:
+			\begin{center}
+				(a) $\begin{psm} + & + \\ + & + \end{psm}$, \quad
+				(b) $\begin{psm} - & - \\ - & - \end{psm}$, \quad
+				(c) $\begin{psm} + & + \\ - & - \end{psm}$, \quad
+				(d) $\begin{psm} - & - \\ + & + \end{psm}$;
+			\end{center}
+			and at the same time the borders $\alpha_j^{\pm}$ of $D_j$ are increasing curves for cases (a), (b), and decreasing curves for (c), (d);
+		\item[(2)] the borders $\alpha_i^{\pm}$ of an island $D_i$ are decreasing curves, $\forall \vb{p} \in \overline{V_{ij}}$ signs of $\{ a_{mn} \}$ in the matrix of the linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$ have exactly one of the following configurations:
+			\begin{center}
+				(a) $\begin{psm} + & - \\ - & + \end{psm}$, \quad
+				(b) $\begin{psm} - & + \\ + & - \end{psm}$,	\quad
+				(c) $\begin{psm} + & - \\ + & - \end{psm}$, \quad
+				(d) $\begin{psm} - & + \\ - & + \end{psm}$;		
+			\end{center}
+			and at the same time borders $\alpha_j^{\pm}$ of $D_j$ are decreasing curves for cases (a), (b), and increasing for (c), (d);
+	\end{enumerate}
+	and moreover $\exists \mu > 1$ such that $\forall p \in \overline{V_{ij}}$, $|a_{11}| \ge \mu$.
+	Then
+	\begin{itemize}
+		\item[(i)] for any \emph{h}-strip $H \in D_i$, $\mathcal{P} (H) \cap D_j = \widetilde{H}_j$ is also an \emph{h}-strip;
+		\item[(ii)] $d_{\mathrm{h}}(\widetilde{H}_j) \le (1 / \mu) d_{\mathrm{h}}(H)$ (here $d_{\mathrm{h}}(\cdot)$ is an \emph{h}-strip thickness in a sence of Definition~\ref{def:h-thickness}).
+	\end{itemize}
+\end{theorem}
+Proof of Theorem~\ref{thm:h-strips-mapping} can be found in Appendix~\ref{appendix:strips-mapping-theorems}.
+Basically, this theorem postulate two following things:
+\begin{itemize}
+	\item If linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$, $\vb{p} \in V_{ij}$, satisfies {\it some conditions} on signs of $a_{mn}$, then $\mathcal{P}$ {\it maps h-strips to h-strips}.
+	\item If for the linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$ the estimation $|a_{11}| \ge \mu > 1$, $\exists \mu$, takes place for $\vb{p} \in V_{ij}$, then $\mathcal{P}$ {\it shrinks thickness of h-strips}.
+\end{itemize}
+The next theorem establish the similar properties for the v-strips mapping.
 
-Such correspondence allows us to make conclusion on different types of regular solutions that equation \eqref{eq:stationary-piecewise} has.
+\begin{theorem}[On v-strips mapping]
+\label{thm:v-strips-mapping}
+	Let Poincar\'e map $\mathcal{P}$ and its inverse $\mathcal{P}^{-1}$ be defined on a complete (see Definition~\ref{def:complete-island-set}) island set $\bigcup_{i \in S} D_i$, where $S$ is a finite or countable set of indices.
+	Let for all $i, j \in S$ the set $H_{ij} = \mathcal{P} (D_i) \cap D_j$ is non-empty, $\mathcal{P}^{-1}$ is defined on a
+	 closure $\overline{H_{ij}}$, and one of the following two conditions holds:
+	\begin{enumerate}
+		\item[(1)] the borders $\beta_j^{\pm}$ of an island $D_j$ are increasing curves, $\forall \vb{q} \in \overline{H_{ij}}$ the signs of $\{ b_{mn} \}$ in the matrix of the linear operator $D \mathcal{P}_{\vb{q}}^{-1} = (b_{mn})$ have exactly one of the following configurations:
+			\begin{center}
+				(a) $\begin{psm} + & + \\ + & + \end{psm}$, \quad
+				(b) $\begin{psm} - & - \\ - & - \end{psm}$, \quad
+				(c) $\begin{psm} + & + \\ - & - \end{psm}$, \quad
+				(d) $\begin{psm} - & - \\ + & + \end{psm}$;
+			\end{center}
+			and at the same time the borders $\beta_i^{\pm}$ of $D_i$ are increasing curves for cases (a), (b), and decreasing curves for (c), (d);
+		\item[(2)] the borders $\beta_j^{\pm}$ of an island $D_j$ are decreasing curves, $\forall \vb{q} \in \overline{H	_{ij}}$ the signs of $\{ b_{mn} \}$ in the matrix of the linear operator $D \mathcal{P}_{\vb{q}}^{-1} = (b_{mn})$ have exactly one of the following configurations:
+			\begin{center}
+				(a) $\begin{psm} + & - \\ - & + \end{psm}$, \quad
+				(b) $\begin{psm} - & + \\ + & - \end{psm}$,	\quad
+				(c) $\begin{psm} + & - \\ + & - \end{psm}$, \quad
+				(d) $\begin{psm} - & + \\ - & + \end{psm}$;		
+			\end{center}
+			and at the same time borders $\beta_i^{\pm}$ of $D_i$ are decreasing curves for cases (a), (b), and increasing for (c), (d);
+	\end{enumerate}
+	and moreover $\exists \nu > 1$ such that $\forall q \in \overline{H_{ij}}$, $|b_{22}| \ge \nu$.
+	Then
+	\begin{itemize}
+		\item[(i)] for any \emph{v}-strip $V \in D_j$, $\mathcal{P}^{-1} (V) \cap D_i = \widetilde{V}_i$ is also a \emph{v}-strip;
+		\item[(ii)] $d_{\mathrm{v}} (\widetilde{V}_i) \le (1 / \nu) d_{\mathrm{v}} (V)$ (here $d_{\mathrm{v}}(\cdot)$ is an \emph{v}-strip thickness in a sence of Definition~\ref{def:v-thickness}).
+	\end{itemize}
+\end{theorem}
+Proof of this theorem is analogous to the previous one and can be performed in the same manner with minor adjustments.
+Similarly, this theorem postulate two following things:
+\begin{itemize}
+	\item If linear operator $D \mathcal{P}_{\vb{q}}^{-1} = (b_{mn})$, $\vb{q} \in H_{ij}$, satisfies {\it some conditions} on signs of $b_{mn}$, then $\mathcal{P}^{-1}$ {\it maps v-strips to v-strips}.
+	\item If for the linear operator $D \mathcal{P}_{\vb{q}}^{-1} = (b_{mn})$ the estimation $|b_{22}| \ge \nu > 1$, $\exists \nu$, takes place for $\vb{q} \in H_{ij}$, then $\mathcal{P}^{-1}$ {\it shrinks thickness of v-strips}.
+\end{itemize}
+
+The great advantage of Theorems~\ref{thm:h-strips-mapping} and \ref{thm:v-strips-mapping} is that linear operators $D \mathcal{P}_{\vb{p}}$ and $D \mathcal{P}_{\vb{q}}^{-1}$ can be constructed numerically.
+After that the conditions of the theorems above can be verified via the numerical grid in a finite area of plane of initial conditions.
+That allows to turn theorems on h- and v-strips mapping into a numerical algorithm of Hypothesis~\ref{hypothesis:strips-mapping} validation, see Algorithm~\ref{algorithm:hypotheses-validation}.
+
+\begin{algorithm}[H]
+\caption{Numerical Validation of Hypothesis~\ref{hypothesis:strips-mapping}}
+\label{algorithm:hypotheses-validation}
+\begin{algorithmic}
+	\STATE \textbf{Input:} Hypothesis~\ref{hypothesis:island-set} takes place for the complete island set $\mathcal{D}_N = \bigcup_{k \in S_N} D_k$.
+	\STATE \textbf{Step (1)}. For all $i, j \in S_N$ construct numerically sets $H_{ij} = \mathcal{P}(D_i) \cap D_j$, and $V_{ij} = \mathcal{P}^{-1} (D_j) \cap D_i$.
+	\STATE \textbf{Step (2)}. Signs validation.
+	\STATE
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+  		\setlength{\parsep}{0pt}
+		\item[\textbf{(a)}] For each point $\vb{p} \in V_{ij}$ of numerical grid compute 2$\cross$2 matrix $D \mathcal{P}_{\vb{p}} = (a_{mn})$ and check sings of $a_{mn}$ along the conditions of Theorem~\ref{thm:h-strips-mapping}.
+		\item[\textbf{(b)}] For each point $\vb{q} \in H_{ij}$ of numerical grid compute 2$\cross$2 matrix $D \mathcal{P}_{\vb{q}}^{-1} = (b_{mn})$ and check sings of $b_{mn}$ along the conditions of Theorem~\ref{thm:v-strips-mapping}.
+	\end{enumerate}
+	\STATE \textbf{Step (3)}. Numerical estimation of values $\mu$, $\nu$.
+	\STATE
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+  		\setlength{\parsep}{0pt}
+		\item[\textbf{(a)}] Using the numerical grid compute an estimation $\mu_* = \min \limits_{\vb{p} \in V_{ij}} a_{11}(\vb{p})$; check that $\mu_* > 1$.
+		\item[\textbf{(b)}] Using the numerical grid compute an estimation $\nu_* = \min \limits_{\vb{q} \in H_{ij}} b_{22}(\vb{q})$; check that $\nu_* > 1$.
+	\end{enumerate}
+\end{algorithmic}
+\end{algorithm}
+
+If the validation provided by the steps above is successful then one have a numerical evidence that Hypothesis~\ref{hypothesis:strips-mapping} is also valid.
+Hence, accordingly to Theorem~\ref{thm:coding}, there exists a homeomorphism $\mathcal{C}$ between orbits of regular solutions $\mathcal{O}_N$ and bi-infinite sequences $\mathcal{S}_N$ of symbols from $S_N$.
+Let us illustrate this idea for the considered equation \eqref{eq:stationary-piecewise} with the parameters $(L_*, L_0) = (2, 1)$.
+Applying of the technique above can be summarized within a picture, see Figure~\ref{fig:hypotheses-validation-piecewise}.
+% TODO: Discussion.
+
+\begin{figure}[h]
+\centering
+	\includegraphics[scale = 1]{pic/hypotheses for piecewise equation}
+	\caption{
+		...
+	}
+\label{fig:hypotheses-validation-piecewise}
+\end{figure}
+
+\section{Stationary Solutions of GPE with Piecewise Pseudopotential}
+
+Let's demonstrate how coding of solutions can be used to identify classes of different solutions.
+For that purpose we use again Eq.~\eqref{eq:stationary-piecewise} with the parameters $(L_*, L_0) = (2, 1)$.
+We have shown previously that there exists a numerical evidence that Hypotheses~\ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping} are valid for three central islands.
+We checked them for a lager number of connected component as well, like $5$, $7$, and $9$ central islands, and saw that the hypotheses remain valid.
+Let's now restrict our consideration by the first five central components $D_i$, $i \in \{ -2, -1, 0, +1, +2 \}$ of the island set $\mathscr{U}_L$.
+Since our numerical analysis shown that both Hypothesis~\ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping} are valid, Theorem~\ref{thm:coding} can be applied.
+It allows to conclude that there exists a homeomorphism between a subset of regular solutions and the set $\mathcal{S}_5$.
+
+Such correspondence allows us to make conclusion on different types of regular solutions of equation \eqref{eq:stationary-piecewise}.
 For example, there exist periodic solutions of a period $nL$ for any number $n \in \mathbb{N}$.
 Their symbolic codes have a periodic structure $\{ \dots, i_0, \dots i_n, i_0, \dots, i_n, \dots \}$.
 There also exist localized solutions of different shapes.
@@ -1101,8 +1229,14 @@ In this chapter the approach for classification of bounded solutions for equatio
 This approach is related to the analysis of the dynamics of Poincar\'e map $\mathcal{P}$ on the set $\mathscr{U}_L$.
 It turns out that under some restrictions the map $\mathcal{P}$ is a horseshoe map with finite or infinite number of partitions.
 This allows us to establish a homeomorphism between orbits of regular solutions of \eqref{eq:stationary} and symbolic sequences over some alphabet based on the structure of the set $\mathscr{U}_L$.
-We've formulated sufficient conditions for the existence of this	 homeomorphism in a form of two hypotheses.
-We've also shown how these hypotheses can be verified numerically and applied this approach to equation \eqref{eq:stationary-piecewise} with the simplest form of periodic pseudopotential $P(x)$.
 
+We formulated sufficient conditions for the existence of this	 homeomorphism in a form of two hypotheses, see Hypotheses~\ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping}.
+Hypothesis~\ref{hypothesis:island-set} can be verified numerically in a straightforward way.
+Hypothesis~\ref{hypothesis:strips-mapping} requires a more delicate attitude.
+We replaced Hypothesis~\ref{hypothesis:strips-mapping} with Theorems~\ref{thm:h-strips-mapping} and \ref{thm:v-strips-mapping}, they are proved in Appendix~\ref{appendix:strips-mapping-theorems}.
+These theorems admits numerical verification by Algorithm~\ref{algorithm:hypotheses-validation}.
+If all steps of the algorithm above are successful, we can conclude that Hypothesis~\ref{hypothesis:strips-mapping} takes place. 
+
+The elaborated technique was applied to equation \eqref{eq:stationary-piecewise} with the simplest form of periodic pseudopotential $P(x)$.
 On the example of equation \eqref{eq:stationary-piecewise} we show that the presence of sign-altering periodic pseudopotential results in the existence of a plethora of regular solutions.
 Such observation allows us we to expect that similar variety of regular solutions is a common property for the overall class of equations \eqref{eq:stationary}.
