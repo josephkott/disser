@@ -1,0 +1,186 @@
+\documentclass[candidate, href, colorlinks]{disser}
+
+\usepackage [T2A] {fontenc}
+\usepackage [utf8] {inputenc}
+\usepackage [english, main = russian] {babel}
+\usepackage {tabularx}
+
+\usepackage [intlimits] {amsmath}
+\usepackage {amssymb}
+\usepackage {amsfonts}
+\usepackage [autostyle] {csquotes}
+\usepackage {xcolor}
+
+\usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm] {geometry}
+
+\usepackage[style=gost-numeric, backend=biber, language=auto, hyperref=auto, autolang=other, defernumbers, sorting=none]{biblatex}
+
+\addbibresource{bibliography.bib}
+
+\pagestyle{footcenter} % page number at bottom center
+%\chapterpagestyle{footcenter} % (?)
+
+\begin{document}
+
+% -------------------- TITLE -------------------- %
+\begin{titlepage}
+\thispagestyle{empty}
+\enlargethispage{1cm}
+\vspace*{-2cm}
+
+\begin{center}
+	Институт математики с вычислительным центром \\ УФИЦ РАН
+\end{center}
+
+\vskip1cm
+	
+\begin{flushright}
+	\emph{На правах рукописи}
+\end{flushright}
+	
+\vskip3cm
+
+\begin{center}
+	{\large Лебедев Михаил Евгеньевич}
+	\vskip1cm
+	{\Large\bfseries Стационарные решения уравнения Гросса--Питаевского с периодически модулированной нелинейностью \par}
+	\vskip1.5cm
+	{РЕЗЮМЕ ДИССЕРТАЦИИ \\ на соискание ученой степени кандидата наук \\ по прикладной математике}
+\end{center}
+
+\vskip2cm
+
+\hspace{8cm}\begin{minipage}{0.4\linewidth}
+	Научный руководитель \\
+	д.~ф.-м.~н., проф. \\
+	Алфимов Георгий Леонидович
+\end{minipage}
+
+\vfill
+
+\begin{center}
+	{Москва -- \the\year}
+\end{center}
+
+\normalfont\clearpage
+\end{titlepage}
+% -------------------- END -------------------- %
+
+\thispagestyle{empty}
+\vspace*{-2cm}
+\noindent
+\begin{center}
+Работа выполнена в \emph{Институте математики с вычислительным центром УФИЦ РАН}.
+\end{center}
+\vskip1ex\noindent
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+	\textbf{Научный руководитель:} & \textbf{Алфимов Георгий Леонидович}\\
+	& доктор физико-математических наук \\[6pt]
+	
+	\textbf{Официальные оппоненты:} & \textbf{\textcolor{red}{фамилия имя отчество}}\\
+	& \textcolor{red}{ученая степень, ученое звание} \\[6pt]
+	& \textbf{\textcolor{red}{фамилия имя отчество}} \\
+	& \textcolor{red}{ученая степень, ученое звание} \\[6pt]
+	& \textbf{\textcolor{red}{фамилия имя отчество}} \\
+	& \textcolor{red}{ученая степень, ученое звание} \\[6pt]
+	
+	\textbf{Ведущая организация:} & Институт математики с вычислительным центром УФИЦ РАН
+\end{tabularx}
+
+\vskip5ex\noindent
+Защита состоится \datefield{} в \rule[0pt]{1cm}{0.5pt} часов
+на заседании диссертационного совета \emph{\textcolor{red}{шифр совета}} при \emph{\textcolor{red}{название организации, при которой создан совет}}, расположенном по адресу:\emph{\textcolor{red}{адрес}}
+
+\vskip1ex\noindent
+С диссертацией можно ознакомиться в библиотеке \emph{\textcolor{red}{название организации}}, а также по ссылке \href{http://www.xyz.com}{\textcolor{red}{http://www.xyz.com}}.
+
+\vskip1ex\noindent
+Автореферат разослан \datefield{}
+
+\vskip2ex\noindent
+Отзывы и замечания по автореферату в двух экземплярах, заверенные
+печатью, просьба высылать по вышеуказанному адресу на имя ученого секретаря диссертационного совета.
+
+\vfill\noindent
+\begin{minipage}[b]{1\linewidth}
+	Ученый секретарь \\
+	диссертационного совета, \\
+	\emph{доктор физико-математических наук}, \emph{профессор} \hfill \emph{\textcolor{red}{Фамилия И. О.}}
+\end{minipage}
+
+%\vfill\noindent
+%\begin{minipage}[b]{0.4\linewidth}
+%  Ученый секретарь \\
+%  диссертационного совета, \\
+%  \emph{ученая степень}, \emph{ученое звание}
+% %\hfill \emph{фамилия и. о.}
+%\end{minipage}
+%\begin{minipage}[b]{0.4\linewidth}
+%  \hfill \\
+%  \hfill \\
+%  \hfill asdasd
+%\end{minipage}
+%\hfill
+
+%% Insert a file with the facsimile of scientific secretary
+%\makeatletter
+%\ifDis@facsimile
+%  \includegraphics[width=3cm]{sec-facsimile}\hfill
+%\fi%
+%\makeatother%
+%\emph{фамилия и. о.}
+
+\clearpage
+
+\nsection{Общая характеристика работы}
+
+\textbf{Актуальность темы исследования.} % (?)
+
+\textbf{Степень разработанности темы исследования.}{
+
+\textbf{Цели и задачи диссертационной работы:}
+
+\textbf{Научная новизна.}
+
+\textbf{Теоретическая и практическая значимость.}
+
+\textbf{Методология и методы исследования.} % (?)
+
+\textbf{Положения, выносимые на защиту:}
+
+\textbf{Степень достоверности и апробация результатов.}
+
+\textbf{Публикации.}
+
+\textbf{Личный вклад автора.}
+
+\textbf{Структура и объем диссертации.}
+
+\nsection{Содержание работы}
+
+\textbf{Во Введении} обоснована актуальность диссертационной работы, сформулирована цель и аргументирована научная новизна исследований, показана практическая значимость полученных результатов, представлены выносимые на защиту научные положения.
+
+\textbf{В первой главе}
+
+Результаты первой главы опубликованы в работе [...].
+
+\textbf{Во второй главе}
+
+Результаты второй главы опубликованы в работе [...].
+
+\textbf{В третьей главе}
+
+Результаты третьей главы опубликованы в работе [...].
+
+\textbf{В четвертой главе}
+
+Результаты четвертой главы опубликованы в работе [...].
+
+\textbf{В Заключении}
+
+\printbibliography[keyword=own, title={Основные публикации по теме диссертации}]
+
+% All other cited literature
+% \printbibliography[notkeyword=own, title={Цитированная литература}]
+
+\end{document}
