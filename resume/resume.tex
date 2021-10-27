@@ -18,7 +18,7 @@
 \addbibresource{bibliography.bib}
 
 \pagestyle{footcenter} % page number at bottom center
-%\chapterpagestyle{footcenter} % (?)
+% \chapterpagestyle{footcenter} % (?)
 
 \begin{document}
 
@@ -70,7 +70,7 @@
 \vspace*{-2cm}
 \noindent
 \begin{center}
-Работа выполнена в \emph{Институте математики с вычислительным центром УФИЦ РАН}.
+Работа выполнена в \emph{ИМВЦ УФИЦ РАН}.
 \end{center}
 \vskip1ex\noindent
 \begin{tabularx}{\linewidth}{@{}lX@{}}
@@ -89,7 +89,7 @@
 
 \vskip5ex\noindent
 Защита состоится \datefield{} в \rule[0pt]{1cm}{0.5pt} часов
-на заседании диссертационного совета \emph{\textcolor{red}{шифр совета}} при \emph{\textcolor{red}{название организации, при которой создан совет}}, расположенном по адресу:\emph{\textcolor{red}{адрес}}
+на заседании диссертационного совета \emph{\textcolor{red}{шифр совета}} при \emph{\textcolor{red}{название организации, при которой создан совет}}, расположенном по адресу: \emph{\textcolor{red}{адрес}}.
 
 \vskip1ex\noindent
 С диссертацией можно ознакомиться в библиотеке \emph{\textcolor{red}{название организации}}, а также по ссылке \href{http://www.xyz.com}{\textcolor{red}{http://www.xyz.com}}.
@@ -134,27 +134,34 @@
 
 \nsection{Общая характеристика работы}
 
-\textbf{Актуальность темы исследования.} % (?)
+\textbf{Постановка проблемы.} % \textbf{Введение.}
 
-\textbf{Степень разработанности темы исследования.}{
+\textbf{Степень разработанности темы исследования.} % Выделить четко?
 
 \textbf{Цели и задачи диссертационной работы:}
+
+\textbf{Актуальность темы исследования.}
 
 \textbf{Научная новизна.}
 
 \textbf{Теоретическая и практическая значимость.}
+Результаты, изложенные в диссертации, могут быть использованы при проведении экспериментов с конденсатом Бозе--Эйнштейна, ...
 
 \textbf{Методология и методы исследования.} % (?)
 
 \textbf{Положения, выносимые на защиту:}
 
 \textbf{Степень достоверности и апробация результатов.}
+% Add two of my papers and one conference not on thesis topic as external refs here.
 
 \textbf{Публикации.}
 
 \textbf{Личный вклад автора.}
 
 \textbf{Структура и объем диссертации.}
+Диссертация состоит из введения, четырёх глав, трёх приложений и библиографии.
+Общий объем диссертации \textcolor{red}{?} страниц, из них \textcolor{red}{?} страниц текста, включая \textcolor{red}{?} рисунков, четыре таблицы и одну схему алгоритма.
+Библиография включает \textcolor{red}{?} наименования на \textcolor{red}{?} страницах.
 
 \nsection{Содержание работы}
 
@@ -162,23 +169,29 @@
 
 \textbf{В первой главе}
 
-Результаты первой главы опубликованы в работе [...].
+Результаты первой главы опубликованы в работах \cite{AlfimovLebedev}, \cite{NizhniNovgorod2014} и \cite{Ufa2015}.
 
 \textbf{Во второй главе}
 
-Результаты второй главы опубликованы в работе [...].
+Результаты второй главы опубликованы в работах \cite{Bannoe2019} и \cite{Bannoe2021}.
 
 \textbf{В третьей главе}
 
-Результаты третьей главы опубликованы в работе [...].
+Результаты третьей главы опубликованы в работах \cite{LebedevAlfimovMalomed}, \cite{NizhniNovgorod2016} и \cite{Tashkent2018}.
 
 \textbf{В четвертой главе}
 
-Результаты четвертой главы опубликованы в работе [...].
+Результаты четвертой главы опубликованы в работах \cite{AlfimovGegelLebedevMalomedZezyulin} и \cite{Bannoe2018}.
 
 \textbf{В Заключении}
 
-\printbibliography[keyword=own, title={Основные публикации по теме диссертации}]
+\renewcommand{\bibname}{\protect\leftline{Bibliography}}
+
+\renewcommand{\bibname}{\protect\leftline{\large Список публикаций автора по теме диссертации}}
+\printbibliography[keyword=own]
+
+% Center aligned bibliography title
+% \printbibliography[keyword=own, title={\large Список публикаций автора по теме диссертации}]
 
 % All other cited literature
 % \printbibliography[notkeyword=own, title={Цитированная литература}]
