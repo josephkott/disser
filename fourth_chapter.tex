@@ -255,7 +255,7 @@ If $P_0$ component of pseudopotential is not negligible, one can scale out the a
 \end{equation}
 Equation \eqref{eq:gpe-parabolic} takes form
 \begin{equation}
-	i \Psi_t + \Psi_{xx} + x^2 \Psi + (\sigma_0 + P_1 \cos (\Omega x)) |\Psi|^2 \Psi = 0.
+	i \Psi_t + \Psi_{xx} - x^2 \Psi + (\sigma_0 + P_1 \cos (\Omega x)) |\Psi|^2 \Psi = 0.
 \label{eq:gpe-non-zero-mean}
 \end{equation}
 where $\sigma_0 \equiv P_0 / |P_0| = \mathrm{sign} (P_0)$.
@@ -372,7 +372,7 @@ If $P_0$ component of the pseudopotential can be neglected, we drop $P_0$, and r
 \end{equation}
 which leads to the equation
 \begin{equation}
-	i \Psi_t + \Psi_{xx} + x^2 \Psi + \sigma_1 \cos (\Omega x) |\Psi|^2 \Psi = 0,
+	i \Psi_t + \Psi_{xx} - x^2 \Psi + \sigma_1 \cos (\Omega x) |\Psi|^2 \Psi = 0,
 \label{eq:gpe-zero-mean}
 \end{equation}
 where $\sigma_1 = P_1 / |P_1| = \mathrm{sign}(P_1)$.
@@ -526,7 +526,7 @@ One also notice that, for the greatest value $\Omega = 16$ there exist a ``stabi
 \centering
 	\includegraphics[scale = 1]{pic/branches with linear counterpart, zero mean cosine nho}
 	\caption{
-		Curves $N(\omega)$ of branches $\Gamma_n$, $n = 0, 1, 2, 3$ for equation \eqref{eq:nho-zero-mean} wi(-th $\sigma_1 = 1$ and $\Omega = 8, 12, 16$.
+		Curves $N(\omega)$ of branches $\Gamma_n$, $n = 0, 1, 2, 3$ for equation \eqref{eq:nho-zero-mean} with $\sigma_1 = 1$ and $\Omega = 8, 12, 16$.
 		The following notation is used: branch $\Gamma_n^{\Omega}$ corresponds to the branch with linear counterpart $\Gamma_n$, obtained for equation \eqref{eq:nho-zero-mean} where the frequency of pseudopotential equals $\Omega$.
 		Bold (thin) lines correspond to stable (unstable) solutions.
 		For convenience the stability of the families $\Gamma_n^{\Omega}$ is duplicated by straight lines under the main plot.
