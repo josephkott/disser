@@ -2,7 +2,6 @@
 % TODO: Labels in the beginning, not in the end?
 % TODO: Use $u'$ instead of $u_x$.
 % TODO: Check that "panel" written with lower letter "p".
-% TODO: Describe Hypothesis II validation in details.
 \chapter{Stationary States Classification Within Symbolic Dynamics Framework}
 \label{chapter:II}
 
@@ -1145,15 +1144,15 @@ Similarly, this theorem postulate two following things:
 
 The great advantage of Theorems~\ref{thm:h-strips-mapping} and \ref{thm:v-strips-mapping} is that linear operators $D \mathcal{P}_{\vb{p}}$ and $D \mathcal{P}_{\vb{q}}^{-1}$ can be constructed numerically.
 After that the conditions of the theorems above can be verified via the numerical grid in a finite area of plane of initial conditions.
-That allows to turn theorems on h- and v-strips mapping into a numerical algorithm of Hypothesis~\ref{hypothesis:strips-mapping} validation, see Algorithm~\ref{algorithm:hypotheses-validation}.
+That allows to turn theorems on h- and v-strips mapping into a numerical algorithm of Hypothesis~\ref{hypothesis:strips-mapping} verification, see Algorithm~\ref{algorithm:hypotheses-validation}.
 
 \begin{algorithm}[H]
-\caption{Numerical Validation of Hypothesis~\ref{hypothesis:strips-mapping}}
+\caption{Numerical Check of Hypothesis~\ref{hypothesis:strips-mapping}}
 \label{algorithm:hypotheses-validation}
 \begin{algorithmic}
 	\STATE \textbf{Input:} Hypothesis~\ref{hypothesis:island-set} takes place for the complete island set $\mathcal{D}_N = \bigcup_{k \in S_N} D_k$.
 	\STATE \textbf{Step (1)}. For all $i, j \in S_N$ construct numerically sets $H_{ij} = \mathcal{P}(D_i) \cap D_j$, and $V_{ij} = \mathcal{P}^{-1} (D_j) \cap D_i$.
-	\STATE \textbf{Step (2)}. Signs validation.
+	\STATE \textbf{Step (2)}. Signs verification.
 	\STATE
 	\begin{enumerate}
 		\setlength{\itemsep}{1pt}
@@ -1174,7 +1173,7 @@ That allows to turn theorems on h- and v-strips mapping into a numerical algorit
 \end{algorithmic}
 \end{algorithm}
 
-If the validation provided by the steps above is successful then one have a numerical evidence that Hypothesis~\ref{hypothesis:strips-mapping} is valid.
+If the verification provided by the steps above is successful then one have a numerical evidence that Hypothesis~\ref{hypothesis:strips-mapping} is valid.
 Hence, accordingly to Theorem~\ref{thm:coding}, there exists a homeomorphism $\mathcal{C}$ between orbits of regular solutions $\mathcal{O}_N$ and bi-infinite sequences $\mathcal{S}_N$ of symbols from $S_N$.
 Let us illustrate this idea for the considered equation \eqref{eq:stationary-piecewise} with the parameters $(L_*, L_0) = (2, 1)$.
 Applying of the technique above can be summarized within a picture, see Figure~\ref{fig:hypotheses-validation-piecewise}.
@@ -1202,13 +1201,13 @@ The corresponding histogram of $a_{11}$ values (blue histogram) is presented in 
 The computed lower boundary of $|b_{22}(\vb{q})|$, $\vb{q} \in H_{ij}$, $i, j \in \{ -1, 0, +1 \}$ is $\nu_* = 4.676$ (yellow histogram).
 Both $\mu_*$ and $\nu_*$ are greater than $1$.
 Hence, the corresponding conditions of Theorem~\ref{thm:h-strips-mapping} and \ref{thm:v-strips-mapping} are satisfied and $\mathcal{P}$ shrinks thickness of h-strips, while $\mathcal{P}^{-1}$ shrinks thickness of v-strips.
-This completes the validation of Hypothesis~\ref{hypothesis:strips-mapping}.
+This completes the verification of Hypothesis~\ref{hypothesis:strips-mapping}.
 
 \begin{figure}[h]
 \centering
 	\includegraphics[scale = 1]{pic/hypotheses for piecewise equation}
 	\caption{
-		Illustration to the validation of Hypothesis~\ref{hypothesis:strips-mapping} for equation \eqref{eq:stationary-piecewise} with parameters $(L_*, L_0) = (2, 1)$ for three-component island set $\mathcal{D}_3 = \{ D_{-1}, D_0, D_{+1} \}$.
+		Illustration to the verification of Hypothesis~\ref{hypothesis:strips-mapping} for equation \eqref{eq:stationary-piecewise} with parameters $(L_*, L_0) = (2, 1)$ for three-component island set $\mathcal{D}_3 = \{ D_{-1}, D_0, D_{+1} \}$.
 	}
 \label{fig:hypotheses-validation-piecewise}
 \end{figure}
