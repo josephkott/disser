@@ -29,7 +29,21 @@
 
 \usepackage{wrapfig} % floating figures
 
-\usepackage[style=gost-numeric, backend=biber, language=auto, hyperref=auto, autolang=other, sorting=none]{biblatex}
+% Previously used biblatex
+% \usepackage[style=gost-numeric, backend=biber, language=auto, hyperref=auto, autolang=other, sorting=none] {biblatex}
+
+% Biblatex usage same as for resume
+\usepackage[
+	bibstyle=gost-numeric,
+	backend=biber,
+	language=auto,
+	hyperref=auto,
+	autolang=other,
+	defernumbers=true,
+	movenames=false,
+	sorting=none,
+	maxbibnames=99
+] {biblatex}
 
 \addbibresource{bibliography.bib} % bibliography source
 
@@ -101,10 +115,6 @@
 
 % Bibliography
 \printbibliography[heading=bibintoc]
-
-% Appendix
-% \appendix
-% \input{a}
 
 \end{document}
 
