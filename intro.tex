@@ -1,18 +1,195 @@
 \chapter*{Itroduction}
 \addcontentsline{toc}{chapter}{Introduction}
+\label{introduction}
 
-One dimensional Gross--Pitaevskii equation (describes ``cigar-shaped'' condensate) takes form:
+Since the 90s of the last century, the Nonlinear Schr\"odinger Equation (NLS) with additional spatial non-autonomous terms has been an object of thorough studies.
+Specific interest to this class of equations has been caused by progress in experimental study of Bose--Einstein Condensate (BEC).
+Being predicted in 20-ies\cite{Einstein, Bose}, this state of matter was obtained for the first time in 1995 independently in experiments of two groups of researchers\cite{WiemanCornell, Ketterle}.
+In 2001 authors of this discovery was awarded the Nobel Prize.
+
+The observation of BEC stimulated experimental and theoretical studies all over the world.
+These studies exhibited that BEC may have numerous practical applications.
+Nowadays, it's expected that the usage of BEC may have a huge impact on the development of the new high-frequency interferometers \cite{GrossZiboldNicklasEsteveOberthaler}.
+Also it is expected that BEC can be used in designing of quantum computers \cite{JakschZoller} and quantum lasers \cite{GuerinRiouGaeblerJosseBouyerAspect}.
+
+It turn out that the dynamics of elongated BEC in so-called mean-field approximation is well described by the Schr\"odinger type equation with spatial non-autonomous terms,
 \begin{equation}
-	i \Psi_t + \Psi_{xx} + U(x) \Psi + P(x) |\Psi|^2 \Psi = 0.
-\label{eq:gross-pitaevskii}
+	i \Psi_t + \Psi_{xx} - U(x) \Psi + P(x) |\Psi^2| \Psi = 0.
+\label{eq:intro-gpe}
+\end{equation}
+In the context of BEC, equation \eqref{eq:intro-gpe} is called the {\it Gross--Pitaevskii equation} (GPE).
+Here $\Psi(t, x)$ is the dimensionless wave function of the condensate cloud, that is assumed to be elongated along the axis $x$.
+The function $U(x)$ describes the trap potential that is used to confine BEC, and $P(x)$ corresponds to nonlinear potential (also called {\it pseudopotential}).
+The pseudopotential describes the dependence of scattering length on the coordinates that may be non-constant due to various reasons.
+Possible experimental techniques to achieve non-constant scattering length involves optical or magnetic Feshbach resonances \cite{PollackDriesJunkerChenCorcovilosHulet, ChinGrimmJulienneTsienga, BauerLetterVoRempeDurr}.
+In the nonlinear optics spatial modulation of the Kerr coefficient can be induced by inhomogeneous density of resonant nonlinearity-enhancing dopants implanted into the waveguide \cite{HukriedeRundeKip}.
+Intervals with positive values of pseudopotential, $P(x) > 0$, correspond to the case of attraction of the condensate particles, while intervals with negative values, $P(x) < 0$, correspond to the interatomic repulsion.
+The prototypical examples of $U(x)$ are the harmonic potential well $U(x) = Ax^2$ (the magnetic trap), periodic potential $U(x) = A \cos 2x$ (the optical trap), and various types of potential wells.
+As examples of the pseudopotential $P(x)$, different functions has been used, including periodic ones.
+In the latter case one says that there exists a {\it nonlinear lattice} interacting with the condensate cloud.
+In physical experiments nonlinear lattice is created by a resonant action of external magnetic \cite{InouyeAndrewsStengerMiesnerStamperKurnKetterle} or optical \cite{ClarkHaXuChin} field.
+The presence of nonlinear lattice may provide additional possibilities for stabilization of the condensate cloud and for exciting new condensate states.
+In order to model a nonlinear lattice in theoretical works the cosine pseudopotential of the form $P(x) = A + B \cos \Omega x$ is traditionally used \cite{SakaguchiMalomed}.
+
+It's also worth noting that similar problems arise in other branches of physics, in particular in nonlinear optics \cite{KartashovMalomedTorner}.
+In various optical applications, equation \eqref{eq:intro-gpe} describes the propagation of a light beam in an optical fiber.
+In this case, periodic spatial modulation of nonlinearity is achieved by adding resonant dopants into the fiber \cite{HukriedeRundeKip}.
+
+For different physical applications the solutions of equation \eqref{eq:intro-gpe} of the special form, so-called {\it stationary localized solutions} ({\it stationary localized modes}, SLMs), play an important role.
+Such solutions can be obtained by putting into \eqref{eq:intro-gpe} an ansatz
+\begin{equation}
+	\Psi(t, x) = u(x) e^{-i \omega t},
+\label{eq:intro-ansatz}
+\end{equation}
+where the function $u(x)$ satisfies the localization conditions of the form:
+\begin{equation}
+	\lim \limits_{x \to \infty} u(x) = 0.
+\label{eq:intro-localization}
+\end{equation}
+Here $\omega$ is a real parameter that stands for a chemical potential of the condensate.
+The profile $u(x)$ of the stationary localized solution is a real-valued function \cite{AlfimovKonotopSalerno}, satisfying the equation
+\begin{equation}
+	u_{xx} + Q(x) u + P(x) u^3 = 0; \quad Q(x) = \omega - U(x).
+\label{eq:intro-stationary}
 \end{equation}
 
-Here $\Psi(t, x)$ is the macroscopic wave function of the condensate, $U(x)$ corresponds to the potential of the trap holding the condensate, and $P(x)$ describes characteristic length of the atomic interactions.
-Function $P(x)$ is called as {\it pseudopotential} which is induced by spatial periodic modulation.
-This can be achieved in BEC by means of the Feshbach resonance controlled by magnetic or optical field \cite{PollackDriesJunkerChenCorcovilosHulet, ChinGrimmJulienneTsienga, BauerLetterVoRempeDurr}.
-In the nonlinear optics spatial modulation of the Kerr coefficient can be induced by inhomogeneous density of resonant nonlinearity-enhancing dopants implanted into the waveguide \cite{HukriedeRundeKip}.
+It should be noted that not all localized solutions of Eq.~\eqref{eq:intro-stationary} are equally interesting from a physical point of view.
+The stability is a critically important property of the localized solutions.
+If SLM is unstable, a small perturbation leads to its destruction during the temporal evolution.
+Therefore, stable localized solutions are especially valuable from the perspective of physical applications.
+So, the analysis of stability is an essential part of the theoretical study of SLMs.
 
-\dots
+\textbf{Formulation of the problem.}
+While studying the dynamics described by equation \eqref{eq:intro-gpe} the following questions naturally arise:
+\begin{enumerate}
+	\item Is it possible to describe {\it completely all} stationary localized solutions of equation \eqref{eq:intro-gpe} that coexist for under given parameters?
+	\item How to identify stable solutions among them?
+\end{enumerate}
 
-% Why real? All definitions! Stationary states equation.
-% Energy and norm for the general case (U(x), P(x)).
+\textbf{A survey of the current state of the field.}
+It's worth noting that in the majority of works devoted to this topic the problem of finding / describing of {\it all} SLMs has not been raised.
+Instead, only specific classes of solutions corresponding to particular physical structures has been described, see the comprehensive review \cite{KartashovMalomedTorner}.
+At the same time, despite the questions above seem a little bit ``challenging'', the combination of rigorous analytical methods with numerical computations makes it possible to achieve significant progress in this direction.
+Let us note some related results.
+
+For equation \eqref{eq:intro-stationary} with potential $U(x)$ of the form of infinite potential well, in the case of repulsive interparticle interactions, $P(x) \equiv -1$, the computational descriptive procedure has been proposed \cite{AlfimovZezyulin}.
+This procedure provides a computational evidence and can guarantee the complete description of {\it all} bounded solutions of equation for the given set of parameters.
+The proposed method was afterwards generalized to systems of several coupled Gross--Pitaevskii equation, in which the corresponding pseudopotential do not depend on the spatial coordinate \cite{AlfimovBarashenkovFedotovSmirnovZezyulin}.
+
+It was shown, that for the periodic potential $U(x)$ in the case of repulsive interactions of the condensate particles, $P(x) \equiv -1$, there exist sufficient conditions that allow to exhaustively describe {\it all} bounded solutions of equation \eqref{eq:intro-stationary}.
+Moreover, it was shown that under these conditions there exist one-to-one correspondence between the bounded solutions and all possible bi-infinite sequences of symbols of some finite alphabet \cite{AlfimovAvramenko}.
+Such sequences are called {\it codes of solutions}, and the algorithm of assigning of such codes can be called {\it coding of solutions}.
+In the above mentioned paper, the verification of the sufficient conditions was performed by means of numerical computations.
+Results of this paper were further extended \cite{AlfimovKizinZezyulin}, specifically: there has been proposed an algorithm that allows to reconstruct numerically the profile of the solution by its symbolic code.
+
+It's also worth to mention the mathematical works of F. Zanolin and co-authors \cite{ZaniniZanolin2018, ZaniniZanolin2012}, in which the existence of some types of solutions in related problems is proved.
+Such solutions also can be classified by means of methods of nonlinear dynamics.
+Authors of these works use an approach that relies on topological argumentation and differs from the one presented in the dissertation.
+
+\textbf{Relevance of the research topic.}
+Generalization of the above mentioned results to the case of non-constant pseudopotential, $P(x) \neq \mathrm{const}$, is an important actual problem.
+Application of the ``coding approach'' to the Gross-Pitaevskii equation with periodic pseudopotential yields  a classification of nonlinear stationary states in BEC in nonlinear lattice.
+This classification opens up the possibility of experimental finding of new, previously unknown stable stationary states.
+
+\textbf{Tasks and objectives of the study.}
+The main object of the study in the dissertation is the set of stationary solutions of one-dimensional Gross -- Pitaevskii equation \eqref{eq:intro-gpe} with {\it periodic pseudopotential}.
+Tasks and objectives of the study can be formulated as follows:
+\begin{enumerate}
+	\item To formulate sufficient conditions that allow to generalize the method of coding of SLMs \cite{AlfimovAvramenko} to the case of periodic pseudopotential; to specify the ways of verification of these conditions (analytically or with numerical computations).
+	\item To study the set of stationary solutions of equation \eqref{eq:intro-gpe} with periodic pseudopotential in the case when the trapping potential can be neglected, $U(x) \equiv 0$.
+	\item For the case of harmonic potential well, $U(x) = A x^2$, to investigate the effect of periodic pseudopotential on the structure of the set of stationary localized solutions and their stability.
+\end{enumerate}
+
+\textbf{Scientific novelty.}
+In the thesis, a number of exact statements about regular and singular solutions of equation \eqref{eq:intro-stationary} are proved.
+The conditions that ensure the existence of singular solutions, or their absence are formulated.
+In particular, it was shown that if the pseudopotential is negative at least at one point $x_0$, $P(x_0) < 0$, then there exist two one-parametric families of solutions which tend to infinity at this point $x_0$.
+Asymptotic expansions for these families are given.
+
+The method of excluding of singular solutions was further developed.
+The dissertation proposes sufficient conditions for existence of one-to-one correspondence between regular solutions of equation \eqref{eq:intro-stationary} and bi-infinite symbolic sequences over some alphabet. 
+In contrast to the previously obtained results \cite{AlfimovAvramenko}, the proposed conditions admit effective numerical verification.
+An algorithm of the numerical verification is provided in the dissertation along with its theoretical justification.
+This algorithm was implemented in {\tt MATLAB} using {\tt MEX} extension for high performance computing support.
+
+For the case $U(x) \equiv 0$ and cosine periodic pseudopotential of the form $P(x) = A + B \cos 2x$ the set of stationary localized solutions has been studied.
+When applying the above-mentioned techniques, the set of SLMs was effectively described, and, eventually, new stable localized solution, named {\it dipole soliton} \cite{LebedevAlfimovMalomed}, was found.
+This solution has been previously unknown.
+
+Finally, in the case of harmonic trapping potential, $U(x) = A x^2$, the effect of periodic pseudopotential of the form $P(x) = A + B \cos \Omega x$ on the set of SLMs was studied.
+It was shown that in comparison with well-studied case $P(x) = \mathrm{const}$, the set of stationary localized solutions is much richer.
+Namely, there exist essentially nonlinear solutions which cannot be predicted by low-amplitude approximation.
+The dependence of the SLMs stability on the frequency $\Omega$ of the pseudopotential was studied.
+For the pseudopotential with zero mean, $P(x) = B \cos \Omega x$, it was found that the increase of frequency $\Omega$ allows to stabilize low-amplitude solutions, whose counterparts in the model with $P(x) = \mathrm{const}$ are unstable.
+
+\textbf{The highlights of the thesis are:}
+\begin{enumerate}
+	\item The statements on the presence and absence of singular solutions of equation \eqref{eq:intro-stationary} are proved.
+		It is shown that in the case $P(x) > 0$ all solutions of \eqref{eq:intro-stationary} are regular.
+		If $P(x)$ is negative at least at one point $x_0$, $P(x_0) < 0$, then there exist two one-parametric families of solutions, which tend to infinity at the point $x_0$.
+		The asymptotic description of these families are given.
+		In the case $Q(x) < 0$ and $P(x) < 0$, it is shown that all solutions of equation \eqref{eq:intro-stationary} are singular.
+	\item For equation \eqref{eq:intro-stationary} sufficient conditions for coding of regular solutions are formulated.
+		An effective algorithm for their numerical verification is presented.
+	\item For the case $U(x) \equiv 0$, $P(x) = A + \cos 2x$ the set of SLMs of Eq.~\eqref{eq:intro-gpe} are described.
+		This study reveals new stable localized solution, named {\it dipole soliton}.
+	\item It is shown that the model that includes both trapping harmonic potential $U(x) = A x^2$ and the nonlinear lattice admits new classes of SLMs, in comparison with the case when the nonlinear lattice is not taken into account.
+		For the periodic pseudopotential with zero mean, it is shown that increasing of the frequency of pseudopotential can stabilize low-amplitude localized solutions.
+\end{enumerate}
+
+\textbf{Confidence level and approbation of the results.}
+The Gross -- Pitaevskii model is a classical model of physics of ultra-cold temperatures and its confidence is beyond any doubt.
+SLMs in this model correspond to localized stationary solutions of the Gross--Pitaevskii equation.
+In the thesis, SLMs are constructed, and their stability is investigated numerically.
+Numerical computation of SLMs is performed by means of standard numerical methods for ODEs with controlled accuracy.
+The analysis of stability of SLMs is fulfilled by means of the spectral method which is generally recognized for the similar problems.
+Results of the stability analysis are verified by solution of the time-dependent Gross--Pitaevskii equation employing a conservative finite-difference scheme.
+The key findings of the thesis were reported at various scientific seminars and conferences, including:
+\begin{enumerate}
+	\item <<Фундаментальная математика и ее приложения в естествознании>>, BSU, Ufa, September, 2015.
+	\item ``Dynamics, Bifurcations and Chaos III'', Lobachevsky State University of Nizhni Novgorod, Nizhni Novgorod, July, 2016.
+	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March, 2018.
+	\item ``Nonlinear Phenomena in Bose Condensates and Optical Systems'', Tashkent, Uzbekistan, August, 2018.
+	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March, 2019.
+	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March, 2021.
+\end{enumerate}
+
+\textbf{Publications.}
+Materials of the thesis were presented in 9 publications, among them there are 3 articles in peer-reviewed journals \cite{AlfimovLebedev, LebedevAlfimovMalomed, AlfimovGegelLebedevMalomedZezyulin}, and 6 conference proceedings \cite{Ufa2015, NizhniNovgorod2016, Bannoe2018, Tashkent2018, LebedevShipitsynBannoe2019, Bannoe2021}.
+During the work on the dissertation, the author also published 2 articles \cite{LebedevDolininaHong, ZezyulinLebedevAlfimovMalomed} on related topics (results of one of them were also reported on conference \cite{LebedevAlfimovBannoe2019}).
+
+\textbf{Personal contribution of the author.}
+The main finding of the thesis was obtained either by the applicant in person, or in collaboration with co-authors where the role of the applicant was dominant.
+The numerical implementations of all the algorithms and other computer programs was fulfilled by the applicant personally.
+
+\textbf{Structure and volume of the dissertation.}
+The thesis consists of introduction, four chapters, three appendices, and a bibliography.
+Total volume of the dissertation is 130 pages.
+Among them there are 115 pages of text, including 35 figures, 4 tables and 1 algorithm scheme.
+Bibliography consists of 61 titles on 8 pages.
+
+\textbf{\hyperref[introduction]{Introduction}} contains formulation of the problem, justification of the relevance of the research topic, tasks and objectives of the study, scientific novelty, and the highlights of the thesis.
+
+In \textbf{\hyperref[chapter:I]{Chapter I}} several propositions about regular and singular solutions of equation \eqref{eq:intro-stationary} are formulated and proved.
+
+\textbf{\hyperref[chapter:II]{Chapter II}} contains the theory lying behind the symbolic dynamics approach that we use to classify solutions of equation \eqref{eq:intro-stationary}.
+Numerical procedure that establish the possibility of application of this approach is provided.
+
+In \textbf{\hyperref[chapter:III]{Chapter III}} the set of stationary localized solutions has been studied for the case of equation \eqref{eq:intro-gpe} in which the trapping potential is absent, $U(x) \equiv 0$, and the pseudopotential has a cosine form, $P(x) = A + \cos 2x$.
+Linear stability of these solutions is analysed by means of spectral method which is also briefly described.
+
+In \textbf{\hyperref[chapter:IV]{Chapter IV}} the set of SLMs is studied for equation \eqref{eq:intro-gpe} where, along with the periodic pseudopotential, the trapping potential in the form of harmonic potential well is included.
+
+In \textbf{\hyperref[conclusion]{Conclusion}} the results of the thesis are summarized.
+
+In \textbf{\hyperref[appendix:lemma-on-bounded-solutions]{Appendix A}} Lemma on bounded solutions is proved.
+This lemma is used in Chapter I.
+
+\textbf{\hyperref[appendix:solutions-of-duffing-equations]{Appendix B}} contains explicit solutions for two equations of the Duffing oscillator type: 
+\begin{equation}
+	u_{xx} - u + u^3 = 0; \quad u_{xx} - u - u^3 = 0,
+\end{equation}
+that are used in Section~\ref{section:poincare-map-domains-piecewise}.
+
+In \textbf{\hyperref[appendix:strips-mapping-theorems]{Appendix C}} Theorems on h- and v-strips mapping are proved.
+These theorems are used in Chapter~\ref{chapter:II}.
