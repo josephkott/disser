@@ -1,16 +1,15 @@
-\chapter*{Itroduction}
+\chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 \label{introduction}
 
 Since the 90s of the last century, the Nonlinear Schr\"odinger Equation (NLS) with additional spatial non-autonomous terms has been an object of thorough studies.
 Specific interest to this class of equations has been caused by progress in experimental study of Bose--Einstein Condensate (BEC).
-Being predicted in 20-ies\cite{Einstein, Bose}, this state of matter was obtained for the first time in 1995 independently in experiments of two groups of researchers\cite{WiemanCornell, Ketterle}.
-In 2001 authors of this discovery was awarded the Nobel Prize.
+Being predicted in 20-ies \cite{Einstein, Bose}, this state of matter was obtained for the first time in 1995 independently in experiments of two groups of researchers \cite{WiemanCornell, Ketterle}.
+In 2001 authors of this discovery were awarded the Nobel Prize.
 
-The observation of BEC stimulated experimental and theoretical studies all over the world.
+The observation of BEC stimulated experimental and theoretical studies of ultracold cases all over the world.
 These studies exhibited that BEC may have numerous practical applications.
-Nowadays, it's expected that the usage of BEC may have a huge impact on the development of the new high-frequency interferometers \cite{GrossZiboldNicklasEsteveOberthaler}.
-Also it is expected that BEC can be used in designing of quantum computers \cite{JakschZoller} and quantum lasers \cite{GuerinRiouGaeblerJosseBouyerAspect}.
+Nowadays, it's expected that BEC may be used for the development of the new high-frequency interferometers \cite{GrossZiboldNicklasEsteveOberthaler}, in designing of quantum computers \cite{JakschZoller} and quantum lasers \cite{GuerinRiouGaeblerJosseBouyerAspect}.
 
 It turn out that the dynamics of elongated BEC in so-called mean-field approximation is well described by the Schr\"odinger type equation with spatial non-autonomous terms,
 \begin{equation}
@@ -20,20 +19,20 @@ It turn out that the dynamics of elongated BEC in so-called mean-field approxima
 In the context of BEC, equation \eqref{eq:intro-gpe} is called the {\it Gross--Pitaevskii equation} (GPE).
 Here $\Psi(t, x)$ is the dimensionless wave function of the condensate cloud, that is assumed to be elongated along the axis $x$.
 The function $U(x)$ describes the trap potential that is used to confine BEC, and $P(x)$ corresponds to nonlinear potential (also called {\it pseudopotential}).
-The pseudopotential describes the dependence of scattering length on the coordinates that may be non-constant due to various reasons.
-Possible experimental techniques to achieve non-constant scattering length involves optical or magnetic Feshbach resonances \cite{PollackDriesJunkerChenCorcovilosHulet, ChinGrimmJulienneTsienga, BauerLetterVoRempeDurr}.
-In the nonlinear optics spatial modulation of the Kerr coefficient can be induced by inhomogeneous density of resonant nonlinearity-enhancing dopants implanted into the waveguide \cite{HukriedeRundeKip}.
+The pseudopotential describes the spatial dependence of scattering length that may be non-constant due to various reasons.
+Possible experimental techniques to achieve non-constant scattering length involve optical or magnetic Feshbach resonances \cite{PollackDriesJunkerChenCorcovilosHulet, ChinGrimmJulienneTsienga, BauerLetterVoRempeDurr}.
 Intervals with positive values of pseudopotential, $P(x) > 0$, correspond to the case of attraction of the condensate particles, while intervals with negative values, $P(x) < 0$, correspond to the interatomic repulsion.
-The prototypical examples of $U(x)$ are the harmonic potential well $U(x) = Ax^2$ (the magnetic trap), periodic potential $U(x) = A \cos 2x$ (the optical trap), and various types of potential wells.
+The prototypical examples of $U(x)$ are the harmonic potential $U(x) = Ax^2$ (the magnetic trap), periodic potential $U(x) = A \cos 2x$ (the optical trap), and various types of potential wells.
 As examples of the pseudopotential $P(x)$, different functions has been used, including periodic ones.
 In the latter case one says that there exists a {\it nonlinear lattice} interacting with the condensate cloud.
 In physical experiments nonlinear lattice is created by a resonant action of external magnetic \cite{InouyeAndrewsStengerMiesnerStamperKurnKetterle} or optical \cite{ClarkHaXuChin} field.
-The presence of nonlinear lattice may provide additional possibilities for stabilization of the condensate cloud and for exciting new condensate states.
+The presence of nonlinear lattice may provide additional possibilities for stabilization of the condensate cloud and for exciting of new condensate states.
 In order to model a nonlinear lattice in theoretical works the cosine pseudopotential of the form $P(x) = A + B \cos \Omega x$ is traditionally used \cite{SakaguchiMalomed}.
 
 It's also worth noting that similar problems arise in other branches of physics, in particular in nonlinear optics \cite{KartashovMalomedTorner}.
 In various optical applications, equation \eqref{eq:intro-gpe} describes the propagation of a light beam in an optical fiber.
-In this case, periodic spatial modulation of nonlinearity is achieved by adding resonant dopants into the fiber \cite{HukriedeRundeKip}.
+In this case, periodic spatial modulation of the Kerr coefficient, related to nonlinear term in \eqref{eq:intro-gpe}, can be induced by inhomogeneous density of resonant nonlinearity-enhancing dopants implanted into the waveguide \cite{HukriedeRundeKip}.
+%In this case, periodic spatial modulation of nonlinearity is achieved by adding resonant dopants into the fiber \cite{HukriedeRundeKip}.
 
 For different physical applications the solutions of equation \eqref{eq:intro-gpe} of the special form, so-called {\it stationary localized solutions} ({\it stationary localized modes}, SLMs), play an important role.
 Such solutions can be obtained by putting into \eqref{eq:intro-gpe} an ansatz
@@ -76,7 +75,7 @@ For equation \eqref{eq:intro-stationary} with potential $U(x)$ of the form of in
 This procedure provides a computational evidence and can guarantee the complete description of {\it all} bounded solutions of equation for the given set of parameters.
 The proposed method was afterwards generalized to systems of several coupled Gross--Pitaevskii equation, in which the corresponding pseudopotential do not depend on the spatial coordinate \cite{AlfimovBarashenkovFedotovSmirnovZezyulin}.
 
-It was shown, that for the periodic potential $U(x)$ in the case of repulsive interactions of the condensate particles, $P(x) \equiv -1$, there exist sufficient conditions that allow to exhaustively describe {\it all} bounded solutions of equation \eqref{eq:intro-stationary}.
+It was shown, that for the periodic potential $U(x)$ in the case of repulsive interactions of the condensate particles, $P(x) \equiv -1$, there exist sufficient conditions that allow to describe exhaustively {\it all} bounded solutions of equation \eqref{eq:intro-stationary}.
 Moreover, it was shown that under these conditions there exist one-to-one correspondence between the bounded solutions and all possible bi-infinite sequences of symbols of some finite alphabet \cite{AlfimovAvramenko}.
 Such sequences are called {\it codes of solutions}, and the algorithm of assigning of such codes can be called {\it coding of solutions}.
 In the above mentioned paper, the verification of the sufficient conditions was performed by means of numerical computations.
@@ -163,22 +162,24 @@ The main finding of the thesis was obtained either by the applicant in person, o
 The numerical implementations of all the algorithms and other computer programs was fulfilled by the applicant personally.
 
 \textbf{Structure and volume of the dissertation.}
-The thesis consists of introduction, four chapters, three appendices, and a bibliography.
+The thesis consists of introduction, four chapters, conclusion, three appendices, and a bibliography.
 Total volume of the dissertation is 130 pages.
 Among them there are 115 pages of text, including 35 figures, 4 tables and 1 algorithm scheme.
-Bibliography consists of 61 titles on 8 pages.
+Bibliography consists of 61 titles.
 
 \textbf{\hyperref[introduction]{Introduction}} contains formulation of the problem, justification of the relevance of the research topic, tasks and objectives of the study, scientific novelty, and the highlights of the thesis.
 
 In \textbf{\hyperref[chapter:I]{Chapter I}} several propositions about regular and singular solutions of equation \eqref{eq:intro-stationary} are formulated and proved.
 
-\textbf{\hyperref[chapter:II]{Chapter II}} contains the theory lying behind the symbolic dynamics approach that we use to classify solutions of equation \eqref{eq:intro-stationary}.
-Numerical procedure that establish the possibility of application of this approach is provided.
+\textbf{\hyperref[chapter:II]{Chapter II}} contains the theory lying behind the symbolic dynamics approach that is used to classify solutions of equation \eqref{eq:intro-stationary}.
+Main theorem of the approach is formulated and proved.
+Numerical procedure that establishes the possibility of application of this approach is provided.
 
-In \textbf{\hyperref[chapter:III]{Chapter III}} the set of stationary localized solutions has been studied for the case of equation \eqref{eq:intro-gpe} in which the trapping potential is absent, $U(x) \equiv 0$, and the pseudopotential has a cosine form, $P(x) = A + \cos 2x$.
+In \textbf{\hyperref[chapter:III]{Chapter III}} the set of stationary localized solutions has been studied for the case of equation \eqref{eq:intro-gpe} when no trapping potential is included, $U(x) \equiv 0$, and the pseudopotential has a cosine form, $P(x) = A + \cos 2x$.
 Linear stability of these solutions is analysed by means of spectral method which is also briefly described.
 
 In \textbf{\hyperref[chapter:IV]{Chapter IV}} the set of SLMs is studied for equation \eqref{eq:intro-gpe} where, along with the periodic pseudopotential, the trapping potential in the form of harmonic potential well is included.
+Stability of low-amplitude solutions is studied by means of asymptotic methods.
 
 In \textbf{\hyperref[conclusion]{Conclusion}} the results of the thesis are summarized.
 
