@@ -75,7 +75,7 @@
 \begin{center}
 	{\large Lebedev Mikhail Evgenievich}
 	\vskip1cm
-	{\Large\bfseries Stationary States of Bose--Einstein \\ Condensate in Nonlinear Lattices: \\ Mathematical and Numerical Study\par}
+	{\Large\bfseries Stationary States for Nonlinear \\ Schr\"odinger Equation with \\ Periodically Modulated Nonlinearity: \\ Mathematical and Numerical Study\par}
 	\vskip1.5cm
 	{SUMMARY OF THE THESIS \\ submitted for academic degree of \\ Doctor of Philosophy in Applied Mathematics \\ at HSE}
 \end{center}
@@ -146,36 +146,67 @@
 
 \textbf{Introduction.}
 Since the 90s of the last century, the Nonlinear Schr\"odinger Equation (NLS) with additional spatial non-autonomous terms has been an object of thorough studies.
-Specific interest to this class of equations has been caused by progress in experimental study of Bose--Einstein Condensate (BEC).
-Being predicted in 20-ies\footnote{A. Einstein, ``Quantentheorie des einatomigen idealen Gases'', Preussische Akademie der Wissenschaften, Berlin, 1924.}, this state of matter was obtained for the first time in 1995 independently in experiments of two groups of researchers\footnote{M. H. Anderson, J. R. Ensher, M. R. Matthews, C. E. Wieman, E. A. Cornell, ``Observation of Bose–Einstein Condensation in a Dilute Atomic Vapor'', Science, Vol. 269, P. 198--201, 1995.}.
-In 2001 authors of this discovery were awarded the Nobel Prize.
-
-The observation of BEC stimulated experimental and theoretical studies all over the world.
-These studies exhibited that BEC may have numerous practical applications.
-Nowadays, it's expected that BEC may be used for the development of the new high-frequency interferometers\footnote{C. Gross, T. Zibold, E. Nicklas, J. Esteve, and M. K. Oberthaler, ``Nonlinear atom interferometer surpasses classical precision limit'', Nature, Vol. 464, P. 1165--1169, 2010.}, in designing of quantum computers\footnote{D. Jaksch, P. Zoller, ``The cold atom Hubbard toolbox'', Annals of Physics, Vol. 315, P. 52--79, 2005.}, and quantum lasers\footnote{W. Guerin, J.-F. Riou, J. P. Gaebler, V. Josse, P. Bouyer, and A. Aspect, ``Guided Quasicontinuous Atom Laser'', Phys. Rev. Lett., Vol. 97, P. 200402, 2006.}.
-
-It turn out that the dynamics of elongated BEC in so-called mean-field approximation is well described by the Schr\"odinger type equation with spatial non-autonomous terms,
+For the one-dimensional case, this equation can be written as follows:
 \begin{equation}
 	i \Psi_t + \Psi_{xx} - U(x) \Psi + P(x) |\Psi^2| \Psi = 0.
 \label{eq:gpe}
 \end{equation}
+Specific interest to this class of equations has been caused by progress in experimental study of Bose--Einstein Condensate\footnote{A. Einstein, ``Quantentheorie des einatomigen idealen Gases'', Preussische Akademie der Wissenschaften, Berlin, 1924.} (BEC) as well as the development of nonlinear optics and its various applications.
+
 In the context of BEC, equation \eqref{eq:gpe} is called the {\it Gross--Pitaevskii equation} (GPE).
+It describes the dynamics of the condensate in so-called mean-field approximation.
 Here $\Psi(t, x)$ is the dimensionless wave function of the condensate cloud, that is assumed to be elongated along the axis $x$.
 The function $U(x)$ describes the trap potential that is used to confine BEC, and $P(x)$ corresponds to nonlinear potential (also called {\it pseudopotential}).
 The pseudopotential describes the spatial dependence of scattering length that may be non-constant due to various reasons.
-Possible experimental techniques to achieve non-constant scattering length involves optical or magnetic Feshbach resonances\footnote{C. Chin, R. Grimm, P. Julienne, and E. Tiesinga, ``Feshbach resonances in ultracold gases'', Rev. Mod. Phys. Vol. 82, P. 1225, 2010.}.
 Intervals with positive values of pseudopotential, $P(x) > 0$, correspond to the case of attraction of the condensate particles, while intervals with negative values, $P(x) < 0$, correspond to the interatomic repulsion.
 The prototypical examples of $U(x)$ are the harmonic potential $U(x) = Ax^2$ (the magnetic trap), periodic potential $U(x) = A \cos 2x$ (the optical trap), and various types of potential wells.
-%
-As examples of the pseudopotential $P(x)$, different functions has been used, including periodic ones.
-In the latter case one says that there exists a {\it nonlinear lattice} interacting with the condensate cloud.
-In physical experiments nonlinear lattice is created by a resonant action of external magnetic\footnote{S. Inouye, M. R. Andrews, J. Stenger, H.-J. Miesner, D. M. Stamper-Kurn \& W. Ketterle, ``Observation of Feshbach resonances in a Bose--Einstein condensate'', Nature, Vol. 392, P. 151-154, 1998.} or optical\footnote{L. W. Clark, Li-Chung Ha, Chen-Yu Xu, and Cheng Chin, ``Quantum Dynamics with Spatiotemporal Control of Interactions in a Stable Bose--Einstein Condensate'', Phys. Rev. Lett., Vol. 115, P. 155301, 2015.} field.
-The presence of nonlinear lattice may provide additional possibilities for stabilization of the condensate cloud and for exciting of new condensate states.
-In order to model a nonlinear lattice in theoretical works the cosine pseudopotential of the form $P(x) = A + B \cos \Omega x$ is traditionally used\footnote{\label{note:malomed} H. Sakaguchi,  B. A. Malomed, ``Matter-wave solitons in nonlinear optical lat­tices'', Phys. Rev. E, Vol. 72, P. 046610, 2005.}.
+As examples of the pseudopotential $P(x)$, different functions has been used, including periodic ones, for instance, cosine pseudopotential, $P(x) = A + B \cos \Omega x$.
+In the latter case one says that there exists a {\it nonlinear lattice}\footnote{\label{note:malomed} H. Sakaguchi,  B. A. Malomed, ``Matter-wave solitons in nonlinear optical lat­tices'', Phys. Rev. E, Vol. 72, P. 046610, 2005.} interacting with the condensate cloud.
 
-It's also worth noting that similar problems arise in other branches of physics, in particular in nonlinear optics\footnote{\label{note:turner} Y. V. Kartashov, B. A. Malomed, and L. Torner, ``Solitons in nonlinear lattices'', Rev. Mod. Phys. Vol. 83, P. 247, 2011}.
-In various optical applications, equation \eqref{eq:gpe} describes the propagation of a light beam in an optical fiber.
-In this case, periodic spatial modulation of nonlinearity is achieved by adding resonant dopants into the fiber\footnote{J. Hukriede, D. Runde, and D. Kip, ``Fabrication and application of holographic Bragg gratings in lithium niobate channel waveguides'', J. Phys. D, Vol. 36, R1, 2003.}.
+In optical applications, equation \eqref{eq:gpe} describes the propagation of a light beam in an optical fiber.
+For this case function $\Psi(t, x)$ corresponds to the amplitude of the electromagnetic wave, where $t$ is the propagation distance and $x$ is a transverse spatial coordinate.
+Function $U(x)$ corresponds to a local perturbation of the refractive index, which accounts for the optical inhomogeneity of the medium.
+In other words, $U(x)$ describes a linear linear lattice written in the medium to control the linear transmission of the optical beams\footnote{\label{note:torner} Y. V. Kartashov, B. A. Malomed, and L. Torner, ``Solitons in nonlinear lattices'', Rev. Mod. Phys. Vol. 83, P. 247, 2011.}.
+Function $P(x)$ represents the Kerr coefficient, the spatial modulation of which is achieved by adding resonant dopants into the fiber\footnote{J. Hukriede, D. Runde, and D. Kip, ``Fabrication and application of holographic Bragg gratings in lithium niobate channel waveguides'', J. Phys. D, Vol. 36, R1, 2003.}.
+Also, periodical dependence of $P(x)$ naturally arises while considering a multilayer periodic system of thin film nonlinear waveguides\footnote{Y. S. Kivshar, G. P. Agrawal, ``Optical Solitons'', Academic Press, P. 386--424, 2003.}.
+Such dependence of the Kerr coefficient implies the existence of
+the {\it nonlinear lattice} in the inhomogeneous optical medium.
+
+% -------------------- OLD -------------------- %
+
+%\textbf{Introduction.}
+%Since the 90s of the last century, the Nonlinear Schr\"odinger Equation (NLS) with additional spatial non-autonomous terms has been an object of thorough studies.
+%Specific interest to this class of equations has been caused by progress in experimental study of Bose--Einstein Condensate (BEC).
+%Being predicted in 20-ies\footnote{A. Einstein, ``Quantentheorie des einatomigen idealen Gases'', Preussische Akademie der Wissenschaften, Berlin, 1924.}, this state of matter was obtained for the first time in 1995 independently in experiments of two groups of researchers\footnote{M. H. Anderson, J. R. Ensher, M. R. Matthews, C. E. Wieman, E. A. Cornell, ``Observation of Bose–Einstein Condensation in a Dilute Atomic Vapor'', Science, Vol. 269, P. 198--201, 1995.}.
+%In 2001 authors of this discovery were awarded the Nobel Prize.
+%
+%The observation of BEC stimulated experimental and theoretical studies all over the world.
+%These studies exhibited that BEC may have numerous practical applications.
+%Nowadays, it's expected that BEC may be used for the development of the new high-frequency interferometers\footnote{C. Gross, T. Zibold, E. Nicklas, J. Esteve, and M. K. Oberthaler, ``Nonlinear atom interferometer surpasses classical precision limit'', Nature, Vol. 464, P. 1165--1169, 2010.}, in designing of quantum computers\footnote{D. Jaksch, P. Zoller, ``The cold atom Hubbard toolbox'', Annals of Physics, Vol. 315, P. 52--79, 2005.}, and quantum lasers\footnote{W. Guerin, J.-F. Riou, J. P. Gaebler, V. Josse, P. Bouyer, and A. Aspect, ``Guided Quasicontinuous Atom Laser'', Phys. Rev. Lett., Vol. 97, P. 200402, 2006.}.
+%
+%It turn out that the dynamics of elongated BEC in so-called mean-field approximation is well described by the Schr\"odinger type equation with spatial non-autonomous terms,
+%\begin{equation}
+%	i \Psi_t + \Psi_{xx} - U(x) \Psi + P(x) |\Psi^2| \Psi = 0.
+%\label{eq:gpe}
+%\end{equation}
+%In the context of BEC, equation \eqref{eq:gpe} is called the {\it Gross--Pitaevskii equation} (GPE).
+%Here $\Psi(t, x)$ is the dimensionless wave function of the condensate cloud, that is assumed to be elongated along the axis $x$.
+%The function $U(x)$ describes the trap potential that is used to confine BEC, and $P(x)$ corresponds to nonlinear potential (also called {\it pseudopotential}).
+%The pseudopotential describes the spatial dependence of scattering length that may be non-constant due to various reasons.
+%Possible experimental techniques to achieve non-constant scattering length involves optical or magnetic Feshbach resonances\footnote{C. Chin, R. Grimm, P. Julienne, and E. Tiesinga, ``Feshbach resonances in ultracold gases'', Rev. Mod. Phys. Vol. 82, P. 1225, 2010.}.
+%Intervals with positive values of pseudopotential, $P(x) > 0$, correspond to the case of attraction of the condensate particles, while intervals with negative values, $P(x) < 0$, correspond to the interatomic repulsion.
+%The prototypical examples of $U(x)$ are the harmonic potential $U(x) = Ax^2$ (the magnetic trap), periodic potential $U(x) = A \cos 2x$ (the optical trap), and various types of potential wells.
+%As examples of the pseudopotential $P(x)$, different functions has been used, including periodic ones.
+%In the latter case one says that there exists a {\it nonlinear lattice} interacting with the condensate cloud.
+%In physical experiments nonlinear lattice is created by a resonant action of external magnetic\footnote{S. Inouye, M. R. Andrews, J. Stenger, H.-J. Miesner, D. M. Stamper-Kurn \& W. Ketterle, ``Observation of Feshbach resonances in a Bose--Einstein condensate'', Nature, Vol. 392, P. 151-154, 1998.} or optical\footnote{L. W. Clark, Li-Chung Ha, Chen-Yu Xu, and Cheng Chin, ``Quantum Dynamics with Spatiotemporal Control of Interactions in a Stable Bose--Einstein Condensate'', Phys. Rev. Lett., Vol. 115, P. 155301, 2015.} field.
+%The presence of nonlinear lattice may provide additional possibilities for stabilization of the condensate cloud and for exciting of new condensate states.
+%In order to model a nonlinear lattice in theoretical works the cosine pseudopotential of the form $P(x) = A + B \cos \Omega x$ is traditionally used\footnote{\label{note:malomed} H. Sakaguchi,  B. A. Malomed, ``Matter-wave solitons in nonlinear optical lat­tices'', Phys. Rev. E, Vol. 72, P. 046610, 2005.}.
+%
+%It's also worth noting that similar problems arise in other branches of physics, in particular in nonlinear optics\footnote{\label{note:turner} Y. V. Kartashov, B. A. Malomed, and L. Torner, ``Solitons in nonlinear lattices'', Rev. Mod. Phys. Vol. 83, P. 247, 2011}.
+%In various optical applications, equation \eqref{eq:gpe} describes the propagation of a light beam in an optical fiber.
+%In this case, periodic spatial modulation of nonlinearity is achieved by adding resonant dopants into the fiber\footnote{J. Hukriede, D. Runde, and D. Kip, ``Fabrication and application of holographic Bragg gratings in lithium niobate channel waveguides'', J. Phys. D, Vol. 36, R1, 2003.}.
+
+% -------------------- END -------------------- %
 
 For different physical applications the solutions of equation \eqref{eq:gpe} of the special form, so-called {\it stationary localized solutions} ({\it stationary localized modes}, SLMs), play an important role.
 Such solutions can be obtained by putting into \eqref{eq:gpe} an ansatz
