@@ -61,36 +61,42 @@
 \vspace*{-2cm}
 
 \begin{center}
-	Institute of Mathematics with Computing Centre \\ UFRC RAS
+	National Research University \\ <<Higher School of Economics>>
 \end{center}
 
 \vskip1cm
 	
 \begin{flushright}
-	\emph{As a manuscript}
+	\emph{as a manuscript}
 \end{flushright}
 	
 \vskip3cm
 
 \begin{center}
-	{\large Lebedev Mikhail Evgenievich}
+	{\large Lebedev Mikhail}
 	\vskip1cm
-	{\Large\bfseries Stationary States for Nonlinear \\ Schr\"odinger Equation with \\ Periodically Modulated Nonlinearity: \\ Mathematical and Numerical Study\par}
-	\vskip1.5cm
-	{SUMMARY OF THE THESIS \\ submitted for academic degree of \\ Doctor of Philosophy in Applied Mathematics \\ at HSE}
+	{\large\bfseries Stationary states for nonlinear Schr\"odinger equation with periodically modulated nonlinearity: mathematical and numerical study\par}
+	\vskip1cm
+	{Ph. D. Thesis summary}
+	\vskip1cm
+	{for the purpose of obtaining academic degree \\ Doctor of Philosophy in Applied Mathematics}
 \end{center}
 
 \vskip2cm
 
-\hspace{8cm}\begin{minipage}{0.45\linewidth}
-	Academic supervisor \\
-	Alfimov Georgy Leonidovich, Ph. D.
+\hspace{8cm}
+\begin{minipage}{0.45\linewidth}
+\begin{flushright}
+	Academic supervisor: \\
+	Doctor of Sciences, professor \\
+	Georgy L. Alfimov
+\end{flushright}
 \end{minipage}
 
 \vfill
 
 \begin{center}
-	{Moscow -- \the\year}
+	{Moscow, \the\year}
 \end{center}
 
 \normalfont\clearpage
@@ -144,7 +150,8 @@
 
 \nsection{General Description of the Work}
 
-\textbf{Introduction.}
+\textbf{Introduction}
+
 Since the 90s of the last century, the Nonlinear Schr\"odinger Equation (NLS) with additional spatial non-autonomous terms has been an object of thorough studies.
 For the one-dimensional case, this equation can be written as follows:
 \begin{equation}
@@ -231,14 +238,16 @@ If SLM is unstable, a small perturbation leads to its destruction during the tem
 Therefore, stable localized solutions are especially valuable from the perspective of physical applications.
 So, the analysis of stability is an essential part of the theoretical study of SLMs.
 
-\textbf{Formulation of the problem.}
+\textbf{Formulation of the problem}
+
 While studying the dynamics described by equation \eqref{eq:gpe} the following questions naturally arise:
 \begin{enumerate}
 	\item Is it possible to describe {\it completely all} stationary localized solutions of equation \eqref{eq:gpe} that coexist for under given parameters?
 	\item How to identify stable solutions among them?
 \end{enumerate}
 
-\textbf{A survey of the current state of the field.}
+\textbf{A survey of the current state of the field}
+
 It's worth noting that in the majority of works devoted to this topic the problem of finding / describing of {\it all} SLMs has not been raised.
 Instead, only specific classes of solutions corresponding to particular physical structures has been described, see the comprehensive review\textsuperscript{\ref{note:turner}}.
 At the same time, despite the questions above seem a little bit ``challenging'', the combination of rigorous analytical methods with numerical computations makes it possible to achieve significant progress in this direction.
@@ -258,12 +267,14 @@ It's also worth to mention the mathematical works of F. Zanolin and co-authors\f
 Such solutions also can be classified by means of methods of nonlinear dynamics.
 Authors of these works use an approach that relies on topological argumentation and differs from the one presented in the dissertation.
 
-\textbf{Relevance of the research topic.}
+\textbf{Relevance of the research topic}
+
 Generalization of the above mentioned results to the case of non-constant pseudopotential, $P(x) \neq \mathrm{const}$, is an important actual problem.
 Application of the ``coding approach'' to the Gross-Pitaevskii equation with periodic pseudopotential yields  a classification of nonlinear stationary states in BEC in nonlinear lattice.
 This classification opens up the possibility of experimental finding of new, previously unknown stable stationary states.
 
-\textbf{Tasks and objectives of the study.}
+\textbf{Tasks and objectives of the study}
+
 The main object of the study in the dissertation is the set of stationary solutions of one-dimensional Gross -- Pitaevskii equation \eqref{eq:gpe} with {\it periodic pseudopotential}.
 Tasks and objectives of the study can be formulated as follows:
 \begin{enumerate}
@@ -272,7 +283,8 @@ Tasks and objectives of the study can be formulated as follows:
 	\item For the case of harmonic potential well, $U(x) = A x^2$, to investigate the effect of periodic pseudopotential on the structure of the set of stationary localized solutions and their stability.
 \end{enumerate}
 
-\textbf{The methods.}
+\textbf{Methods}
+
 In order to study possible types of SLMs the {\it method of excluding of singular solutions}\textsuperscript{\ref{note:alfavr}} is used.
 We call a solution of equation \eqref{eq:stationary} {\it singular} if it goes to infinity at a finite point $x = x_0$ of the real axis, i.e.
 \begin{equation}
@@ -286,7 +298,8 @@ In order to compute profiles of localized solutions of equation \eqref{eq:statio
 The obtained solutions are checked for linear stability by solving corresponding eigenvalue problem in the Fourier space (Fourier Collocation Method\footnote{J. Yang, ``Nonlinear Waves in Integrable and Nonintegrable Systems'', Philadelphia: SIAM, 2010.}), and also via simulation of dynamics of \eqref{eq:gpe} with a conservative finite-difference scheme\footnote{V. Trofimov, N. Peskov Comparison of finite-difference schemes for the Gross-Pi­ taevskii equation // Mathematical Modelling and Analysis. — 2009. — Mar. — Vol. 14. — P. 109–126.}.
 All the algorithms and numerical methods are implemented in {\tt MATLAB} using {\tt MEX} extension for high performance computing support.
 
-\textbf{Scientific novelty.}
+\textbf{Scientific novelty}
+
 In the thesis, a number of exact statements about regular and singular solutions of equation \eqref{eq:stationary} are proved.
 The conditions that ensure the existence of singular solutions, or their absence are formulated.
 In particular, it was shown that if the pseudopotential is negative at least at one point $x_0$, $P(x_0) < 0$, then there exist two one-parametric families of solutions which tend to infinity at this point $x_0$.
@@ -298,7 +311,7 @@ In contrast to the previously obtained results\textsuperscript{\ref{note:alfavr}
 An algorithm of the numerical verification is provided in the dissertation along with its theoretical justification.
 
 For the case $U(x) \equiv 0$ and cosine periodic pseudopotential of the form $P(x) = A + B \cos 2x$ the set of stationary localized solutions has been studied.
-When applying the above-mentioned techniques, the set of SLMs was effectively described, and, eventually, new stable localized solution, named {\it dipole soliton} \cite{LebedevAlfimovMalomed}, was found.
+When applying the above-mentioned techniques, the set of SLMs was effectively described, and, eventually, new stable localized solution, named {\it dipole soliton}, was found.
 This solution has been previously unknown.
 
 Finally, in the case of harmonic trapping potential, $U(x) = A x^2$, the effect of periodic pseudopotential of the form $P(x) = A + B \cos \Omega x$ on the set of SLMs was studied.
@@ -325,34 +338,42 @@ For the pseudopotential with zero mean, $P(x) = B \cos \Omega x$, it was found t
 		For the periodic pseudopotential with zero mean, it is shown that increasing of the frequency of pseudopotential can stabilize low-amplitude localized solutions.
 \end{enumerate}
 
-\textbf{Confidence level and approbation of the results.}
+\textbf{Confidence level and approbation of the results}
+
 The Gross -- Pitaevskii model is a classical model of physics of ultra-cold temperatures and its confidence is beyond any doubt.
 SLMs in this model correspond to localized stationary solutions of the Gross--Pitaevskii equation.
 In the thesis, SLMs are constructed, and their stability is investigated numerically.
 Numerical computation of SLMs is performed by means of standard numerical methods for ODEs with controlled accuracy.
 The analysis of stability of SLMs is fulfilled by means of the spectral method which is generally recognized for the similar problems.
 Results of the stability analysis are verified by solution of the time-dependent Gross--Pitaevskii equation employing a conservative finite-difference scheme.
-The key findings of the thesis were reported at various scientific seminars and conferences, including:
+The key findings of the thesis were reported at various scientific seminars and conferences, including: 
 \begin{enumerate}
-	\item <<Фундаментальная математика и ее приложения в естествознании>>, BSU, Ufa, September, 2015.
-	\item ``Dynamics, Bifurcations and Chaos III'', Lobachevsky State University of Nizhni Novgorod, Nizhni Novgorod, July, 2016.
-	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March, 2018.
-	\item ``Nonlinear Phenomena in Bose Condensates and Optical Systems'', Tashkent, Uzbekistan, August, 2018.
-	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March, 2019.
-	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March, 2021.
+	\item ``Фундаментальная математика и ее приложения в естествознании'', BSU, Ufa, September 2015, talk ``Стационарные моды нелинейного уравне­ния Шрёдингера в присутствии линейного и нелинейного потенциалов''.
+	\item ``Dynamics, Bifurcations and Chaos III'', Lobachevsky State University of Nizhni Novgorod, Nizhni Novgorod, July 2016, talk ``Stable dipole solitons and soliton complexes in the nonlinear Schr\"odinger equation with periodically modulated nonlinearity''.
+	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March 2018, talk ``Steady-states for the Gross-Pitaevskii equation with nonlinear lattice pseudo- potential''.
+	\item ``Nonlinear Phenomena in Bose Condensates and Optical Systems'', Tashkent, Uzbekistan, August 2018, talk ``Steady-states for the Gross-Pitaevskii equation with nonlinear lattice pseudopotential''.
+	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March 2019, talk ``Coding of solutions for the Duffing equation with non-homogeneous nonlinearity''.
+	\item ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March 2021, talk ``Coding of bounded solutions of equation $u_{xx} - u + \eta(x) u^3 = 0$ with periodic piecewise constant function $\eta(x)$''.
 \end{enumerate}
 
-\textbf{Publications.}
-Materials of the thesis were presented in 9 publications, among them there are 3 articles in peer-reviewed journals \cite{AlfimovLebedev, LebedevAlfimovMalomed, AlfimovGegelLebedevMalomedZezyulin}, and 6 conference proceedings \cite{Ufa2015, NizhniNovgorod2016, Bannoe2018, Tashkent2018, Bannoe2019, Bannoe2021}.
-During the work on the dissertation, the author also published 2 articles\footnote{M. E. Lebedev, D. A. Dolinina, K. B. Hong, {\it et al.}, ``Exciton-polariton Josephson junctions at finite temperatures'', Scientific Reports Vol. 7, P. 9515, 2017}\textsuperscript{,}\footnote{D. A. Zezyulin, M. E. Lebedev, G. L. Alfimov, and B. A. Malomed, ``Symmetry breaking in competing single-well linear-nonlinear potentials'', Phys. Rev. E, Vol. 98, P. 042209, 2018.} on related topics (results of one of them were also reported on conference\footnote{D. A. Zezyulin, M. E. Lebedev, G. L. Alfimov, and B. A. Malomed, ``Symmetry breaking in competing single-well linear-nonlinear potentials'', Abstracts of conference ``Complex Analysis, Mathematical Physics and Nonlinear Equations'', Bashkortostan, Bannoe Lake, March, 2019.}).
+\textbf{Publications}
 
-\textbf{Personal contribution of the author.}
+Materials of the thesis were presented in 3 articles of peer-reviewed journals included in the international citation system Scopus:
+\begin{enumerate}
+	\item Alfimov G. L., Lebedev M. E. On regular and singular solutions for equation $u_{xx} + Q(x) u + P(x) u^3 = 0$ // Ufa Mathematical Journal, 2015, Vol. 7, no. 2, P. 3--16, DOI: 10.13108/2015-7-2-3 (Scopus Q2).
+	\item Lebedev M. E., Alfimov G. L., Malomed B. Stable dipole solitons and soliton complexes in the nonlinear Schr\"odinger equation with periodically modulated nonlinearity // Chaos, 2016, Vol. 26, P. 073110, DOI: 10.1063/1.4958710 \\ (Scopus Q1).
+	\item Alfimov G. L., Gegel L. A., Lebedev M. E., Malomed B. A., Zezyulin D. A. Localized modes in the Gross-Pitaevskii equation with a parabolic trapping potential and a nonlinear lattice pseudopotential // Communications in Nonli-near Science and Numerical Simulation, 2019, Vol. 66, P. 194--207, \\ DOI: 10.1016/j.cnsns.2018.06.019 (Scopus Q1).
+\end{enumerate}
+
+\textbf{Personal contribution of the author}
+
 The main finding of the thesis was obtained either by the applicant in person, or in collaboration with co-authors where the role of the applicant was dominant.
 The numerical implementations of all the algorithms and other computer programs was fulfilled by the applicant personally.
 
-\textbf{Structure and volume of the dissertation.}
+\textbf{Structure and volume of the dissertation}
+
 The thesis consists of introduction, four chapters, conclusion, three appendices, and a bibliography.
-Total volume of the dissertation is 130 page.
+Total volume of the dissertation is 131 page.
 Among them there are 115 pages of text, including 35 figures, 4 tables and 1 algorithm scheme.
 Bibliography consists of 61 titles.
 
@@ -369,7 +390,7 @@ Point $x_0$ is called a collapse point for the solution $u(x)$.
 Alternatively, one can say that such solution {\it collapses} at the point $x_0$.
 On the contrary, solution is called {\it regular} if there is no such point $x_0$.
 
-In \textbf{Chapter I} the propositions about regular and singular solutions of equation \eqref{eq:stationary} are formulated and proved.
+In \textbf{Chapter 1} the propositions about regular and singular solutions of equation \eqref{eq:stationary} are formulated and proved.
 
 \begin{proposition}
 \label{prop:absense-of-singular-solutions}
@@ -412,9 +433,8 @@ Finally, the conditions are given that ensure that equation \eqref{eq:stationary
 
 It follows from Proposition~\ref{prop:singular-families} that if pseudopotential $P(x)$ is a sign-altering function then singular behaviour is common for solutions of equation \eqref{eq:stationary}.
 This fact makes it possible to apply the method of excluding of singular solutions\textsuperscript{\ref{note:alfavr}}.
-Results of the first chapter were published in \cite{AlfimovLebedev} and \cite{Ufa2015}.
 
-In \textbf{Chapter II} the basic concept of the theory for coding of stationary states is introduced.
+In \textbf{Chapter 2} the basic concept of the theory for coding of stationary states is introduced.
 It is assumed that the potential and the pseudopotential in Eq.~\eqref{eq:gpe} are $L$-periodic functions, $U(x + L) = U(x)$, $P(x + L) = P(x)$.
 It turns out that under certain conditions the set of regular solutions of equation \eqref{eq:stationary} can be fully described by the structure of the so-called {\it coding sets}: $\mathscr{U}_L^+$, $\mathscr{U}_L^-$, $\mathscr{U}_L$.
 These sets are defined on the plane $(u, u')$ of initial conditions for equation \eqref{eq:stationary} as follows.
@@ -501,7 +521,6 @@ If Hypotheses~I and II are valid for $\mathcal{D}$, then it's possible to descri
 In Figure~\ref{fig:hypotheses-validation} example of the set $\mathcal{D}$ is shown.
 This set consists of three connected components.
 Hypotheses~I and II are valid for $\mathcal{D}$, hence, there exists a subset of regular solutions which can be exhaustively coded with three symbols $\{-1, 0, +1\}$.
-Results of the second chapter where published in \cite{Bannoe2019} and \cite{Bannoe2021}.
 
 \begin{figure}[h]
 \centering
@@ -514,7 +533,7 @@ Results of the second chapter where published in \cite{Bannoe2019} and \cite{Ban
 \label{fig:hypotheses-validation}
 \end{figure}
 
-In \textbf{Chapter III} the set of stationary localized solutions has been studied for the case of equation \eqref{eq:gpe} in which the trapping potential is absent, $U(x) \equiv 0$, and the pseudopotential has a cosine form, $P(x) = A + \cos 2x$.
+In \textbf{Chapter 3} the set of stationary localized solutions has been studied for the case of equation \eqref{eq:gpe} in which the trapping potential is absent, $U(x) \equiv 0$, and the pseudopotential has a cosine form, $P(x) = A + \cos 2x$.
 Such model has been previously considered in literature.
 It was reported\textsuperscript{\ref{note:malomed}} that this model admits a stationary localized bell-shaped solution, called {\it fundamental soliton}, which is stable for certain parameters of the equation.
 
@@ -542,7 +561,6 @@ Analysis of the linear stability by means of spectral method showed that the maj
 However, there is a number of stable solutions, and some of them were previously unknown.
 One of these new stable solutions is the so-called {\it dipole soliton}.
 Its profile is depicted in Figure~\ref{fig:solutions}~(e).
-Results of the third chapter were published in \cite{LebedevAlfimovMalomed}, \cite{NizhniNovgorod2016} and \cite{Tashkent2018}.
 
 \begin{figure}[h!]
 \centering
@@ -556,7 +574,7 @@ Results of the third chapter were published in \cite{LebedevAlfimovMalomed}, \ci
 \label{fig:solutions}
 \end{figure}
 
-In \textbf{Chapter IV} the set of SLMs is studied for equation \eqref{eq:gpe} where, along with the periodic pseudopotential, the trapping potential in the form of harmonic potential well is included.
+In \textbf{Chapter 4} the set of SLMs is studied for equation \eqref{eq:gpe} where, along with the periodic pseudopotential, the trapping potential in the form of harmonic potential well is included.
 After the suitable renormalization, the functions of potential and pseudopotential take the forms $U(x) = x^2$, $P(x) = A + B \cos \Omega x$.
 The equation admits so-called {\it stationary solutions with linear counterpart}.
 These solutions arise from small-amplitude limit, $|u(x)| \ll 1$.
@@ -582,7 +600,6 @@ Linear stability analysis showed that almost all of them are unstable.
 The second part of the fourth chapter is devoted to the analysis of the stability for low-amplitude solutions with linear counterpart.
 It is shown that in the case of pseudopotential with zero-mean, $P(x) = B \cos \Omega x$, increase of the frequency $\Omega$ leads to stabilization of low-amplitude solutions with linear counterpart.
 That is, for each branch $\Gamma_n$ there exists a threshold $\Omega_n$, such that for $\Omega > \Omega_n$ the corresponding branch of solutions is stable in the vicinity of its bifurcation point $N \ll 1$, $\omega_n \approx \tilde{\omega}_n$.
-Results of the fourth chapter were published in \cite{AlfimovGegelLebedevMalomedZezyulin} and \cite{Bannoe2018}.
 
 \begin{figure}[h]
 \centering
@@ -631,9 +648,9 @@ These theorems are used in Chapter II.
 
 % \renewcommand{\bibname}{\protect\leftline{Bibliography}}
 
-\def\thispagestyle#1{}
-\renewcommand{\bibname}{\protect\leftline{\large List of Publications on the Topic of Dissertation}}
-\printbibliography[keyword=own]
+%\def\thispagestyle#1{}
+%\renewcommand{\bibname}{\protect\leftline{\large List of Publications on the Topic of Dissertation}}
+%\printbibliography[keyword=own]
 
 % Center aligned bibliography title
 % \printbibliography[keyword=own, title={\large Список публикаций автора по теме диссертации}]

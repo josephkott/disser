@@ -2,10 +2,12 @@
 % TODO: Labels in the beginning, not in the end?
 % TODO: Use $u'$ instead of $u_x$.
 % TODO: Check that "panel" written with lower letter "p".
-\chapter{Classification of Stationary States by Means of Symbolic Dynamics}
+\chapter*{{\normalfont Chapter 2} \\ Classification of Stationary States by Means of Symbolic Dynamics}
+\addcontentsline{toc}{chapter}{Chapter 2 \quad Classification of Stationary States by Means of Symbolic Dynamics}
 \label{chapter:II}
 
-\section{Objectives}
+\section*{2.1 Objectives}
+\addcontentsline{toc}{section}{2.1 \quad Objectives}
 
 In this chapter we describe an approach that will be used in what follows to classify the stationary states of one-dimensional GPE that are described by the equation,
 \begin{equation}
@@ -38,11 +40,12 @@ During this part of the study we follow the approach that goes back to 60-70-es,
 In the seminal papers the symbolic dynamics approach was applied for description of behaviour of trajectories near a homoclinic loop and for three-body problem.
 In this chapter, the horseshoe dynamics approach is used for the mapping of Poincar\'e map domains that is a new application of this theory.
 
-\section{Geometry of the Poincar\'e Map}
+\section*{2.2 Geometry of the Poincar\'e Map}
+\addcontentsline{toc}{section}{2.2 \quad Geometry of the Poincar\'e Map}
 
 First of all let's introduce several definitions.
 
-\subsection{Poincar\'e Map}
+\subsection*{2.2.1 Poincar\'e Map}
 
 Since we consider functions $Q(x)$, $P(x)$ to be $L$-periodic let's introduce the Poincar\'e map associated with the period $L$ of the equation \eqref{eq:stationary}.
 Define the Poincar\'e map $\mathcal{P}: \mathbb{R}^2 \to \mathbb{R}^2$ in the following manner:
@@ -115,7 +118,7 @@ From that point of view the case when $P(x)$ changes its sing becomes interestin
 According to Proposition \ref{prop:singular-families} points $x$ where $P(x) < 0$ originate families of collapsing solutions.
 Such families at their turn sift the set of bi-infinite orbits.
 
-\subsection{Island Set}
+\subsection*{2.2.2 Island Set}
 
 \begin{definition}
 	Let $\gamma > 0$ be fixed.
@@ -167,7 +170,7 @@ Further we'll see that such connection naturally comes from the dynamics of the 
 \label{fig:islands-set}
 \end{figure}
 
-\subsection{Curves and Strips}
+\subsection*{2.2.3 Curves and Strips}
 
 Move on to the definition of h,v-curves and h,v-strips.
 
@@ -224,7 +227,7 @@ At last let's define one additional property of island set along with $\mathcal{
 \label{def:complete-island-set}
 \end{definition}
 
-\subsection{Thickness of Strips}
+\subsection*{2.2.4 Thickness of Strips}
 
 Next we'll also need a definition of the strips thickness.
 Let an h-strip $H$ lie inside an island $D$ and is bounded by h-curves $\alpha^+$ and $\alpha^-$.
@@ -307,7 +310,8 @@ Remark~\ref{remark:h-strips-thickness} and Proposition~\ref{prop:h-strip-domains
 Note that thickness of h-strip is measured in vertical direction, and thickness of v-strip is measured in horizontal direction.
 If a strip is well-measurable then its thickness is measured in a direction along the straight line that connects points from the opposite side of the strip.
 
-\section{Poincar\'e Map Domains for Piecewise Periodic Pseudopotential}
+\section*{2.3 Poincar\'e Map Domains for Piecewise Periodic Pseudopotential}
+\addcontentsline{toc}{section}{2.3 \quad Poincar\'e Map Domains for Piecewise Periodic Pseudopotential}
 \label{section:poincare-map-domains-piecewise}
 
 Let's demonstrate how the definitions introduced above work all together.
@@ -341,7 +345,7 @@ In each region Eq.~\eqref{eq:stationary-piecewise} has a form of conservative Du
 	&& u_{xx} - u + u^3 = 0, \quad x \in [L_*; L_* + L_0] \label{eq:stationary-piecewise-regular}.
 \end{eqnarray}
 Each of equations \eqref{eq:stationary-piecewise-singular}, \eqref{eq:stationary-piecewise-regular} can be solved explicitly  through Jacobi elliptic functions.
-Exact solutions are given in Appendix \ref{appendix:solutions-of-duffing-equations}.
+Exact solutions are given in Appendix~B. % \ref{appendix:solutions-of-duffing-equations}
 \begin{figure}[h]
 \centering
 	\includegraphics[scale = 1]{pic/phase portraits}
@@ -386,7 +390,7 @@ The area inside the separatrix loops is filled by closed orbits of periodic solu
 All other orbits turn around the origin and correspond to solutions with zero mean.
 That's why we mark a corresponding period part $L_0$ with a symbol ``$0$'', since it looks like a little curve circle.
 
-\subsection{General Propositions on the $\mathscr{U}_L^{\pm}$ Sets for Piecewise Pseudopotential}
+\subsection*{2.3.1 General Propositions on the $\mathscr{U}_L^{\pm}$ Sets for Piecewise Pseudopotential}
 
 Let's move on to the consideration of the $\mathscr{U}_L^{\pm}$ sets for equation \eqref{eq:stationary-piecewise}.
 We consider a decomposition of the Poincar\'e map $\mathcal{P} = \mathcal{P}_0 \mathcal{P}_*$, where  maps associated with corresponding parts of the overall period $L$ are defined in a similar manner as the initial Poincar\'e map $\mathcal{P}$ itself \eqref{eq:poincare-map}.
@@ -459,7 +463,8 @@ The following proposition is valid.
 	Then there exists a point $\vb{p} = (u_s, u_s') \in \gamma_1^-$ such that $\mathcal{P}_0(\vb{p}) \in \gamma_2^+$.
 	Due to the symmetries of the phase portraits for equations \eqref{eq:stationary-piecewise-singular} and \eqref{eq:stationary-piecewise-regular}, $\vb{q} = (u_s, -u_s')$, see Figure~\ref{fig:separatrix-map}~(a).
 	Consider a phase trajectory of \eqref{eq:stationary-piecewise-regular} that lies outside of separatrix loop and connects points $\vb{p}$ and $\vb{q}$.
-	According to Appendix~\ref{appendix:solutions-of-duffing-equations} exact form of the solution is
+	% \ref{appendix:solutions-of-duffing-equations}
+	According to Appendix~B exact form of the solution is
 	\begin{equation}
 		u(x) = x_0 \cn \left( \sqrt{x_0^2 - 1} x + x_1, k \right),
 	\label{eq:stationary-piecewise-regular-solution}
@@ -647,7 +652,7 @@ This obviously follows from that fact, that set $\mathscr{U}_{L_*}^-$ contains t
 \label{fig:separatrix-map-with-numerical-computations}
 \end{figure}
 
-\subsection{Construction of the Poincar\'e Map Domains}
+\subsection*{2.3.2 Construction of the Poincar\'e Map Domains}
 
 One of the possible way to construct $\mathscr{U}_L^{\pm}$ sets for different maps associated with equation \eqref{eq:stationary} is to use a numerical procedure called scanning of initial conditions plane $(u, u')$.
 That's how it works.
@@ -711,7 +716,7 @@ Establishing a criteria for existence of the island set is a quite tricky task e
 Our approach is based on scanning of a sufficiently large subset of initial conditions plane around the center $(u, u') = (0, 0)$.
 If the resulting subset of $\mathscr{U}_L$ form an island set we just {\it make a hypothesis} that all other intersections and also islands.
 
-\subsection{Complete Island Set}
+\subsection*{2.3.3 Complete Island Set}
 
 Let $\mathscr{U}_L$ represents an island set.
 It turns out that for Eq.~\eqref{eq:stationary-piecewise} the property of ``completeness''  for an island set in a sense of Definition~\ref{def:complete-island-set} naturally arises from its construction.
@@ -770,7 +775,8 @@ Island set $\mathscr{U}_L = \bigcup_{i \in S} D_i$ for Eq.~\eqref{eq:stationary-
 It means that $V_{ij} = \mathcal{P}^{-1}(D_j) \cap D_i \neq \varnothing$ for each $i, j \in S$.
 In Figure~\ref{fig:v-strips-piecewise} sets $V_{ij}$ are depicted for $i, j \in \{ -1, 0, +1 \}$.
 
-\section{Symbolic Dynamics: Coding of Solutions}
+\section*{2.4 Symbolic Dynamics: Coding of Solutions}
+\addcontentsline{toc}{section}{2.4 \quad Symbolic Dynamics: Coding of Solutions}
 
 In this section we show how all the concepts introduced above can be used together to classify all bounded solutions of equation \eqref{eq:stationary}.
 Our classification is closely connected with the structure of the $\mathscr{U}_L$ set.
@@ -833,7 +839,7 @@ Obviously points of orbit of our solution cannot lie down outside of  $\mathscr{
 \label{fig:solution-and-orbit}
 \end{figure}
 
-\subsection{Uniqueness of Solutions Coding}
+\subsection*{2.4.1 Uniqueness of Solutions Coding}
 
 The most intriguing question about coding is the following: when is the correspondence between solutions orbits $\mathcal{O}$ and codes $\mathcal{S}$ based on the $\mathscr{U}_L$ set structure for Eq.~\eqref{eq:stationary} is bijective (one-to-one)?
 We can also formulate another question: when there exists a homeomorphism between two topological spaces $\mathcal{O}$ and $\mathcal{S}$?
@@ -1041,7 +1047,8 @@ Hypothesis~III from \cite{AlfimovAvramenko} requires a sophisticated analyses of
 	Theorem is proven.
 \end{proof}
 
-\section{Numerical Test of Existence of Coding Homeomorphism}
+\section*{2.5 Numerical Test of Existence of Coding Homeomorphism}
+\addcontentsline{toc}{section}{2.5 \quad Numerical Test of Existence of Coding Homeomorphism}
 
 In order to apply Theorem~\ref{thm:coding} to equation \eqref{eq:stationary} one should get a strong evidence that Hypotheses \ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping} are valid.
 However it's rather difficult to obtain a rigorous mathematical proof of them even for the simplest form of the functions $Q(x)$, $P(x)$ in \eqref{eq:stationary}.
@@ -1099,7 +1106,7 @@ Let's formulate the first statement that cover a part of Hypothesis~\ref{hypothe
 		\item[(ii)] $d_{\mathrm{h}}(\widetilde{H}_j) \le (1 / \mu) d_{\mathrm{h}}(H)$ (here $d_{\mathrm{h}}(\cdot)$ is an \emph{h}-strip thickness in a sence of Definition~\ref{def:h-thickness}).
 	\end{itemize}
 \end{theorem}
-Proof of Theorem~\ref{thm:h-strips-mapping} can be found in Appendix~\ref{appendix:strips-mapping-theorems}.
+Proof of Theorem~\ref{thm:h-strips-mapping} can be found in Appendix~C. % \ref{appendix:strips-mapping-theorems}
 Basically, this theorem postulate two following things:
 \begin{itemize}
 	\item If linear operator $D \mathcal{P}_{\vb{p}} = (a_{mn})$, $\vb{p} \in V_{ij}$, satisfies {\it some conditions} about signs of $a_{mn}$, then $\mathcal{P}$ {\it maps h-strips to h-strips}.
@@ -1214,7 +1221,8 @@ This completes the verification of Hypothesis~\ref{hypothesis:strips-mapping}.
 \label{fig:hypotheses-validation-piecewise}
 \end{figure}
 
-\section{Stationary Solutions of GPE with Piecewise Pseudopotential}
+\section*{2.6 Stationary Solutions of GPE with Piecewise Pseudopotential}
+\addcontentsline{toc}{section}{2.6 \quad Stationary Solutions of GPE with Piecewise Pseudopotential}
 
 Let's demonstrate how coding of solutions can be used to identify classes of different solutions.
 For that purpose we use again Eq.~\eqref{eq:stationary-piecewise} with the parameters $(L_*, L_0) = (2, 1)$.
@@ -1255,7 +1263,8 @@ Presumably an analogous technique can be applied for a periodic pseudopotential 
 
 % TODO: Take care of this indentation.
 \pagebreak
-\section{Summary}
+\section*{2.7 Summary}
+\addcontentsline{toc}{section}{2.7 \quad Summary}
 
 In this chapter the approach for classification of bounded solutions for equation \eqref{eq:stationary} has been exposed.
 This approach is based on the analysis of the dynamics of Poincar\'e map $\mathcal{P}$ on the set $\mathscr{U}_L$.
@@ -1265,7 +1274,7 @@ This allows us to establish a homeomorphism between orbits of regular solutions 
 We formulated sufficient conditions for the existence of this	 homeomorphism in a form of two hypotheses, see Hypotheses~\ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping}.
 Hypothesis~\ref{hypothesis:island-set} can be verified numerically in a straightforward way.
 Hypothesis~\ref{hypothesis:strips-mapping} requires a more delicate attitude.
-We replaced Hypothesis~\ref{hypothesis:strips-mapping} with Theorems~\ref{thm:h-strips-mapping} and \ref{thm:v-strips-mapping}, they are proved in Appendix~\ref{appendix:strips-mapping-theorems}.
+We replaced Hypothesis~\ref{hypothesis:strips-mapping} with Theorems~\ref{thm:h-strips-mapping} and \ref{thm:v-strips-mapping}, they are proved in Appendix~C. % \ref{appendix:strips-mapping-theorems}
 These theorems admits numerical verification by Algorithm~\ref{algorithm:hypotheses-validation}.
 If all steps of the algorithm above are successful, we can conclude that Hypothesis~\ref{hypothesis:strips-mapping} takes place. 
 

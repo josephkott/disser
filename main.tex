@@ -45,6 +45,11 @@
 	maxbibnames=99
 ] {biblatex}
 
+\addto\captionsenglish{
+  \renewcommand{\contentsname}
+    {Table of Contents}
+}
+
 \addbibresource{bibliography.bib} % bibliography source
 
 % Page number position config
@@ -87,7 +92,8 @@
 
 % Title page
 \input{title}
-\addtocounter{page}{1}
+\input{title_rus}
+\addtocounter{page}{2}
 
 % Content
 \tableofcontents

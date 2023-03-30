@@ -1,7 +1,9 @@
-\chapter{Localized Solutions of Gross-Pitaevskii Equation with Periodic Pseudopotential}
+\chapter*{{\normalfont Chapter 3} \\ Localized Solutions of Gross-Pitaevskii Equation with Periodic Pseudopotential}
+\addcontentsline{toc}{chapter}{Chapter 3 \quad Localized Solutions of Gross-Pitaevskii Equation with Periodic Pseudopotential}
 \label{chapter:III}
 
-\section{Objectives}
+\section*{3.1 Objectives}
+\addcontentsline{toc}{section}{3.1 \quad Objectives}
 
 In this chapter we apply the coding approach to the Gross-Pitaevskii equation of the form
 \begin{equation}
@@ -50,7 +52,8 @@ For that purpose authors used variational approximation method which requires in
 Such limitation does not allow to find more sophisticated localized solutions.
 By using of our coding technique we are going to reveal significantly wider class of stationary localized solutions of Eq.~\eqref{eq:gpe-cosine}.
 
-\section{Coding of Solutions}
+\section*{3.2 Coding of Solutions}
+\addcontentsline{toc}{section}{3.2 \quad Coding of Solutions}
 
 Our approach requires the presence of singular solutions families.
 That's why according to Proposition~\ref{prop:singular-families} we assume that $\alpha \in (-1; 1)$, so that function $P(x)$ alternates its sing along the value $x$.
@@ -59,7 +62,7 @@ This restriction comes from the obvious condition of the soliton localization, g
 
 Let's introduce a Poincar\'e map $\mathcal{P}: \mathbb{R}^2 \to \mathbb{R}^2$ associate with equation \eqref{eq:stationary-cosine} in the same way we did it before in \eqref{eq:poincare-map} assuming $L = \pi$.
 Poincar\'e map $\mathcal{P}$ and its inverse $\mathcal{P}^{-1}$ is not defined in the whole plane $(u, u')$ of initial conditions.
-We can construct their domains using the scanning technique introduced in Chapter~\ref{chapter:II}.
+We can construct their domains using the scanning technique introduced in Chapter~2. % \ref{chapter:II}
 Sets $\mathscr{U}_{\pi}^+$ and $\mathscr{U}_{\pi}^-$ for different parameters $(\omega, \alpha)$ are presented in Figure~\ref{fig:island-set-emergence-cosine}.
 Numerical results allows us to conclude that the sets $\mathscr{U}_{\pi}^{\pm}$ are unbounded spirals with infinite number of rotations around the origin, similar to what we saw previously for equation \eqref{eq:stationary-piecewise}.
 According to the Proposition~\ref{prop:domain-reflection} these sets are related with a reflection with respect to the $u'$ axis, i.e. $\mathscr{U}_{\pi}^- = I \mathscr{U}_{\pi}^+$.
@@ -82,7 +85,7 @@ In panel (d) $\mathscr{U}_{\pi}$ is a seven-component island set in the scanning
 \end{figure}
 
 Presence of the island set structure is a first required step of our coding technique.
-In Chapter~\ref{chapter:II} we established two hypotheses which must be valid, so the conditions of Theorem~\ref{thm:coding} take place.
+In Chapter~2 we established two hypotheses which must be valid, so the conditions of Theorem~\ref{thm:coding} take place.
 Let's focus on the case $(\omega, \alpha) = (1.5, 0)$.
 We restrict the scanning area in plane $(u, u')$ of initial conditions by seven components of $\mathscr{U}_{\pi}$.
 The set $\mathscr{U}_{\pi}$ is depicted in Figure~\ref{fig:island-set-cosine}.
@@ -102,7 +105,7 @@ Applying this notation for the seven-component island set from Figure~\ref{fig:i
 \label{fig:island-set-cosine}
 \end{figure}
 
-To check Hypothesis~\ref{hypothesis:strips-mapping} we use the numerical procedure described in Chapter~\ref{chapter:II} which relies on Strips Mapping Theorems from Appendix~\ref{appendix:strips-mapping-theorems}.
+To check Hypothesis~\ref{hypothesis:strips-mapping} we use the numerical procedure described in Chapter~2 which relies on Strips Mapping Theorems from Appendix~C.
 Since set $\mathscr{U}_{\pi}$ is symmetric with respect to the $u$ and $u'$ axis we can check Hypothesis~\ref{hypothesis:strips-mapping} only for four islands: $D_0$, $D_{+1}$, $D_{+2}$, and $D_{+1\mathrm{i}}$.
 For each island $D_k$ we introduce a grid of values for numerical computations like we do it during the scanning procedure.
 Using that grid we compute sets $H_{i, k} = \mathcal{P}(D_i) \cap D_k$ and sets $V_{k, i} = \mathcal{P}^{-1}(D_i) \cap D_k$, where $i \in S_7$.
@@ -146,7 +149,7 @@ According to the numerical computations Theorems~\ref{thm:h-strips-mapping} and 
 		Boundaries of the set $\mathscr{U}_{\pi}^+$ (light gray) contains $\beta_k^{\pm}$ boundaries for each island $D_k$; boundaries of $\mathscr{U}_{\pi}^-$ (dark gray) contains $\alpha_k^{\pm}$ boundaries correspondingly.
 		Estimations of $\mu_*$ and $\nu_*$ values are shown with histograms below each island.
 		Configuration of value signs in operators $D \mathcal{P}_{\vb{p}} = (a_{mn})$, $\vb{p} \in V_{k, i}$ (blue), and $D \mathcal{P}^{-1}_{\vb{p}} = (b_{mn})$, $\vb{p} \in H_{i, k} $ (yellow) are shown from the right side of each island $D_k$.
-		All of them satisfy the conditions of Theorem~\ref{thm:h-strips-mapping} (On h-strip mapping) and Theorem~\ref{thm:v-strips-mapping} (On v-strips mapping) from Appendix~\ref{appendix:strips-mapping-theorems}.
+		All of them satisfy the conditions of Theorem~\ref{thm:h-strips-mapping} (On h-strip mapping) and Theorem~\ref{thm:v-strips-mapping} (On v-strips mapping) from Appendix~C.
 		Sets $H_{+2, k}$ and $V_{k, +2}$ are not depicted since they are too thin and barely visible at this scale, but all the computations have been also provided for them and the overall result satisfies the above mentioned theorems as well.
 	}
 \label{fig:hypotheses-validation-cosine}
@@ -187,7 +190,8 @@ In particular, the solitons with codes $\{ \dots, 0, k, 0, \dots \}$, $k \ne 0$ 
 \label{fig:solutions-cosine}
 \end{figure}
 
-\section{Analysis of Stability}
+\section*{3.3 Analysis of Stability}
+\addcontentsline{toc}{section}{3.3 \quad Analysis of Stability}
 
 Stability is a critically important issue for stationary localized solutions.
 By stability of localized stationary solution we mean its resistance to small perturbations.
@@ -245,7 +249,7 @@ The discrete spectrum includes zero eigenvalue $\lambda = 0$.
 It is easy to see that other eigenvalues of discrete spectrum of Eq.~\eqref{eq:eigenvalue-problem} have the following symmetry properties: if $\lambda$ is an eigenvalue, then so are $\lambda^{\dagger}$, $-\lambda$, and $-\lambda^{\dagger}$.
 This means that these eigenvalues always appear in pairs or quadruples.
 
-\subsection{Fourier Collocation Method}
+\subsection*{3.3.1 Fourier Collocation Method}
 
 To find discrete eigenvalues numerically we use so-called Fourier Collocation Method (FCM) described in \cite{JiankeYang}.
 This method is very efficient to find {\it exponential instabilities} that appear due to real eigenvalues.
@@ -303,7 +307,7 @@ Solution of the eigenvalue problem gives $2N + 1$ eigenvalues.
 In our computations we used $N = 256$ and $N = 512$ and got nearly identical spectrums.
 From the practical point of view for the linear-stability analysis the number of Fourier modes can be relatively small, since eigenvalues for the higher modes have zero real part.
 
-\subsection{Evolutionary Simulation}
+\subsection*{3.3.2 Evolutionary Simulation}
 
 To control linear-stability analysis and get additional confidence in stability of localized solutions we also performed a numerical simulation of their evolution.
 For that purpose Trofimov-Peskov finite-difference scheme \cite{TrofimovPeskov} for numerical solution of the Gross-Pitaevskii \eqref{eq:gpe} equation was used. 
@@ -322,7 +326,7 @@ In order to reveal instability (if it is), the soliton profile was perturbed at 
 A finite spatial domain $[-5 \pi; 5 \pi]$ was used, with reflection of radiation from boundaries eliminated by means of absorbing boundary conditions.
 During our analysis we got consistent results between the linear stability and evolutionary simulation.
 
-\subsection{Results of Linear Stability Analysis}
+\subsection*{3.3.3 Results of Linear Stability Analysis}
 
 With the help of FCM, a great number of localized stationary solutions of equation \eqref{eq:gpe-cosine}, represented by different codes, were analyzed.
 Due to the infinite number of essentially different solitons, it's not possible to preform a comprehensive stability analysis of all localized solutions.
@@ -382,7 +386,7 @@ At $\omega^* \approx 0.265$, the DS family, coded by $\{ \dots, 0, \pm 1\mathrm{
 \label{fig:branches-with-stability}
 \end{figure}
 
-\subsubsection{Stable Dipole Soliton}
+\subsubsection*{3.3.4 Stable Dipole Soliton}
 
 As an outcome of our analysis for physical applications, the most significant finding is the existence of stable DS family, which was not previously considered in the setting of GPE with periodic pseudopotential.
 Existence of such family is also predicted by variational approximation method, see \cite{LebedevAlfimovMalomed}.
@@ -405,14 +409,15 @@ An example of that is provided in Figure~\ref{fig:stability-dipole-soliton}.
 \label{fig:stability-dipole-soliton}
 \end{figure}
 
-\section{Summary}
+\section*{3.4 Summary}
+\addcontentsline{toc}{section}{3.4 \quad Summary}
 
 In this chapter we studied stationary solutions of Gross--Pitaevskii equation \eqref{eq:gpe} with presence of periodic pseudopotential $P(x)$ of the cosine form \eqref{eq:cosine-pseudopotential}, while potential $U(x)$ is absent.
 We focused on localized solutions as they are of particular interest for physical experiments.
-Periodicity of pseudopotential $P(x)$ allowed us to apply coding technique from Chapter~\ref{chapter:II}.
+Periodicity of pseudopotential $P(x)$ allowed us to apply coding technique from Chapter~2. % \ref{chapter:II}
 We provided a numerical evidence for Hypotheses~\ref{hypothesis:island-set} and \ref{hypothesis:strips-mapping}, which allow to apply Theorem~\ref{thm:coding}, and concluded that there exist a homeomorphism between a subset of bounded solutions and bi-infinite symbolic sequences from some alphabet.
 Existence of the homeomorphism reveal the complex nature of stationary solutions. 
-Like we saw it in Chapter~\ref{chapter:II} presence of periodic pseudopotential that alters its sign along the period generates a great variety of different stationary solutions.
+Like we saw it in Chapter~2 presence of periodic pseudopotential that alters its sign along the period generates a great variety of different stationary solutions.
 We apply linear-stability analysis to identify physically relevant localized solutions among them.
 Outcome of our analysis is the existence of stable dipole soliton (DS) family previously not considered in this setting.
 Results of our finding were published in \cite{LebedevAlfimovMalomed}.

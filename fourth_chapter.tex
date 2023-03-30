@@ -1,10 +1,12 @@
 % TODO: $\Gamma_n^{\Omega}$ is ugly notation. May it's worth to fix it somehow?
 % TODO: "parabolic-pseudopotential" to "periodic-pseudopotential".
 % TODO: Check all references and labels again.
-\chapter{Localized Solutions of Nonlinear Harmonic Oscillator with Periodic Pseudopotential}
+\chapter*{{\normalfont Chapter 4} \\ Localized Solutions of Nonlinear Harmonic Oscillator with Periodic Pseudopotential}
+\addcontentsline{toc}{chapter}{Chapter 4 \quad Localized Solutions of Nonlinear Harmonic Oscillator with Periodic Pseudopotential}
 \label{chapter:IV}
 
-\section{Objectives}
+\section*{4.1 Objectives}
+\addcontentsline{toc}{section}{4.1 \quad Objectives}
 
 In this chapter we study localized solutions of Gross--Pitaevskii equation with a harmonic-oscillator (parabolic) trapping potential and a periodic pseudopotential in front of cubic term.
 The effective one-dimensional GPE for mean-fields wave function $\Psi(t, x)$ is
@@ -56,7 +58,7 @@ During our numerical analysis we focus on the practically important case when th
 \label{eq:gpe-parabolic-pseudopotential}
 \end{equation}
 
-As we say it in Chapter~\ref{chapter:III} stability of solutions is a critically important property.
+As we say it in Chapter~3 stability of solutions is a critically important property.
 Linear stability of localized solutions is addressed by considering of small perturbations of a solution $u(x)$ of the form:
 \begin{equation}
 	\Psi(t, x) = \left( u(x) + (v(x) + w(x)) e^{\lambda t} + (v^{\dagger}(x) - w^{\dagger}(x)) e^{\lambda^{\dagger} t} \right) e^{-i \omega t},
@@ -85,7 +87,7 @@ where
 	&& \mathcal{L}_+ = \partial_{xx} + \omega -x^2 + 3 P(x) u^2.
 \end{eqnarray*}
 This problem is similar to the previously considered problem \eqref{eq:eigenvalue-problem}.
-Fourier Collocation Method from Chapter~\ref{chapter:III} is also applicable for effective numerical evaluation of spectrum \eqref{eq:eigenvalue-problem-gpe-parabolic}.
+Fourier Collocation Method from Chapter~3 is also applicable for effective numerical evaluation of spectrum \eqref{eq:eigenvalue-problem-gpe-parabolic}.
 Eigenvalues with non-zero real part rise to the instability, while pure imaginary spectrum indicates that solutions is linearly stable.
 Again, we note that the eigenvalues appears in pairs and quadruples, i.e. if $\lambda$ is an eigenvalue, then $-\lambda$, $\lambda^{\dagger}$, $-\lambda^{\dagger}$ are eigenvalues too.
 
@@ -96,7 +98,7 @@ For the analytical analysis during this chapter it's convenient to rewrite eigen
 \end{equation}
 In terms of \eqref{eq:eigenvalue-problem-gpe-parabolic-analytical}, a solution $u(x)$ passes the linear stability test if the spectrum of eigenvalues $\Lambda$ is all-real positive.
 
-\subsection{Solutions with linear counterpart}
+\subsection*{4.1.1 Solutions with linear counterpart}
 
 An important class of localized solutions of equation \eqref{eq:nho-periodic} is {\it nonlinear solutions with linear counterpart}.
 Such terminology has been adopted in \cite{AgostaMalomedPresilla, AgostaPresilla}.
@@ -163,7 +165,8 @@ We apply linear stability analysis to find stable solutions among them.
 Our baseline model for comparison is well-studied equation \eqref{eq:nho} for nonlinear harmonic-oscillator with constant pseudopotential.
 We pay special attention to the localized solutions with linear counterpart, and study how the presence of periodic pseudopotential $P(x)$ of the cosine form \eqref{eq:gpe-parabolic-pseudopotential} affects their stability.
 
-\section{Small-Amplitude Localized Solutions with Linear Counterpart}
+\section*{4.2 Small-Amplitude Localized Solutions with Linear Counterpart}
+\addcontentsline{toc}{section}{4.2 \quad Small-Amplitude Localized Solutions with Linear Counterpart}
 
 For Eq.~\eqref{eq:nho-periodic} let's consider a small-amplitude limit of solutions with linear counterpart.
 As we say above, such solutions $u_n(x)$ originate from the bifurcation of eigenstates $(\tilde{\omega}_n, \tilde{u}_n(x))$ of harmonic-oscillator equation \eqref{eq:ho} and form families $\Gamma_n = (\omega_n, u_n(x))$.
@@ -239,7 +242,8 @@ Using explicit expressions for the eigenfunctions $\tilde{u}_n(x)$ from \eqref{e
 \end{align}
 Formulas \eqref{eq:Mn11} -- \eqref{eq:Mn22} with $P(x) = \pm 1$ were used in \cite{ZezyulinAlfimovKonotopPerecGarcia2008} to explore the stability of small-amplitude nonlinear solutions in the model with constant pseudopotential.
 
-\section{Branches of Nonlinear Localized Solutions for Periodic Pseudopotential, $P(x) = P_0 + P_1 \cos (\Omega x)$}
+\section*{4.3 Branches of Nonlinear Localized Solutions for Periodic Pseudopotential, $P(x) = P_0 + P_1 \cos (\Omega x)$}
+\addcontentsline{toc}{section}{4.3 \quad Branches of Nonlinear Localized Solutions for Periodic Pseudopotential, $P(x) = P_0 + P_1 \cos (\Omega x)$}
 
 We present our numerical and analytical results for pseudopotential of the cosine form \eqref{eq:gpe-parabolic-pseudopotential}.
 It represents a sum of a constant part $P_0$ and a periodic part $P_1 \cos (\Omega x)$.
@@ -247,7 +251,7 @@ In what follow below we conclude that the relation between the magnitudes of $|P
 Hence, it's necessary to consider two cases separately: (a) $|P_0| \gtrsim |P_1|$, when the constant component is not negligible, and (b) $|P_0| \ll |P_1|$, when the constant component is negligible and pseudopotential \eqref{eq:gpe-parabolic-pseudopotential} should be treated as a function with zero mean. 
 We consider each of these cases separately.
 
-\subsection{Periodic pseudopotential with Non-Zero Mean, $|P_0| \gtrsim |P_1|$}
+\subsection*{4.3.1 Periodic pseudopotential with Non-Zero Mean, $|P_0| \gtrsim |P_1|$}
 
 If $P_0$ component of pseudopotential is not negligible, one can scale out the absolute value of it, by replacing 
 \begin{equation}
@@ -345,7 +349,7 @@ Small-amplitude solutions belonging to $\Gamma_2^8$ are unstable, but they becom
 However, Eq.~\eqref{eq:nho-non-zero-mean-asymptotic} implies that the further increase of $\Omega$ will necessarily leads to the destabilization of these solutions (see branch $\Gamma_2^{16}$), because in the nonlinear harmonic-oscillator limit the small amplitude solutions belonging to $\Gamma_2$ are unstable.
 % The possibility to manage the stability of small-amplitude nonlinear localized solutions by tuning frequency of the periodic component of the pseudopotential has been reported in \cite{KevrekidisFrantzeskakis}.
 
-To check predictions of the linear-stability analysis, we have performed simulations of the evolutions of localized solutions in the framework of time-dependent GPE \eqref{eq:gpe-non-zero-mean}, using an implicit finite-difference scheme from \cite{TrofimovPeskov} that has been already used in Chapter~\ref{chapter:III}.
+To check predictions of the linear-stability analysis, we have performed simulations of the evolutions of localized solutions in the framework of time-dependent GPE \eqref{eq:gpe-non-zero-mean}, using an implicit finite-difference scheme from \cite{TrofimovPeskov} that has been already used in Chapter~3.
 In the simulation, solutions which are predicted to be linearly stable keep their shape indefinitely long, see Figure~\ref{fig:stability-nho-non-zero-mean}~(e).
 Solutions that are predicted to be unstable typically transform into a pulsating object localized over one period of the pseudopotential, see Figure~\ref{fig:stability-nho-non-zero-mean}~(f).
 
@@ -362,7 +366,7 @@ Solutions that are predicted to be unstable typically transform into a pulsating
 \label{fig:stability-nho-non-zero-mean}
 \end{figure}
 
-\subsection{Periodic pseudopotential with Zero Mean, $|P_0| \ll |P_1|$}
+\subsection*{4.3.2 Periodic pseudopotential with Zero Mean, $|P_0| \ll |P_1|$}
 
 According to the results of the previous section, the effect of a rapidly oscillating pseudopotential with non-zero mean may be approximated using the standard nonlinear harmonic-oscillator model with uniform nonlinearity.
 However, the situation becomes essentially different for the case $|P_0| \ll |P_1|$.
@@ -552,7 +556,8 @@ As an example of a distinctive pattern of dynamical behaviour of unstable statio
 \end{figure}
 \pagebreak
 
-\section{Summary}
+\section*{4.4 Summary}
+\addcontentsline{toc}{section}{4.4 \quad Summary}
 
 In this chapter we studied localized stationary solutions of Gross--Pitaevskii equation with the harmonic-oscillator potential and pseudopotential $P(x)$, which is a periodic function oscillating with spatial frequency $\Omega$.
 Let's summarize out results.
